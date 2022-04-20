@@ -1,0 +1,64 @@
+.log-body {
+    background-image: url("https://i.ibb.co/m5GRQnp/city.jpg");
+    display: flex;
+    justify-content: center;
+}
+.log-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr;
+    height: 10%;
+}
+.pbk{
+    grid-column: 1/2;
+    margin-left: 10%;
+    margin-top: 15px;
+}
+.log-icon{
+    width: 40px;
+    height: 40px;  
+}
+.log-icons-field{
+    grid-column: 3;
+    display: block;
+    margin-top: 20px;
+}
+.log-icon{
+    width: 25px;
+    height: 25px;   
+}
+  .log-form {
+    display:flex;
+    justify-content:center;
+    background-color:azure;
+    margin:30%;
+    margin-top:10%;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  .log-table {
+    grid-column: 2/3;
+    font-size: 20px;
+    color: black;
+    margin: 10%;
+    width: fit-content;
+  }
+.log-input{
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+}
+.log-input1 {
+    width: 90%;
+    height: 30px;
+    font-size: 20px;
+    color: azure;
+    background-color:darkgrey;
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 100px;
+}
+.log-input1:hover {
+    color: black;
+    background-color: azure;
+}
+

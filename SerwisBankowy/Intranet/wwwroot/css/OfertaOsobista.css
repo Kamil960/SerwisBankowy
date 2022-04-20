@@ -1,0 +1,140 @@
+﻿
+/* Index */
+.col{
+    margin:50px;
+}
+.card {
+    height: 500px;
+    width: 400px;
+}
+
+.conteiner {
+    border: 1px solid green;
+    border-radius: 10px;
+    margin-left: 10%;
+    background-color: #19222a;
+}
+
+.col {
+    width: 350px;
+}
+.title {
+    display:flex;
+    justify-content:center;
+    padding-bottom: 7%;
+    margin-top: 5%;
+    position: relative;
+    flex-wrap:wrap;
+}
+.add {
+    padding-bottom: 7%;
+    margin-top: 5%;
+    position: relative;
+}
+
+    .add a svg {
+        width: 100px;
+        height: 100px;
+    }
+.title label {
+    font-size: 42px;
+    text-decoration: none;
+    color: #19222a;
+}
+
+    .add a {
+        font-size: 42px;
+        text-decoration: none;
+        color: antiquewhite;
+        margin-left: 33%;
+    }
+a svg:hover{
+    color:aliceblue;
+}
+
+.card {
+    height: 450px;
+
+}
+
+    .card:hover {
+        background-color: cyan;
+        text-decoration: none;
+        color: black;
+    }
+.btn-choice {
+    width: 100%;
+    max-width: 500px;
+    height: 90%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+    .btn-choice:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+
+.btn-header {
+    font-size: 20px;
+    text-align: center;
+    width: 300px;
+    margin-top: 10%;
+}
+
+.btn-icon {
+    padding:10px;
+    border-radius: 15px;
+    width:300px;
+    height: 200px;
+}
+
+.btn-description {
+    font-size: 16px;
+    font-weight: bold;
+}
+.del {
+    margin-left: 45%;
+    width:35px;
+    height:35px;
+    border: 1px solid #19222a;
+    border-radius: 5px;
+    background-color:white;
+}
+    .del:hover {
+        border: 1px solid white;
+        background-color: #19222a;
+    }
+.del-btn {
+    top: 10%;
+    left: 25%;
+    width: 35px;
+    height: 35px;
+    color: #19222a;
+    display:flex;
+    justify-content:center;
+}
+.del-btn:hover {
+    color: white;
+}
+.del-btn svg{
+    margin-top:7px;
+    margin-right:1px;
+}
+.procent {
+    background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-512.png");
+    background-size: cover;
+    width: 250px;
+    height: 200px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.procent p{
+    position: relative;
+    padding-top:35%;
+    font-size: 60px;
+    font-weight:900;
+    font-family:Centaur;
+}
+

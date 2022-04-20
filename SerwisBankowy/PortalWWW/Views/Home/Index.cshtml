@@ -1,0 +1,10 @@
+﻿@{
+	<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" asp-append-version="true">
+}
+	@await Html.PartialAsync("Strony", (IEnumerable<BankData.Data.CMS.Strony>)ViewBag.ModelStrony)
+<div class="main-section">
+	@await Html.PartialAsync("MainPageArt1", (IEnumerable<BankData.Data.CMS.Art1>)ViewBag.ModelArt1)
+	@await Html.PartialAsync("MainPageArt2", (IEnumerable<BankData.Data.CMS.Art2>)ViewBag.ModelArt2)
+	@await Html.PartialAsync("MainPageArt3", (IEnumerable<BankData.Data.CMS.Art3>)ViewBag.ModelArt3)
+</div>

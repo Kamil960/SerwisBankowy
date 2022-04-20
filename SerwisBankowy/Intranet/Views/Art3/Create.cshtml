@@ -1,0 +1,110 @@
+﻿@model BankData.Data.CMS.Art3
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Art3</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tytul" class="control-label"></label>
+                <input asp-for="Tytul" class="form-control" />
+                <span asp-validation-for="Tytul" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tresc1" class="control-label"></label>
+                <input asp-for="Tresc1" class="form-control" />
+                <span asp-validation-for="Tresc1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tresc2" class="control-label"></label>
+                <input asp-for="Tresc2" class="form-control" />
+                <span asp-validation-for="Tresc2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PozGieldowa1" class="control-label"></label>
+                <input asp-for="PozGieldowa1" class="form-control" />
+                <span asp-validation-for="PozGieldowa1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PozGieldowa2" class="control-label"></label>
+                <input asp-for="PozGieldowa2" class="form-control" />
+                <span asp-validation-for="PozGieldowa2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PozGieldowa3" class="control-label"></label>
+                <input asp-for="PozGieldowa3" class="form-control" />
+                <span asp-validation-for="PozGieldowa3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PozGieldowa4" class="control-label"></label>
+                <input asp-for="PozGieldowa4" class="form-control" />
+                <span asp-validation-for="PozGieldowa4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grafika" class="control-label"></label>
+                <input asp-for="Grafika" class="form-control" />
+                <span asp-validation-for="Grafika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrypTytul" class="control-label"></label>
+                <input asp-for="CrypTytul" class="form-control" />
+                <span asp-validation-for="CrypTytul" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crypto1" class="control-label"></label>
+                <input asp-for="Crypto1" class="form-control" />
+                <span asp-validation-for="Crypto1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crypto2" class="control-label"></label>
+                <input asp-for="Crypto2" class="form-control" />
+                <span asp-validation-for="Crypto2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crypto3" class="control-label"></label>
+                <input asp-for="Crypto3" class="form-control" />
+                <span asp-validation-for="Crypto3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crypto4" class="control-label"></label>
+                <input asp-for="Crypto4" class="form-control" />
+                <span asp-validation-for="Crypto4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrypIcon1" class="control-label"></label>
+                <input asp-for="CrypIcon1" class="form-control" />
+                <span asp-validation-for="CrypIcon1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrypIcon2" class="control-label"></label>
+                <input asp-for="CrypIcon2" class="form-control" />
+                <span asp-validation-for="CrypIcon2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrypIcon3" class="control-label"></label>
+                <input asp-for="CrypIcon3" class="form-control" />
+                <span asp-validation-for="CrypIcon3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrypIcon4" class="control-label"></label>
+                <input asp-for="CrypIcon4" class="form-control" />
+                <span asp-validation-for="CrypIcon4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

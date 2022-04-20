@@ -1,0 +1,47 @@
+﻿@model BankData.Data.Bank.Klient
+@{
+	<link rel="stylesheet" href="~/css/registration.css" asp-append-version="true" />
+	ViewData["Title"] = "Rejestracja";
+}
+<form asp-action="RegistrationFinal" class="log-form">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<input type="hidden" asp-for="IdKlient" />
+	<div id="t3">
+		<h2>Dane logowania:</h2>
+		<table class="log-table">
+			<tr><td>Login</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text autofocus autocomplete="off" required placeholder="Wpisz login" asp-for="Login" value=''></td>
+			</tr>
+			<tr><td>Hasło</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type="password" required placeholder="Wpisz hasło" asp-for="Haslo" value=''></td>
+			</tr>
+			<tr>
+				<td style="visibility:collapse" class="tdi"><label asp-for="CzyAktywny">True</label></td>
+			</tr>
+                <input type='hidden' asp-for="Imie" />
+                <input type='hidden' asp-for="Nazwisko"/>
+                <input type='hidden' asp-for="DataUrodzenia"/>
+                <input type='hidden' asp-for="NrDokumentu"/>
+				<input type='hidden' asp-for="Miejscowosc"/>
+                <input type='hidden' asp-for="Ulica" />
+                <input type='hidden' asp-for="NrBudynku"/>
+                <input type='hidden' asp-for="KodPocztowy"/>
+                <input type='hidden' asp-for="Poczta"/>
+			<tr>
+				<td class="tdi">
+					<input class="log-input1" type="submit" value="Zarejestruj się" style="font-weight: bold;" />
+					<a class="log-input1" asp-action="Registration" asp-route-id='1' style="font-weight: bold;">Powrót</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</form>
+
+@section Scripts {
+    @{
+	await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

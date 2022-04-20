@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BankData.Data.CMS.Usluga>
+
+
+<ul class="nav-flyout">
+	@foreach (var item in Model)
+	{
+		<li>
+			<a class="" asp-area="" asp-controller="UslugaSzczegolowa" asp-action="Index"><img class="intra-icon2" src=~/css/Icons/@Html.DisplayFor(modelItem => item.Grafika)>@Html.DisplayFor(modelItem => item.Nazwa)</a>
+		</li>
+	}
+</ul>

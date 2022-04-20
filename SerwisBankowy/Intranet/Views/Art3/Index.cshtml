@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BankData.Data.CMS.Art3>
+
+@{
+	ViewData["Title"] = "Edycja";
+	<link rel="stylesheet" href="~/css/art.css" asp-append-version="true" />
+}
+
+<h1>Trzeci Artykuł Strony Głównej</h1>
+
+<div class="section-3">
+	<a asp-action="Edit" asp-route-id="@Model.First().IdArt3">
+		<p class="p-1">@Model.First().Tytul</p>
+		<div class="cont">
+			<img class="cont-img" src="@Model.First().Grafika" />
+			<div class="wr-cont">
+				<p>@Model.First().Tresc1</p>
+				<ol>
+					<li>@Model.First().PozGieldowa1</li>
+					<li>@Model.First().PozGieldowa2</li>
+					<li>@Model.First().PozGieldowa3</li>
+					<li>@Model.First().PozGieldowa4</li>
+				</ol>
+			</div>
+			<p class="pl-cont">@Model.First().Tresc2</p>
+			<p class="cr-title">@Model.First().CrypTytul</p>
+			<div class="crypto">
+				<div class="cr-card">
+					<img class="cr-icon" src="@Model.First().CrypIcon1" />
+					<p>@Model.First().Crypto1</p>
+				</div>
+				<div class="cr-card">
+					<img class="cr-icon" src="@Model.First().CrypIcon2" />
+					<p>@Model.First().Crypto2</p>
+				</div>
+				<div class="cr-card">
+					<img class="cr-icon" src="@Model.First().CrypIcon3" />
+					<p>@Model.First().Crypto3</p>
+				</div>
+				<div class="cr-card">
+					<img class="cr-icon" src="@Model.First().CrypIcon4" />
+					<p>@Model.First().Crypto4</p>
+				</div>
+			</div>
+		</div>
+	</a>
+</div>
+

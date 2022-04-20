@@ -1,0 +1,52 @@
+﻿@model BankData.Data.Bank.Klient
+@{
+	<link rel="stylesheet" href="~/css/registration.css" asp-append-version="true" />
+	ViewData["Title"] = "Rejestracja";
+}
+
+<form asp-action="RegistrationEdit" class="log-form">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<input type="hidden" asp-for="IdKlient" />
+	<div id="t2">
+		<h2>Dane adresowe:</h2>
+		<table class="log-table">
+			<tr><td>Miejscowość</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text required placeholder="Wpisz miejscowość" asp-for="Miejscowosc" value=""></td>
+			</tr>
+			<tr><td>Ulica</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text required placeholder="Wpisz ulice" asp-for="Ulica" value=""></td>
+			</tr>
+			<tr><td>Numer budynku</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text autocomplete="off" required placeholder="Wpisz numer domu" asp-for="NrBudynku" value=""></td>
+			</tr>
+			<tr><td>Kod pocztowy</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text autocomplete="off" required placeholder="Wpisz kod pocztowy" asp-for="KodPocztowy" value=""></td>
+			</tr>
+			<tr><td>Poczta</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text autocomplete="off" required placeholder="Wpisz miejscowość poczty" asp-for="Poczta" value=""></td>
+			</tr>
+			    <input type='hidden' asp-for="Login"/>
+                <input type='hidden' asp-for="Haslo"/>
+                <input type='hidden' asp-for="Imie" />
+                <input type='hidden' asp-for="Nazwisko"/>
+                <input type='hidden' asp-for="DataUrodzenia"/>
+                <input type='hidden' asp-for="NrDokumentu"/>
+			<tr>
+				<td class="tdi">
+					<input class="log-input1" type="submit" value="Dalej" style="font-weight: bold;" />
+					<a class="log-input1" asp-action="Registration" asp-route-id='1' style="font-weight: bold;">Powrót</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</form>
+@section Scripts {
+    @{
+	await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

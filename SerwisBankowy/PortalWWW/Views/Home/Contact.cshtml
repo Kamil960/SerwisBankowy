@@ -1,0 +1,23 @@
+﻿@{
+	<link rel="stylesheet" href="~/css/contact.css" asp-append-version="true" />
+}
+@await Html.PartialAsync("Strony", (IEnumerable<BankData.Data.CMS.Strony>)ViewBag.ModelStrony)
+<div class="field1" style="background-image: url(@ViewBag.Contact.Grafika)">
+	<h2 class="title">@ViewBag.Contact.Tytul</h2>
+	<div class="cloud1">
+		<h3>@ViewBag.Contact.Opis1</h3>
+		<p>@ViewBag.Contact.Adres</p>
+	</div>
+
+	<div class="cloud2">
+		<h3>Telefon:</h3>
+		<p>@ViewBag.Contact.Opis3 @ViewBag.Contact.NrTelefonuSt</p>
+		<p>@ViewBag.Contact.Opis2 @ViewBag.Contact.NrTelefonuKom</p>
+	</div>
+
+	<div class="cloud3">
+		<h3>@ViewBag.Contact.Opis4</h3>
+		<p>@ViewBag.Contact.Email</p>
+	</div>
+</div>
+

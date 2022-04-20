@@ -1,0 +1,40 @@
+﻿@{
+	<link rel="stylesheet" href="~/css/of.css" asp-append-version="true" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" asp-append-version="true">
+}
+@await Html.PartialAsync("Strony", (IEnumerable<BankData.Data.CMS.Strony>)ViewBag.ModelStrony)
+<div class="g-box">
+	<h2 class="of-title">Dostępne oferty</h2>
+	<div class="field-choice">
+		<a class="btn-choice" href=@Url.Action("PersonalAccount", "Home")>
+				<h4 class="btn-header">Konto Osobiste</h4>
+				<img class="btn-icon" src="https://cdn-icons-png.flaticon.com/512/1251/1251570.png?w=826" alt="">
+				<p class="btn-description">Sprawdź naszą najnowszą ofertę konta osobistego</p>
+		</a>
+		<a class="btn-choice" href=@Url.Action("CompanyAccount", "Home")>
+				<h4 class="btn-header">Konto Firmowe</h4>
+				<img class="btn-icon" src="https://cdn-icons-png.flaticon.com/512/950/950943.png?w=826" alt="">
+				<p class="btn-description">Zapoznaj się z naszym sposobem na obsługę finansów twojej firmy</p>
+		</a>
+		<a class="btn-choice" href=@Url.Action("Loan", "Home")>
+				<h4 class="btn-header">Kredyt</h4>
+				<img class="btn-icon" src="https://cdn-icons-png.flaticon.com/512/1211/1211591.png?w=826" alt="">
+				<p class="btn-description">Dopasowany do sytuacji</p>
+		</a>
+		<a class="btn-choice" href=@Url.Action("Deposit", "Home")>
+				<h4 class="btn-header">Lokata</h4>
+				<img class="btn-icon" src="https://cdn-icons-png.flaticon.com/512/1255/1255987.png?w=826" alt="">
+				<p class="btn-description">Pozwól swoim pieniądzą zarabiać</p>
+		</a>
+		<a class="btn-choice" href=@Url.Action("Insurance", "Home")>
+				<h4 class="btn-header">Ubezpieczenie</h4>
+				<img class="btn-icon" src="https://cdn-icons-png.flaticon.com/512/1219/1219903.png?w=826" alt="">
+				<p class="btn-description">Zabezpiecz przyszłość swoją i twoich bliskich</p>
+		</a>
+		<a class="btn-choice">
+			<h4 class="btn-header">Konkurs</h4>
+			<img class="btn-icon" src="https://cdn-icons-png.flaticon.com/512/1239/1239853.png?w=826" alt="">
+			<p class="btn-description">Każdy nowy klient bierze udział w konkursie</p>
+		</a>
+	</div>
+</div>

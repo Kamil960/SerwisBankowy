@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BankData.Data.CMS.Strony>
+
+<div class="container bg-light">
+	<div class="d-flex justify-content-end">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+
+						@foreach (var item in Model)
+						{
+							@if (item.Pozycja == 1)
+							{
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="@Url.Action("Logowanie", "Home")">@item.Nazwa</a>
+								</li>
+							}
+							else if (item.Pozycja == 2)
+							{
+								<li class="nav-item">
+									<a class="nav-link" asp-action='Registration'>@item.Nazwa</a>
+								</li>
+							}
+							else if (item.Pozycja == 3)
+							{
+								<li class="nav-item dropdown" href="@Url.Action("Of", "Home")">
+									<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										@item.Nazwa
+									</a>
+									@await Html.PartialAsync("ListaOfert", (IEnumerable<BankData.Data.CMS.Usluga>)ViewBag.ModelListyOfert)
+								</li>
+							}
+							else if (item.Pozycja == 4)
+							{
+								<li class="nav-item">
+									<a class="nav-link" asp-controller="Home" asp-action="AboutUs" asp-route-id="3">@item.Nazwa</a>
+								</li>
+							}
+							else if (item.Pozycja == 5)
+							{
+								<li class="nav-item">
+									<a class="nav-link" href="@Url.Action("Contact", "Home")">@item.Nazwa</a>
+								</li>
+							}
+							else
+							{
+								<li class="nav-item">
+									<a class="nav-link" href="@Url.Action("Index", "Home")">@item.Nazwa</a>
+								</li>
+							}
+
+						}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>

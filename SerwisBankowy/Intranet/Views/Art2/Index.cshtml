@@ -1,0 +1,20 @@
+﻿@model IEnumerable<BankData.Data.CMS.Art2>
+
+@{
+	ViewData["Title"] = "Edycja";
+	<link rel="stylesheet" href="~/css/art.css" asp-append-version="true"/>
+}
+
+<h1>Drugi Artykuł Strony Głównej</h1>
+
+<div class="section-2">
+	<a asp-action="Edit" asp-route-id="@Model.First().IdArt2">
+		<p class="p-1">@Model.First().Tytul</p>
+
+		<div class="cont">
+			<img src="@Model.First().Grafika" />
+			<p class="p-3">@Model.First().Tresc1</p>
+			<p class="p-31">@Model.First().Tresc2</p>
+		</div>
+	</a>
+</div>

@@ -1,0 +1,52 @@
+﻿@model BankData.Data.Bank.Klient
+@{
+	<link rel="stylesheet" href="~/css/registration.css" asp-append-version="true" />
+	ViewData["Title"] = "Rejestracja";
+}
+@*@await Html.PartialAsync("Strony", (IEnumerable<BankData.Data.CMS.Strony>)ViewBag.ModelStrony)*@
+
+<form asp-action='Registration' asp-controller='Home' class="log-form">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<div id="t1">
+		<h2>Dane osobowe:</h2>
+		<table class="log-table">
+			<tr><td>Imie</td></tr>
+			<tr>
+				<td class="tdi">
+                    <input class="log-input" type=text autofocus autocomplete="off" required placeholder="Wpisz imie" asp-for="Imie">
+                </td>
+			</tr>
+			<tr><td>Nazwisko</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text required placeholder="Wpisz nazwisko" asp-for="Nazwisko"></td>
+			</tr>
+			<tr><td>Data urodzenia</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type="date" required placeholder="Wpisz datę urodzenia" asp-for="DataUrodzenia"></td>
+			</tr>
+			<tr><td>Numer dokumentu</td></tr>
+			<tr>
+				<td class="tdi"><input class="log-input" type=text required placeholder="Wpisz numer dokumentu tożsamości" asp-for="NrDokumentu"></td>
+			</tr>
+                <input type='hidden' asp-for="Login" value="ar" />
+                <input type='hidden' asp-for="Haslo" value="ka" />
+                <input type='hidden' asp-for="Miejscowosc" value="n" />
+                <input type='hidden' asp-for="Ulica" value="o" />
+                <input type='hidden' asp-for="NrBudynku" value="e" />
+                <input type='hidden' asp-for="KodPocztowy" value="gggggg" />
+                <input type='hidden' asp-for="Poczta" value="o" />
+			<tr>
+				<td class="tdi">
+					<input class="log-input1" type="submit" value="Dalej" style="font-weight: bold;" />
+					<a class="log-input1" href=@Url.Action("Index", "Home") style="font-weight: bold;">Powrót</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</form>
+
+@section Scripts {
+    @{
+	await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

@@ -1,0 +1,26 @@
+﻿@{
+	<link rel="stylesheet" href="~/css/logowanie.css" asp-append-version="true" />
+    ViewData["Title"] = "Home Page";
+}
+@await Html.PartialAsync("Strony", (IEnumerable<BankData.Data.CMS.Strony>)ViewBag.ModelStrony)
+	<form method=POST action='' class="log-form"> 
+		<table class="log-table" >
+        <tr><td>Login</td></tr>
+		<tr>
+		<td ><input class="log-input" type=text name='login' autofocus autocomplete="off" required placeholder="Wpisz login"></td>
+		</tr>
+        <tr><td>Hasło</td></tr>
+		<tr>
+		<td><input class="log-input" type=password name='haslo' required placeholder="Wpisz hasło"></td>
+		</tr>
+        <tr>
+            
+            <td><input type="checkbox">Zapamiętaj mnie</>  <a>Zapomniałeś hasła?</a></td>
+            </tr>
+		<tr style="height: 20px;">
+        </tr>
+		<tr>
+		<td ><input class="log-input1" type=submit value='Zaloguj się' style="font-weight: bold;"></td>
+		</tr>
+		</table>
+	</form>

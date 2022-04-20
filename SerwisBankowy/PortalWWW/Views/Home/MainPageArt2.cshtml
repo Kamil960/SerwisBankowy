@@ -1,0 +1,10 @@
+﻿@model IEnumerable<BankData.Data.CMS.Art2>
+
+<div class="section-2">
+	<p class="p-1">@Model.First().Tytul</p>
+	<div class="cont">
+		<img src="@Model.First().Grafika" />
+		<p class="p-3">@Model.First().Tresc1</p>
+		<p class="p-31">@Model.First().Tresc2 <a href=@Url.Action("Of","Home") style="text-decoration:none; color:black;">Sprawdź ofertę naszych usług.</a></p>
+	</div>
+</div>

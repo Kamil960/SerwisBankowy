@@ -1,0 +1,75 @@
+﻿@model BankData.Data.CMS.Art1
+
+@{
+	ViewData["Title"] = "Edit";
+	<link rel="stylesheet" href="~/css/artEdit.css" asp-append-version="true" />
+}
+
+<h1>Edycja Artykułu Pierwszego Strony Głównej</h1>
+
+<hr />
+<div class="section-1">
+	<form asp-action="Edit">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<input type="hidden" asp-for="IdArt1" />
+
+		<p class="p-1">
+			<label asp-for="Tytul" class="control-label"></label>
+			<input asp-for="Tytul" class="form-control" />
+			<span asp-validation-for="Tytul" class="text-danger"></span>
+		</p>
+		<div class="id-cards-field">
+			<div class="id-card">
+				<h2>
+					<input asp-for="Nazwa1" class="form-control" />
+					<span asp-validation-for="Nazwa1" class="text-danger"></span>
+				</h2>
+				<textarea asp-for="Grafika1" class="form-control-desc"></textarea>
+				<span asp-validation-for="Grafika1" class="text-danger"></span>
+				<p class="p-2">
+					<textarea asp-for="Opis1" class="form-control"></textarea>
+					<span asp-validation-for="Opis1" class="text-danger"></span>
+				</p>
+			</div>
+			<div class="id-card">
+				<h2>
+					<input asp-for="Nazwa2" class="form-control" />
+					<span asp-validation-for="Nazwa2" class="text-danger"></span>
+				</h2>
+				<textarea asp-for="Grafika2" class="form-control-desc"></textarea>
+				<span asp-validation-for="Grafika2" class="text-danger"></span>
+				<p class="p-2">
+					<textarea asp-for="Opis2" class="form-control"></textarea>
+					<span asp-validation-for="Opis2" class="text-danger"></span>
+				</p>
+			</div>
+			<div class="id-card">
+				<h2>
+					<input asp-for="Nazwa3" class="form-control" />
+					<span asp-validation-for="Nazwa3" class="text-danger"></span>
+				</h2>
+				<textarea asp-for="Grafika3" class="form-control-desc"></textarea>
+				<span asp-validation-for="Grafika3" class="text-danger"></span>
+				<p class="p-2">
+					<textarea asp-for="Opis3" class="form-control"></textarea>
+					<span asp-validation-for="Opis3" class="text-danger"></span>
+				</p>
+			</div>
+		</div>
+		<p class="p-3">
+			<label asp-for="Podsumowanie" class="control-label"></label>
+			<input asp-for="Podsumowanie" class="form-control" />
+			<span asp-validation-for="Podsumowanie" class="text-danger"></span>
+		</p>
+		<div class="form-group-btn">
+			<input type="submit" value="Edytuj" class="button" />
+			<a class="button" asp-action="Index">Powrót</a>
+		</div>
+	</form>
+</div>
+
+@section Scripts {
+    @{
+	await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

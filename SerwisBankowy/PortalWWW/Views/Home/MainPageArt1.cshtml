@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BankData.Data.CMS.Art1>
+<div class="section-1">
+		<p class="p-1">@Model.ElementAt(0).Tytul</p>
+		<div class="id-cards-field">
+			<div class="id-card">
+				<h2>@Model.ElementAt(0).Nazwa1</h2>
+				<img src="@Model.ElementAt(0).Grafika1" />
+				<p class="p-2">@Model.ElementAt(0).Opis1</p>
+			</div>
+			<div class="id-card">
+				<h2>@Model.ElementAt(0).Nazwa2</h2>
+				<img src="@Model.ElementAt(0).Grafika2" />
+				<p class="p-2">@Model.ElementAt(0).Opis2</p>
+			</div>
+			<div class="id-card">
+				<h2>@Model.ElementAt(0).Nazwa3</h2>
+				<img src="@Model.ElementAt(0).Grafika3" />
+				<p class="p-2">@Model.ElementAt(0).Opis3</p>
+			</div>
+		</div>
+		<p class="p-3">@Model.ElementAt(0).Podsumowanie<br /><a href=@Url.Action("Of","Home")>Sprawdź ofertę naszych usług.</a></p>
+	</div>

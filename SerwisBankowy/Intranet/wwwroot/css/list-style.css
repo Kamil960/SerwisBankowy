@@ -1,0 +1,33 @@
+﻿.list-container {
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    margin-top: 20%;
+}
+.list {
+    background-color: #09f;
+    width: fit-content;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    
+}
+.list-element {
+    padding: 15px;
+    border: 1px solid darkcyan;
+}
+.list-element:hover {
+    transition: background-color 0.5s ease;
+    background-color: #01f;
+}
+.list-link {
+    text-decoration: none;
+    color: black;
+    font-size:32px;
+    text-align:center;
+}
+    .list-link:hover {
+        transition: font-size 0.5s ease;
+        font-size: 35px;
+        color: whitesmoke;
+    }

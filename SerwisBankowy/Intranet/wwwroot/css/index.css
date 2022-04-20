@@ -1,0 +1,9 @@
+﻿.main{
+    display:grid;
+    grid-template-columns: 30% 70%;
+}
+
+.navbar{
+   grid-column: 1/2;
+}
+

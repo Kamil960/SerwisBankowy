@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BankData.Data.CMS.Kontakt>
+@{
+	ViewData["Title"] = "Edycja";
+	<link rel="stylesheet" href="~/css/contact.css" asp-append-version="true" />
+}
+
+<h1>Edycja Strony Kontaktowej</h1> 
+
+<a asp-action="Edit" asp-route-id="@Model.First().IdKontakt">
+<div class="field1">
+	<h2 class="title">@Model.First().Tytul</h2>
+	<div class="cloud1">
+		<h3 class="cloudname">@Model.First().Opis1</h3>
+		<p class="content1">@Model.First().Adres</p>
+	</div>
+
+	<div class="cloud2">
+		<h3 class="cloudname cloudname2">Telefon</h3>
+		<p class="content2">@Model.First().Opis3<br/> @Model.First().NrTelefonuSt</p>
+		<p class="content2">@Model.First().Opis2 <br/>@Model.First().NrTelefonuKom</p>
+	</div>
+
+	<div class="cloud3">
+		<h3 class="cloudname">@Model.First().Opis4</h3>
+		<p class="content3">@Model.First().Email</p>
+	</div>
+</div>
+</a>

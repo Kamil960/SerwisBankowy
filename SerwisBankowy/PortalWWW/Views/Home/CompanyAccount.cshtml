@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BankData.Data.Bank.KontoFirmowe>
+
+@{
+	ViewData["Title"] = "Oferta kont dla Firm";
+	<link rel="stylesheet" href="~/css/OfertaFirmy.css" asp-append-version="true" />
+}
+@await Html.PartialAsync("Strony", (IEnumerable<BankData.Data.CMS.Strony>)ViewBag.ModelStrony)
+<h1>Oferta Kont firmowych</h1>
+
+<div class="main-div">
+	<div class="card">
+		<p class="content">
+			<label>Dostępne oferty</label>
+		</p>
+
+		<input type="radio" name="select" id="slide_1" checked>
+		<input type="radio" name="select" id="slide_2">
+		<input type="radio" name="select" id="slide_3">
+
+		<div class="slider">
+			<label for="slide_1" class="slide slide_1"></label>
+			<label for="slide_2" class="slide slide_2"></label>
+			<label for="slide_3" class="slide slide_3"></label>
+		</div>
+
+		<div class="inner_part">
+			<label for="slideImg" class="img">
+				<img class="img_1" src="@Model.ElementAt(0).Grafika">
+			</label>
+			<div class="content content_1">
+				<div class="title">@Model.ElementAt(0).Nazwa</div>
+				<div class="text">
+					@Model.ElementAt(0).Opis
+				</div>
+			</div>
+		</div>
+		<div class="inner_part"> 
+			<label for="slideImg" class="img">
+				<img class="img_2" src="@Model.ElementAt(1).Grafika">
+			</label>
+			<div class="content content_2">
+				<div class="title">@Model.ElementAt(1).Nazwa</div>
+				<div class="text">
+					@Model.ElementAt(1).Opis
+				</div>
+			</div>
+		</div>
+
+		<div class="inner_part">
+			<label for="slideImg" class="img">
+				<img class="img_3" src="@Model.ElementAt(2).Grafika">
+			</label>
+			<div class="content content_3">
+				<div class="title">@Model.ElementAt(2).Nazwa</div>
+				<div class="text">
+					@Model.ElementAt(2).Opis
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

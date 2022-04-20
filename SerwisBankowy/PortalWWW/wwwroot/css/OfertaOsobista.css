@@ -1,0 +1,107 @@
+﻿
+/* Index */
+.title label {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    position: relative;
+    flex-wrap: wrap;
+    color: whitesmoke;
+    font-size: 42px;
+    text-decoration: none;
+}
+.field{
+    display:flex;
+    justify-content:center;
+}
+.conteiner {
+    border: 1px solid green;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: #19222a;
+}
+.card {
+    height: 450px;
+    width: 400px;
+    padding:4%;
+    display:grid;
+    grid-template-rows: 0.5fr 1fr 1fr;
+
+}
+    .card:hover {
+        background-color: cyan;
+        text-decoration: none;
+        color: black;
+    }
+    .card h4{
+        grid-row:1;
+    }
+    .card img {
+        grid-row: 2;
+    }
+    .card p {
+        grid-row: 3;
+        margin-left:4%;
+        padding-top:7%;
+    }
+.col {
+    width: 350px;
+    margin: 50px;
+    display:flex;
+    justify-content:center;
+}
+a svg:hover{
+    color:aliceblue;
+}
+
+.btn-choice {
+    width: 100%;
+    max-width: 500px;
+    height: 90%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+    .btn-choice:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+
+.btn-header {
+    font-size: 20px;
+    text-align: center;
+    width: 300px;
+    margin-top: 10%;
+}
+
+.btn-icon {
+    padding:10px;
+    border-radius: 15px;
+    width:300px;
+    height: 200px;
+}
+
+.btn-description {
+    font-size: 16px;
+    font-weight: bold;
+}
+.procent {
+    background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-512.png");
+    background-size: cover;
+    width: 80%;
+    height: 100%;
+    grid-row:2;
+    margin-left:10%;
+    display:flex;
+    justify-content:center;
+}
+.procent p{
+    display:flex;
+    justify-content:center;
+    padding-top:35%;
+    font-size: 60px;
+    font-weight:900;
+    font-family:Centaur;
+}
+

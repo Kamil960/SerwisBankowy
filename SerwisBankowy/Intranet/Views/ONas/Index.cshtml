@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BankData.Data.CMS.ONas>
+
+@{
+    ViewData["Title"] = "Index";
+	<link rel="stylesheet" href="~/css/aboutus.css" asp-append-version="true"/>
+}
+
+<h1>Strona Opisującej Polski Bank Kredytowy</h1>
+<a asp-action="Edit" asp-route-id="@Model.First().IdONas">
+	<div class="field" style="background-image: url(@Model.First().Grafika)">
+		<h2 class="title"> @Model.First().Tytul </h2>
+		<p class="text">
+			@Model.First().Opis
+		</p>
+	</div>
+</a>

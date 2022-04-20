@@ -1,0 +1,226 @@
+﻿/*główna sekcja strony*/
+.tworow {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: bold;
+    font-family: 'David CLM BoldItalic';
+    font-size: 52px;
+    text-align:center;
+}
+
+.main-section {
+    display: flex;
+    width: 95%;
+    padding-top: 50px;
+    flex-direction: column;
+    margin-left: 2.5%;
+    border: solid 2px black;
+}
+
+.section-1 {
+    background-color: aliceblue;
+    margin-top: 50px;
+}
+/*pole na którym są wyświetlane karty informacyjne*/
+.id-cards-field {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+/*karta informacyjna sek 1*/
+.id-card {
+    border: solid 1px black;
+    width: 100%;
+    min-height: 300px;
+    margin: 0 0 50px 0px;
+}
+
+    .id-card:hover {
+        border: solid 3px forestgreen;
+    }
+
+
+/*tytuł sek 1*/
+.p-1 {
+    text-align: center;
+    font-family: Britannic;
+    font-size: 40px;
+}
+.form-control{
+    font-size: 22px;
+}
+
+.p-1 .form-control {
+    font-size: 27px;
+    text-align: center;
+    width:50%;
+    margin:0 25%;
+}
+/*treść karty informacyjnej sek 1*/
+.p-2 {
+    top: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+/*podsumowanie sek 1*/
+.p-3 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+/*tytuł karty informacyjnej sek 1*/
+.id-card h2 {
+    font-family: 'Bernard MT';
+    text-align: center;
+}
+.form-control-desc {
+    margin:0 5%;
+    min-width: 90%;
+    min-height: 100px;
+    font-style:italic;
+}
+.p-2 .form-control {
+    font-size: 16px;
+    min-height:100px;
+}
+
+.section-2 {
+    background-color: forestgreen;
+    padding-left: 30px;
+    margin-top: 40px;
+    max-height: 800px;
+}
+
+/*pole dla treści sek 2*/
+.cont {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+    /*treść pierwszej części artykułu sek 2*/
+    .cont p-3 {
+        text-align: left;
+        grid-row: 1/2;
+        grid-column: 1;
+    }
+    /*zdjecie sek 2*/
+    .art2-img {
+        grid-row: 1/2;
+        grid-column: 2;
+    }
+/*treść drugiej części artykułu sek 2*/
+.p-31 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+/*lista sek 2*/
+.cont ol {
+    list-style: square;
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+.section-3 {
+    color: aliceblue;
+    margin-top: 40px;
+    background-color: #19222a;
+}
+    /*pole dla treści sek 3*/
+    .section-3 .cont {
+        display: grid;
+        grid-template-rows: 1fr 0.5fr 75px 100px 0.25fr;
+        grid-template-columns: 1fr 1fr;
+    }
+/*zdjecie sek 3*/
+.cont-img {
+    grid-row: 1;
+    grid-column: 2;
+    max-width: 700px;
+    max-height: 500px;
+    margin: 30px;
+}
+/*treść rynku światowego sek 3*/
+.wr-cont {
+    font-size: 24px;
+    grid-row: 1;
+    grid-column: 1;
+    padding: 30px;
+}
+/*treść rynku polskiego sek 3*/
+.pl-cont {
+    grid-row: 2;
+    grid-column: 1/3;
+    font-size: 24px;
+    border: solid 1px white;
+    padding: 30px;
+}
+/*tytuł części kryptowalut sek 3*/
+.cr-title {
+    grid-row: 3;
+    grid-column: 1/3;
+    justify-self: center;
+    font-size: 44px;
+    padding-bottom: 30px;
+}
+/*pole treści kryptowalut sek 3*/
+.crypto {
+    grid-row: 4;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+}
+/*pole pojedynczej kryptowaluty sek 3*/
+.cr-card {
+    display: flex;
+    margin: 10px;
+    flex-wrap:wrap;
+}
+    /*treść pojedynczej kryptowaluty sek 3*/
+    .cr-card p {
+        font-size: 24px;
+    }
+/*logo pojedynczej kryptowaluty sek 3*/
+.cr-icon {
+    min-width: 300px;
+}
+
+.form-group-btn {
+    grid-row: 6/7;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.button {
+    text-decoration: none;
+    font-family: 'Arial Rounded MT';
+    height: 40px;
+    font-size: 16px;
+    background-color: cornflowerblue;
+    border: solid 1px black;
+    text-shadow: black 1px 1px;
+    color: black;
+    text-align: center;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 150px;
+}
+    .button:hover {
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
+        background-color: lightblue;
+        transition: ease 0.5s all;
+    }
+.pl-cont .form-control-desc{
+    min-height:200px;
+}

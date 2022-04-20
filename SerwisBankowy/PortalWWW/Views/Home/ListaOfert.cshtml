@@ -1,0 +1,32 @@
+﻿@model IEnumerable<BankData.Data.CMS.Usluga>
+
+<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	@foreach (var item in Model)
+	{
+		@if(item.Pozycja == 1)
+		{
+			<li><a class="dropdown-item" href="@Url.Action("PersonalAccount", "Home")">@item.Nazwa</a></li>
+		}
+		else if(item.Pozycja == 2)
+		{
+			<li><a class="dropdown-item" href="@Url.Action("CompanyAccount", "Home")">@item.Nazwa</a></li>
+		}
+		else if(item.Pozycja == 3)
+		{
+			<li><a class="dropdown-item" href="@Url.Action("Loan", "Home")">@item.Nazwa</a></li>
+		}
+		else if(item.Pozycja == 4)
+		{
+			<li><a class="dropdown-item" href="@Url.Action("Deposit", "Home")">@item.Nazwa</a></li>
+		}
+		else if(item.Pozycja == 5)
+		{
+			<li><a class="dropdown-item" href="@Url.Action("Insurance", "Home")">@item.Nazwa</a></li>
+		}
+		else
+		{
+			<li><a class="dropdown-item" href="@Url.Action("Of", "Home")">@item.Nazwa</a></li>
+		}
+
+	}
+</ul>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BankData.Data.Bank.KontoOsobiste>
+@{
+	ViewData["Title"] = "Oferta kont osobistych";
+	<link rel="stylesheet" href="~/css/OfertaOsobista.css" asp-append-version="true" />
+}
+@await Html.PartialAsync("Strony", (IEnumerable<BankData.Data.CMS.Strony>)ViewBag.ModelStrony)
+<p class="title">
+	<label>Oferta Kont Osobistych</label>
+</p>
+<div class="field">
+	<div class="conteiner">
+		<div class="row row-cols-1 row-cols-md-3">
+			@foreach (var item in Model)
+			{
+				<div class="col">
+						<div class="card">
+							<h4 class="btn-header">@item.Nazwa</h4>
+							<img class="btn-icon" src="@item.Grafika" />
+							<p class="btn-description">@item.Opis)</p>
+						</div>
+					</div>
+			}
+		</div>
+	</div>
+</div>

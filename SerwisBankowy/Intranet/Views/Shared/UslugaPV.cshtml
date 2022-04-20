@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BankData.Data.CMS.Usluga>
+
+
+<ul class="nav-flyout">
+	@if (Model != null)
+	{
+		@foreach (var item in Model)
+		{
+			<li>
+				@ViewBag.ModelUslugaSzczegolowa
+				<a class="" asp-controller="UslugaSzczegolowa" asp-action="Index" asp-route-id="@item.IdUsluga"><img class="intra-icon2" src=~/css/Icons/@item.Grafika>@item.Nazwa</a>
+			</li>
+		}
+	}
+
+</ul>

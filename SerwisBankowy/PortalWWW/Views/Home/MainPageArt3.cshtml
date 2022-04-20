@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BankData.Data.CMS.Art3>
+
+<div class="section-3">
+	<p class="p-1">@Model.ElementAt(0).Tytul</p>
+	<div class="cont">
+		<img class="cont-img" src="@Model.ElementAt(0).Grafika" />
+		<div class="wr-cont">
+			<p>@Model.ElementAt(0).Tresc1</p>
+			<ol>
+				<li>@Model.ElementAt(0).PozGieldowa1</li>
+				<li>@Model.ElementAt(0).PozGieldowa2</li>
+				<li>@Model.ElementAt(0).PozGieldowa3</li>
+				<li>@Model.ElementAt(0).PozGieldowa4</li>
+			</ol>
+		</div>
+		<p class="pl-cont">@Model.ElementAt(0).Tresc2</p>
+		<p class="cr-title">@Model.ElementAt(0).CrypTytul</p>
+		<div class="crypto">
+			<div class="cr-card">
+				<img class="cr-icon" src="@Model.ElementAt(0).CrypIcon1" />
+				<p>@Model.ElementAt(0).Crypto1</p>
+			</div>
+			<div class="cr-card">
+				<img class="cr-icon" src="@Model.ElementAt(0).CrypIcon2" />
+				<p>@Model.ElementAt(0).Crypto2</p>
+			</div>
+			<div class="cr-card">
+				<img class="cr-icon" src="@Model.ElementAt(0).CrypIcon3" />
+				<p>@Model.ElementAt(0).Crypto3</p>
+			</div>
+			<div class="cr-card">
+				<img class="cr-icon" src="@Model.ElementAt(0).CrypIcon4" />
+				<p>@Model.ElementAt(0).Crypto4</p>
+			</div>
+		</div>
+	</div>
+</div>

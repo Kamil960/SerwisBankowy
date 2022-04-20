@@ -1,0 +1,15 @@
+﻿@model BankData.Data.Bank.Lokata
+
+@{
+    ViewData["Title"] = "Usuń Ofertę";
+	<link rel="stylesheet" href="~/css/UsunOferte.css" asp-append-version="true" />
+}
+
+<div class="card display-flex">
+	<h3 class="h3">Czy napewno chcesz usunąć wybraną ofertę?</h3>
+		<form class="form" asp-action="Delete">
+			<input type="hidden" asp-for="IdUslugaSzczegolowa" />
+			<button type="submit" value="Delete" class="btn btn-danger">Usuń</button> 
+			<button asp-action="Index" type="submit" class="btn btn-primary">Powrót</button>
+		</form>
+</div>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<BankData.Data.CMS.Usluga>
+
+@{
+	ViewData["Title"] = "Edycja Listy Usług";
+	<link rel="stylesheet" href="~/css/list-style.css" asp-append-version="true"/>
+}
+
+<h1>Edycja Listy Stron</h1>
+<div class="list-container">
+	<div class="list">
+		@foreach (var item in Model)
+		{
+			<div class="list-element">
+				<a class="list-link" asp-action="Edit" asp-route-id="@item.IdUsluga">@item.Nazwa</a>
+			</div>
+		}
+	</div>
+</div>
