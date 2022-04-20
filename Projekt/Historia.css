@@ -1,0 +1,61 @@
+.u-section-1 {
+  background-image: none;
+  align-items: top;
+  height: auto;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 500px;
+}
+.input1 {
+  width: 140%;
+  max-width: 255px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: black;
+}
+.img1 {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+.button1 {
+  color: black;
+  border-radius: 10px;
+}
+.form1 {
+  background-color:lightblue;
+  width: auto;
+  height: auto;
+  margin-top: 15%;
+  margin-left: 25%;
+  border: 2px solid black;
+  align-items: center;
+  border-radius: 10px;
+}
+.table1 {
+  margin-top: 10%;
+  font-size: 20px;
+  color: black;
+  background-color: transparent;
+}
+div {
+  margin-top: 20%;
+  align-content: center;
+  text-align: center;
+}
+.p1 {
+  font-size: 24px;
+  text-align: center;
+  color: black;
+}
+
+.body1 { 
+    background-color: teal; color: #FFFFFF;
+    border: 3px solid black;
+}
+.a1 {
+   color: black;
+}
