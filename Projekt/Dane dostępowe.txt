@@ -1,3 +1,0 @@
-W tym folderze jest plik z bazą danych na której znajduje się konto użytkownika o:
-Login: Cypis
-Hasło: Cypis123
