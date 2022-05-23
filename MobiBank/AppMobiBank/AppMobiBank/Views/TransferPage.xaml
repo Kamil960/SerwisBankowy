@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobiBank.Views.TransferPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Grid.RowSpan="2" x:Name="background" Aspect="AspectFill"/>
+            <Frame Grid.Row="0" Grid.RowSpan="2" Style="{Binding TransferFrame}">
+                <StackLayout>
+                    <Label Text="Szybki przelew" HorizontalOptions="Center" FontSize="Large"/>
+                    <Label Text="Przelew z rachunku:"/>
+                    <Picker x:Name="Accounts"/>
+                    <Entry Placeholder="Wpisz nazwe odbiorcy" Style="{Binding TransferEntry}"/>
+                    <Entry x:Name="ForeignNumber" Placeholder="Wpisz numer konta odbiorcy" Style="{Binding TransferEntry}"/>
+                    <Entry x:Name="Title" Placeholder="Wpisz tytuł" Style="{Binding TransferEntry}"/>
+                    <Label x:Name="MoneyValidation" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false"/>
+                    <Entry x:Name="Money" Placeholder="Wpisz kwote" Style="{Binding TransferEntry}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox x:Name="CheckPT" CheckedChanged="PTChanged"/>
+                        <Label Text="Przelew stały"/>
+                    </StackLayout>
+                    <StackLayout x:Name="FieldsPT"  IsVisible="False">
+                        <Entry x:Name="Frecuency" Placeholder="Co ile dni przelew ma zostać powtórzony?" Style="{Binding TransferEntry}"/>
+                        <Label Text="Wybierz date zakończenia cyku przelewów:"/>
+                        <DatePicker x:Name="LastTerm"/>
+                    </StackLayout>
+                    <Button Text="Wyślij" WidthRequest="200" HeightRequest="50" CornerRadius="10" Clicked="Send"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

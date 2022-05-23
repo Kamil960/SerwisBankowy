@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="BankService.Services.PermamentTransfer.PermamentTransferService" CodeBehind="PermamentTransferService.svc.cs" %>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:model="clr-namespace:AppMobiBank.Models"
+             x:Class="AppMobiBank.Views.CardPage"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid x:Name="Main">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
+                <Label Grid.Row="1" Text="Wybierz numer karty płatniczej:" VerticalTextAlignment="Start" BackgroundColor="White"/>
+                <Picker Grid.Row="1" x:Name="CardsPicker" TextColor="Black" SelectedIndexChanged="Changed"/>
+                <Label Grid.Row="2" Text="Wybrana karta płatnicza" HorizontalOptions="Center" FontSize="26" TextColor="Black"/>
+                <CollectionView Grid.Row="3" x:Name="ItemsListView" Margin="10,0,10,0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout x:DataType="model:Card">
+                                <Label FontSize="Medium" FontAttributes="Bold" Text="Numer karty" TextColor="Black" BackgroundColor="White"/>
+                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding CardNumber}" BackgroundColor="White" />
+                                <Label FontSize="Medium" FontAttributes="Bold" Text="Rodzaj" TextColor="Black" BackgroundColor="White" />
+                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Kind}" BackgroundColor="White"/>
+                                <Label FontSize="Medium" FontAttributes="Bold" Text="Kolor" TextColor="Black" BackgroundColor="White" />
+                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Color}" BackgroundColor="White" />
+                                <Label FontSize="Medium" FontAttributes="Bold" Text="Aktywna" TextColor="Black" BackgroundColor="White" />
+                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Activity}" BackgroundColor="White"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button Grid.Row="4" Text="Zastrzeż" WidthRequest="200" HeightRequest="50" Clicked="Disable" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Grid.Row="5" Text="Zamów nową" WidthRequest="200" HeightRequest="50" Clicked="AddCard" CornerRadius="10" Margin="10,0,10,0"/>
+            </Grid>
+            <StackLayout x:Name="DisCard" Margin="20" IsVisible="False">
+                <Label Text="Z jakiego powodu chcesz zablokować kartę:" x:Name="title"/>
+                <RadioButton Content="Kradzież" CheckedChanged="Reson"/>
+                <RadioButton Content="Zaginięcie" CheckedChanged="Reson"/>
+                <RadioButton Content="Inne" CheckedChanged="Reson" x:Name="Other"/>
+                <Label x:Name="Other1" Text="Inne" FontSize="Medium" HorizontalOptions="Start" IsVisible="False"/>
+                <Editor x:Name="Other2" IsVisible="False"/>
+                <Button Text="Zablokuj" WidthRequest="200" HeightRequest="50" Clicked="Disactive" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Text="Anuluj" WidthRequest="200" HeightRequest="50" Clicked="Cancel" CornerRadius="10" Margin="10,0,10,0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

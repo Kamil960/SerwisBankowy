@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:model="clr-namespace:AppMobiBank.Models"
+             x:Class="AppMobiBank.Views.DepositPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid x:Name="Main">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
+                <Label Grid.Row="1" Text="Wybierz lokate:" VerticalTextAlignment="Start" BackgroundColor="White"/>
+                <Picker Grid.Row="1" x:Name="DepositPicker" TextColor="Black" />
+                <Label Grid.Row="2" Text="Wybrana lokata" HorizontalOptions="Center" FontSize="26" TextColor="Black"/>
+                <CollectionView Grid.Row="3" x:Name="DepositsListView" Margin="10,0,10,0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout x:DataType="model:Deposit">
+                                <Label FontSize="Medium" FontAttributes="Bold" Text="Wkład początkowy" TextColor="Black" BackgroundColor="White"/>
+                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding InitialContribution}" BackgroundColor="White" />
+                                <Label FontSize="Medium" FontAttributes="Bold" Text="Oprocentowanie" TextColor="Black" BackgroundColor="White" />
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="White">
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Percent}" />
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Start" Text="%"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button Grid.Row="4" Text="Zamknij lokate" WidthRequest="200" HeightRequest="50" Clicked="CloseDeposit" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Grid.Row="5" Text="Sprawdź dostępne lokaty" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
+            </Grid>
+            <StackLayout x:Name="CloseDepositView" IsVisible="false">
+                <Label Text="Lokata wybrana do zamknięcia" VerticalTextAlignment="Start" BackgroundColor="White"/>
+                <Label FontSize="Medium" FontAttributes="Bold" Text="Środki zarobione na lokacie:" TextColor="Black" BackgroundColor="White"/>
+                <Label x:Name="Gain" FontSize="Medium" FontAttributes="Bold" TextColor="Black" BackgroundColor="White"/>
+                <Label FontSize="Medium" FontAttributes="Bold" Text="Suma wypłacona na twoje konto po zamknięciu lokaty:" TextColor="Black" BackgroundColor="White" />
+                <Label x:Name="Sum" FontSize="Medium" FontAttributes="Bold" TextColor="Black" BackgroundColor="White"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

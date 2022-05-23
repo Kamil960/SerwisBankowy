@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "yH5xFiRAaCcvz4hekxwosNrQsNIbFD3DAR6HR493zVn0L3hBVxvNmQZ93bMV9AnJnv0dgLeym+HgArhic/1pbg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\Aplikacje mobilne\\MobiBank\\AppMobiBank\\AppMobiBank.iOS\\AppMobiBank.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kamil\\.nuget\\packages\\commonservicelocator\\2.0.5\\commonservicelocator.2.0.5.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.composition\\5.0.1\\system.composition.5.0.1.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.composition.attributedmodel\\5.0.1\\system.composition.attributedmodel.5.0.1.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.composition.convention\\5.0.1\\system.composition.convention.5.0.1.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.composition.hosting\\5.0.1\\system.composition.hosting.5.0.1.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.composition.runtime\\5.0.1\\system.composition.runtime.5.0.1.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.composition.typedparts\\5.0.1\\system.composition.typedparts.5.0.1.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.servicemodel.http\\4.8.0\\system.servicemodel.http.4.8.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

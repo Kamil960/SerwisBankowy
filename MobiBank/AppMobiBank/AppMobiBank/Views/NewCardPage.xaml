@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobiBank.Views.NewCardPage">
+    <ContentPage.Content>
+        <Grid x:Name="Main">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Grid.RowSpan="3" x:Name="background" Aspect="AspectFill"/>
+            <StackLayout Grid.Row="1" Margin="10,0,10,0">
+                <Label Text="Wyrób nową karte płatniczą" HorizontalOptions="Center" FontSize="28" TextColor="Black" Margin="0,0,0,30"/>
+                <Label Text="Wybierz rodzaj karty:"/>
+                <StackLayout>
+                    <RadioButton Content="kredytowa" Value="kredytowa" CheckedChanged="Kind"  x:Name="Type1" IsChecked="True"/>
+                    <RadioButton Content="debetowa" Value="debetowa" CheckedChanged="Kind"  x:Name="Type2"/>
+                </StackLayout>
+                <Label Text="Wybierz kolor karty:"/>
+                <StackLayout>
+                    <RadioButton Content="złoty" Value="złota" CheckedChanged="Kolor" x:Name="Color1" IsChecked="True"/>
+                    <RadioButton Content="czarny" Value="czarna" CheckedChanged="Kolor" x:Name="Color2"/>
+                    <RadioButton Content="biały" Value="biała" CheckedChanged="Kolor" x:Name="Color3"/>
+                    <RadioButton Content="zielony" Value="zielona" CheckedChanged="Kolor" x:Name="Color4"/>
+                </StackLayout>
+                <Button Text="Zamów" WidthRequest="200" HeightRequest="50" Clicked="Add" CornerRadius="10" Margin="10,20,10,0"/>
+                <Button Text="Anuluj" WidthRequest="200" HeightRequest="50" Clicked="Cancel" CornerRadius="10" Margin="10,0,10,0"/>
+                </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

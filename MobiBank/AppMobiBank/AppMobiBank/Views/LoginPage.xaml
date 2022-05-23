@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppMobiBank.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Bisque">
+            <Image x:Name="background" Aspect="AspectFill"/>
+            <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+                <Entry Placeholder="Podaj Id konta" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="700"/>
+                <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}" HorizontalOptions="Center" WidthRequest="700"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

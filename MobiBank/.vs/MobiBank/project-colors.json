@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e4cd9b4a-2d23-4095-b629-9b4b0f7b2407": {
+      "ProjectGuid": "e4cd9b4a-2d23-4095-b629-9b4b0f7b2407",
+      "DisplayName": "BankService",
+      "ColorIndex": 0
+    },
+    "e6ebdeeb-ef55-4f94-ab2f-8eee95e114e0": {
+      "ProjectGuid": "e6ebdeeb-ef55-4f94-ab2f-8eee95e114e0",
+      "DisplayName": "AppMobiBank",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "2ec90cbc-b313-4205-8abe-05eaa54f1775": {
+      "ProjectGuid": "2ec90cbc-b313-4205-8abe-05eaa54f1775",
+      "DisplayName": "WcfServiceBank",
+      "ColorIndex": 2
+    },
+    "ff8350bf-7e05-4581-adff-e07eafecd6f9": {
+      "ProjectGuid": "ff8350bf-7e05-4581-adff-e07eafecd6f9",
+      "DisplayName": "ClassLibrary1",
+      "ColorIndex": 3
+    },
+    "1dfb2513-adf1-40aa-8e1e-f19ab0cc53a7": {
+      "ProjectGuid": "1dfb2513-adf1-40aa-8e1e-f19ab0cc53a7",
+      "DisplayName": "WcfService1",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

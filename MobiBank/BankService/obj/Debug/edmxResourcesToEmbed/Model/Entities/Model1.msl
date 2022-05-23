@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MobileBankModelStoreContainer" CdmEntityContainer="MobileBankEntities">
+    <EntitySetMapping Name="Karta">
+      <EntityTypeMapping TypeName="MobileBankModel.Karta">
+        <MappingFragment StoreEntitySet="Karta">
+          <ScalarProperty Name="IdKarty" ColumnName="IdKarty" />
+          <ScalarProperty Name="IdRachunek" ColumnName="IdRachunek" />
+          <ScalarProperty Name="NrKarty" ColumnName="NrKarty" />
+          <ScalarProperty Name="Kolor" ColumnName="Kolor" />
+          <ScalarProperty Name="UrlGrafika" ColumnName="UrlGrafika" />
+          <ScalarProperty Name="CzyAktywna" ColumnName="CzyAktywna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kredyt">
+      <EntityTypeMapping TypeName="MobileBankModel.Kredyt">
+        <MappingFragment StoreEntitySet="Kredyt">
+          <ScalarProperty Name="IdKredyt" ColumnName="IdKredyt" />
+          <ScalarProperty Name="Oprocentowanie" ColumnName="Oprocentowanie" />
+          <ScalarProperty Name="KwotaKredytu" ColumnName="KwotaKredytu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lokata">
+      <EntityTypeMapping TypeName="MobileBankModel.Lokata">
+        <MappingFragment StoreEntitySet="Lokata">
+          <ScalarProperty Name="IdLokata" ColumnName="IdLokata" />
+          <ScalarProperty Name="Oprocentowanie" ColumnName="Oprocentowanie" />
+          <ScalarProperty Name="WkladPoczatkowy" ColumnName="WkladPoczatkowy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Przelew">
+      <EntityTypeMapping TypeName="MobileBankModel.Przelew">
+        <MappingFragment StoreEntitySet="Przelew">
+          <ScalarProperty Name="IdPrzelew" ColumnName="IdPrzelew" />
+          <ScalarProperty Name="NrRachunekZewnetrzny" ColumnName="NrRachunekZewnetrzny" />
+          <ScalarProperty Name="Kwota" ColumnName="Kwota" />
+          <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rachunek">
+      <EntityTypeMapping TypeName="MobileBankModel.Rachunek">
+        <MappingFragment StoreEntitySet="Rachunek">
+          <ScalarProperty Name="IdRachunek" ColumnName="IdRachunek" />
+          <ScalarProperty Name="NrRachunek" ColumnName="NrRachunek" />
+          <ScalarProperty Name="StanRachunku" ColumnName="StanRachunku" />
+          <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MobileBankModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ubezpieczenie">
+      <EntityTypeMapping TypeName="MobileBankModel.Ubezpieczenie">
+        <MappingFragment StoreEntitySet="Ubezpieczenie">
+          <ScalarProperty Name="IdUbezpieczenie" ColumnName="IdUbezpieczenie" />
+          <ScalarProperty Name="IdRachunek" ColumnName="IdRachunek" />
+          <ScalarProperty Name="WartoscPolisy" ColumnName="WartoscPolisy" />
+          <ScalarProperty Name="RodzajPolisy" ColumnName="RodzajPolisy" />
+          <ScalarProperty Name="Skladka" ColumnName="Skladka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZlecenieStale">
+      <EntityTypeMapping TypeName="MobileBankModel.ZlecenieStale">
+        <MappingFragment StoreEntitySet="ZlecenieStale">
+          <ScalarProperty Name="IdZlecenieStale" ColumnName="IdZlecenieStale" />
+          <ScalarProperty Name="NrRachunekZewnetrzny" ColumnName="NrRachunekZewnetrzny" />
+          <ScalarProperty Name="Kwota" ColumnName="Kwota" />
+          <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Okres" ColumnName="Okres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UslugaSzczegolowa">
+      <EntityTypeMapping TypeName="MobileBankModel.UslugaSzczegolowa">
+        <MappingFragment StoreEntitySet="UslugaSzczegolowa">
+          <ScalarProperty Name="IdOferta" ColumnName="IdOferta" />
+          <ScalarProperty Name="IdRachunek" ColumnName="IdRachunek" />
+          <ScalarProperty Name="CzyAktywna" ColumnName="CzyAktywna" />
+          <ScalarProperty Name="DataRozpoczecia" ColumnName="DataRozpoczecia" />
+          <ScalarProperty Name="DataZakonczenia" ColumnName="DataZakonczenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:model="clr-namespace:AppMobiBank.Models"
+             x:Class="AppMobiBank.Views.LoanPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
+            <Label Grid.Row="1" Text="Twoje kredyty:" VerticalTextAlignment="Start" BackgroundColor="White"/>
+            <Picker Grid.Row="1" x:Name="LoansPicker" TextColor="Black" />
+            <CollectionView Grid.Row="3" x:Name="LoansListView" Margin="10,0,10,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout x:DataType="model:Loan">
+                            <Label FontSize="Medium" FontAttributes="Bold" Text="Data spłaty kolejnej raty" TextColor="Black" BackgroundColor="White"/>
+                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding NextPay}" BackgroundColor="White" />
+                            <Label FontSize="Medium" FontAttributes="Bold" Text="Data spłaty ostatniej raty" TextColor="Black" BackgroundColor="White" />
+                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding LastPay}" BackgroundColor="White"/>
+                            <Label FontSize="Medium" FontAttributes="Bold" Text="Oprocentowanie" TextColor="Black" BackgroundColor="White" />
+                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Percent}" BackgroundColor="White" />
+                            <Label FontSize="Medium" FontAttributes="Bold" Text="Suma kredytu" TextColor="Black" BackgroundColor="White" />
+                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Sum}" BackgroundColor="White"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Grid.Row="4" Text="Sprawdź dostępne kredyty" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,1 @@
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\AppMobiBank.UWP.csproj;x64

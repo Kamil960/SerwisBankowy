@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f708eec1440b4588a527a9fc68249589" Name="Diagram1">
+        <EntityTypeShape EntityType="MobileBankModel.Karta" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.Kredyt" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.Lokata" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.Przelew" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.Rachunek" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.Ubezpieczenie" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.UslugaSzczegolowa" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileBankModel.ZlecenieStale" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="MobileBankModel.FK_Karta_UslugaSzczegolowa" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileBankModel.FK_Lokata_UslugaSzczegolowa" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileBankModel.FK_Przelew_Rachunek" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileBankModel.FK_Rachunek_UslugaSzczegolowa" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileBankModel.FK_UslugaSzczegolowa_Rachunek" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileBankModel.FK_Ubezpieczenie_UslugaSzczegolowa1" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileBankModel.FK_ZlecenieStale_UslugaSzczegolowa" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

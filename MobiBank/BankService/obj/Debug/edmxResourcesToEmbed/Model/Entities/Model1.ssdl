@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Karta">
+    <Key>
+      <PropertyRef Name="IdKarty" />
+    </Key>
+    <Property Name="IdKarty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRachunek" Type="int" />
+    <Property Name="NrKarty" Type="nvarchar" MaxLength="16" />
+    <Property Name="Kolor" Type="nchar" MaxLength="20" />
+    <Property Name="UrlGrafika" Type="nvarchar(max)" />
+    <Property Name="CzyAktywna" Type="bit" />
+  </EntityType>
+  <EntityType Name="Kredyt">
+    <Key>
+      <PropertyRef Name="IdKredyt" />
+    </Key>
+    <Property Name="IdKredyt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oprocentowanie" Type="nchar" MaxLength="10" />
+    <Property Name="KwotaKredytu" Type="money" />
+  </EntityType>
+  <EntityType Name="Lokata">
+    <Key>
+      <PropertyRef Name="IdLokata" />
+    </Key>
+    <Property Name="IdLokata" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oprocentowanie" Type="nchar" MaxLength="10" />
+    <Property Name="WkladPoczatkowy" Type="money" />
+  </EntityType>
+  <EntityType Name="Przelew">
+    <Key>
+      <PropertyRef Name="IdPrzelew" />
+    </Key>
+    <Property Name="IdPrzelew" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NrRachunekZewnetrzny" Type="nvarchar" MaxLength="32" />
+    <Property Name="Kwota" Type="money" />
+    <Property Name="Rodzaj" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rachunek">
+    <Key>
+      <PropertyRef Name="IdRachunek" />
+    </Key>
+    <Property Name="IdRachunek" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NrRachunek" Type="nvarchar" MaxLength="32" />
+    <Property Name="StanRachunku" Type="money" />
+    <Property Name="CzyAktywny" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Ubezpieczenie">
+    <Key>
+      <PropertyRef Name="IdUbezpieczenie" />
+    </Key>
+    <Property Name="IdUbezpieczenie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRachunek" Type="int" />
+    <Property Name="WartoscPolisy" Type="money" />
+    <Property Name="RodzajPolisy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skladka" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Mobile_Bank.dbo.UslugaSzczegolowa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UslugaSzczegolowa">
+    <Key>
+      <PropertyRef Name="IdOferta" />
+      <PropertyRef Name="IdRachunek" />
+    </Key>
+    <Property Name="IdOferta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRachunek" Type="int" Nullable="false" />
+    <Property Name="CzyAktywna" Type="bit" />
+    <Property Name="DataRozpoczecia" Type="date" />
+    <Property Name="DataZakonczenia" Type="date" />
+  </EntityType>
+  <EntityType Name="ZlecenieStale">
+    <Key>
+      <PropertyRef Name="IdZlecenieStale" />
+    </Key>
+    <Property Name="IdZlecenieStale" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NrRachunekZewnetrzny" Type="nvarchar" MaxLength="32" />
+    <Property Name="Kwota" Type="money" />
+    <Property Name="Rodzaj" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Okres" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_UslugaSzczegolowa_Karta">
+    <End Role="Karta" Type="Self.Karta" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Karta">
+        <PropertyRef Name="IdKarty" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Kredyt">
+    <End Role="Kredyt" Type="Self.Kredyt" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kredyt">
+        <PropertyRef Name="IdKredyt" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Lokata">
+    <End Role="Lokata" Type="Self.Lokata" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lokata">
+        <PropertyRef Name="IdLokata" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Przelew">
+    <End Role="Przelew" Type="Self.Przelew" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Przelew">
+        <PropertyRef Name="IdPrzelew" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Rachunek">
+    <End Role="Rachunek" Type="Self.Rachunek" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rachunek">
+        <PropertyRef Name="IdRachunek" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdRachunek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Ubezpieczenie">
+    <End Role="Ubezpieczenie" Type="Self.Ubezpieczenie" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubezpieczenie">
+        <PropertyRef Name="IdUbezpieczenie" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_ZlecenieStale">
+    <End Role="ZlecenieStale" Type="Self.ZlecenieStale" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZlecenieStale">
+        <PropertyRef Name="IdZlecenieStale" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MobileBankModelStoreContainer">
+    <EntitySet Name="Karta" EntityType="Self.Karta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kredyt" EntityType="Self.Kredyt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lokata" EntityType="Self.Lokata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Przelew" EntityType="Self.Przelew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rachunek" EntityType="Self.Rachunek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ubezpieczenie" EntityType="Self.Ubezpieczenie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZlecenieStale" EntityType="Self.ZlecenieStale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UslugaSzczegolowa" EntityType="Self.UslugaSzczegolowa" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UslugaSzczegolowa].[IdOferta] AS [IdOferta], 
+    [UslugaSzczegolowa].[IdRachunek] AS [IdRachunek], 
+    [UslugaSzczegolowa].[CzyAktywna] AS [CzyAktywna], 
+    [UslugaSzczegolowa].[DataRozpoczecia] AS [DataRozpoczecia], 
+    [UslugaSzczegolowa].[DataZakonczenia] AS [DataZakonczenia]
+    FROM [dbo].[UslugaSzczegolowa] AS [UslugaSzczegolowa]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Karta" Association="Self.FK_UslugaSzczegolowa_Karta">
+      <End Role="Karta" EntitySet="Karta" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Kredyt" Association="Self.FK_UslugaSzczegolowa_Kredyt">
+      <End Role="Kredyt" EntitySet="Kredyt" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Lokata" Association="Self.FK_UslugaSzczegolowa_Lokata">
+      <End Role="Lokata" EntitySet="Lokata" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Przelew" Association="Self.FK_UslugaSzczegolowa_Przelew">
+      <End Role="Przelew" EntitySet="Przelew" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Rachunek" Association="Self.FK_UslugaSzczegolowa_Rachunek">
+      <End Role="Rachunek" EntitySet="Rachunek" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Ubezpieczenie" Association="Self.FK_UslugaSzczegolowa_Ubezpieczenie">
+      <End Role="Ubezpieczenie" EntitySet="Ubezpieczenie" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_ZlecenieStale" Association="Self.FK_UslugaSzczegolowa_ZlecenieStale">
+      <End Role="ZlecenieStale" EntitySet="ZlecenieStale" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Karta">
+    <Key>
+      <PropertyRef Name="IdKarty" />
+    </Key>
+    <Property Name="IdKarty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdRachunek" Type="Int32" />
+    <Property Name="NrKarty" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Kolor" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="UrlGrafika" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CzyAktywna" Type="Boolean" />
+    <NavigationProperty Name="UslugaSzczegolowa" Relationship="Self.FK_UslugaSzczegolowa_Karta" FromRole="Karta" ToRole="UslugaSzczegolowa" />
+  </EntityType>
+  <EntityType Name="Kredyt">
+    <Key>
+      <PropertyRef Name="IdKredyt" />
+    </Key>
+    <Property Name="IdKredyt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Oprocentowanie" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="KwotaKredytu" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="UslugaSzczegolowa" Relationship="Self.FK_UslugaSzczegolowa_Kredyt" FromRole="Kredyt" ToRole="UslugaSzczegolowa" />
+  </EntityType>
+  <EntityType Name="Lokata">
+    <Key>
+      <PropertyRef Name="IdLokata" />
+    </Key>
+    <Property Name="IdLokata" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Oprocentowanie" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="WkladPoczatkowy" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="UslugaSzczegolowa" Relationship="Self.FK_UslugaSzczegolowa_Lokata" FromRole="Lokata" ToRole="UslugaSzczegolowa" />
+  </EntityType>
+  <EntityType Name="Przelew">
+    <Key>
+      <PropertyRef Name="IdPrzelew" />
+    </Key>
+    <Property Name="IdPrzelew" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NrRachunekZewnetrzny" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Kwota" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Rodzaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UslugaSzczegolowa" Relationship="Self.FK_UslugaSzczegolowa_Przelew" FromRole="Przelew" ToRole="UslugaSzczegolowa" />
+  </EntityType>
+  <EntityType Name="Rachunek">
+    <Key>
+      <PropertyRef Name="IdRachunek" />
+    </Key>
+    <Property Name="IdRachunek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NrRachunek" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="StanRachunku" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CzyAktywny" Type="Boolean" />
+    <NavigationProperty Name="UslugaSzczegolowa" Relationship="Self.FK_UslugaSzczegolowa_Rachunek" FromRole="Rachunek" ToRole="UslugaSzczegolowa" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ubezpieczenie">
+    <Key>
+      <PropertyRef Name="IdUbezpieczenie" />
+    </Key>
+    <Property Name="IdUbezpieczenie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdRachunek" Type="Int32" />
+    <Property Name="WartoscPolisy" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RodzajPolisy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Skladka" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="UslugaSzczegolowa" Relationship="Self.FK_UslugaSzczegolowa_Ubezpieczenie" FromRole="Ubezpieczenie" ToRole="UslugaSzczegolowa" />
+  </EntityType>
+  <EntityType Name="ZlecenieStale">
+    <Key>
+      <PropertyRef Name="IdZlecenieStale" />
+    </Key>
+    <Property Name="IdZlecenieStale" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NrRachunekZewnetrzny" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Kwota" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Rodzaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Okres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UslugaSzczegolowa" Relationship="Self.FK_UslugaSzczegolowa_ZlecenieStale" FromRole="ZlecenieStale" ToRole="UslugaSzczegolowa" />
+  </EntityType>
+  <EntityType Name="UslugaSzczegolowa">
+    <Key>
+      <PropertyRef Name="IdOferta" />
+      <PropertyRef Name="IdRachunek" />
+    </Key>
+    <Property Name="IdOferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdRachunek" Type="Int32" Nullable="false" />
+    <Property Name="CzyAktywna" Type="Boolean" />
+    <Property Name="DataRozpoczecia" Type="DateTime" Precision="0" />
+    <Property Name="DataZakonczenia" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Karta" Relationship="Self.FK_UslugaSzczegolowa_Karta" FromRole="UslugaSzczegolowa" ToRole="Karta" />
+    <NavigationProperty Name="Kredyt" Relationship="Self.FK_UslugaSzczegolowa_Kredyt" FromRole="UslugaSzczegolowa" ToRole="Kredyt" />
+    <NavigationProperty Name="Lokata" Relationship="Self.FK_UslugaSzczegolowa_Lokata" FromRole="UslugaSzczegolowa" ToRole="Lokata" />
+    <NavigationProperty Name="Przelew" Relationship="Self.FK_UslugaSzczegolowa_Przelew" FromRole="UslugaSzczegolowa" ToRole="Przelew" />
+    <NavigationProperty Name="Rachunek" Relationship="Self.FK_UslugaSzczegolowa_Rachunek" FromRole="UslugaSzczegolowa" ToRole="Rachunek" />
+    <NavigationProperty Name="Ubezpieczenie" Relationship="Self.FK_UslugaSzczegolowa_Ubezpieczenie" FromRole="UslugaSzczegolowa" ToRole="Ubezpieczenie" />
+    <NavigationProperty Name="ZlecenieStale" Relationship="Self.FK_UslugaSzczegolowa_ZlecenieStale" FromRole="UslugaSzczegolowa" ToRole="ZlecenieStale" />
+  </EntityType>
+  <Association Name="FK_UslugaSzczegolowa_Karta">
+    <End Role="Karta" Type="Self.Karta" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Karta">
+        <PropertyRef Name="IdKarty" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Kredyt">
+    <End Role="Kredyt" Type="Self.Kredyt" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kredyt">
+        <PropertyRef Name="IdKredyt" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Lokata">
+    <End Role="Lokata" Type="Self.Lokata" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lokata">
+        <PropertyRef Name="IdLokata" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Przelew">
+    <End Role="Przelew" Type="Self.Przelew" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Przelew">
+        <PropertyRef Name="IdPrzelew" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Rachunek">
+    <End Role="Rachunek" Type="Self.Rachunek" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rachunek">
+        <PropertyRef Name="IdRachunek" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdRachunek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_Ubezpieczenie">
+    <End Role="Ubezpieczenie" Type="Self.Ubezpieczenie" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubezpieczenie">
+        <PropertyRef Name="IdUbezpieczenie" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UslugaSzczegolowa_ZlecenieStale">
+    <End Role="ZlecenieStale" Type="Self.ZlecenieStale" Multiplicity="1" />
+    <End Role="UslugaSzczegolowa" Type="Self.UslugaSzczegolowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZlecenieStale">
+        <PropertyRef Name="IdZlecenieStale" />
+      </Principal>
+      <Dependent Role="UslugaSzczegolowa">
+        <PropertyRef Name="IdOferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MobileBankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Karta" EntityType="Self.Karta" />
+    <EntitySet Name="Kredyt" EntityType="Self.Kredyt" />
+    <EntitySet Name="Lokata" EntityType="Self.Lokata" />
+    <EntitySet Name="Przelew" EntityType="Self.Przelew" />
+    <EntitySet Name="Rachunek" EntityType="Self.Rachunek" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Ubezpieczenie" EntityType="Self.Ubezpieczenie" />
+    <EntitySet Name="ZlecenieStale" EntityType="Self.ZlecenieStale" />
+    <EntitySet Name="UslugaSzczegolowa" EntityType="Self.UslugaSzczegolowa" />
+    <AssociationSet Name="FK_UslugaSzczegolowa_Karta" Association="Self.FK_UslugaSzczegolowa_Karta">
+      <End Role="Karta" EntitySet="Karta" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Kredyt" Association="Self.FK_UslugaSzczegolowa_Kredyt">
+      <End Role="Kredyt" EntitySet="Kredyt" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Lokata" Association="Self.FK_UslugaSzczegolowa_Lokata">
+      <End Role="Lokata" EntitySet="Lokata" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Przelew" Association="Self.FK_UslugaSzczegolowa_Przelew">
+      <End Role="Przelew" EntitySet="Przelew" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Rachunek" Association="Self.FK_UslugaSzczegolowa_Rachunek">
+      <End Role="Rachunek" EntitySet="Rachunek" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_Ubezpieczenie" Association="Self.FK_UslugaSzczegolowa_Ubezpieczenie">
+      <End Role="Ubezpieczenie" EntitySet="Ubezpieczenie" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UslugaSzczegolowa_ZlecenieStale" Association="Self.FK_UslugaSzczegolowa_ZlecenieStale">
+      <End Role="ZlecenieStale" EntitySet="ZlecenieStale" />
+      <End Role="UslugaSzczegolowa" EntitySet="UslugaSzczegolowa" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
