@@ -14,9 +14,9 @@ namespace AppMobiBank.Services
         {
             items = new List<Deposit>
             {
-                new Deposit{IdDeposit = 1, IdOperation = 4, InitialContribution = 1000, Percent = 12, Name = "Prosto liczona"},
-                new Deposit{IdDeposit = 2, IdOperation = 5, InitialContribution = 1000, Percent = 12, Name = "Długoterminowa"},
-                new Deposit{IdDeposit = 3, IdOperation = 6, InitialContribution = 1000, Percent = 12, Name = "Klepsydra"},
+                new Deposit{IdDeposit = 1, IdOperation = 4, InitialContribution = 1000, Percent = 10, Name = "Prosto liczona"},
+                new Deposit{IdDeposit = 2, IdOperation = 5, InitialContribution = 1000, Percent = 10, Name = "Długoterminowa"},
+                new Deposit{IdDeposit = 3, IdOperation = 6, InitialContribution = 1000, Percent = 10, Name = "Klepsydra"},
             };
         }
         #endregion

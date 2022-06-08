@@ -12,19 +12,25 @@
             <Frame Grid.Row="0" Grid.RowSpan="2" Style="{Binding TransferFrame}">
                 <StackLayout>
                     <Label Text="Szybki przelew" HorizontalOptions="Center" FontSize="Large"/>
-                    <Label Text="Przelew z rachunku:"/>
-                    <Picker x:Name="Accounts"/>
-                    <Entry Placeholder="Wpisz nazwe odbiorcy" Style="{Binding TransferEntry}"/>
-                    <Entry x:Name="ForeignNumber" Placeholder="Wpisz numer konta odbiorcy" Style="{Binding TransferEntry}"/>
-                    <Entry x:Name="Title" Placeholder="Wpisz tytuł" Style="{Binding TransferEntry}"/>
-                    <Label x:Name="MoneyValidation" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false"/>
-                    <Entry x:Name="Money" Placeholder="Wpisz kwote" Style="{Binding TransferEntry}"/>
+                        <Label Text="Przelew z rachunku:"/>
+                        <Picker x:Name="Accounts"/>
+                    <StackLayout x:Name="entryStack">
+                        <Entry x:Name="Name" Placeholder="Wpisz nazwe odbiorcy" Style="{Binding TransferEntry}" Unfocused="ValidationName"/>
+                        <Label x:Name="NameValidated" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false" />
+                        <Entry x:Name="ForeignNumber" Placeholder="Wpisz numer konta odbiorcy" Style="{Binding TransferEntry}" Unfocused="ValidationForeignNumber"/>
+                        <Label x:Name="ForeignNumberValidated" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false" />
+                        <Entry x:Name="TransferTitle" Placeholder="Wpisz tytuł" Style="{Binding TransferEntry}" Unfocused="ValidationTitle"/>
+                        <Label x:Name="TitleValidated" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false" />
+                        <Entry x:Name="Money" Placeholder="Wpisz kwote" Style="{Binding TransferEntry}" Unfocused="ValidationCashField"/>
+                        <Label x:Name="MoneyValidated" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false" />
+                    </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <CheckBox x:Name="CheckPT" CheckedChanged="PTChanged"/>
                         <Label Text="Przelew stały"/>
                     </StackLayout>
                     <StackLayout x:Name="FieldsPT"  IsVisible="False">
-                        <Entry x:Name="Frecuency" Placeholder="Co ile dni przelew ma zostać powtórzony?" Style="{Binding TransferEntry}"/>
+                        <Entry x:Name="Frecuency" Placeholder="Co ile dni przelew ma zostać powtórzony?" Style="{Binding TransferEntry}" />
+                        <Label x:Name="DaysValidated" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false" />
                         <Label Text="Wybierz date zakończenia cyku przelewów:"/>
                         <DatePicker x:Name="LastTerm"/>
                     </StackLayout>

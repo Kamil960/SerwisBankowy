@@ -18,7 +18,7 @@ namespace AppMobiBank.ViewModels
         }
         public async Task UpdateBalance(Account acc, decimal money)
         {
-            acc.AccountBalance = acc.AccountBalance - money;
+            acc.AccountBalance = acc.AccountBalance + money;
             await DataStore.UpdateItemAsync(acc);
         }
     }

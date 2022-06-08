@@ -7,6 +7,7 @@ namespace AppMobiBank.Models
     public class Card
     {
         public int IdCard { get; set; }
+        public string AccountNumber { get; set; }
         public string CardNumber { get; set; }
         public string Kind { get; set; }
         public string Color { get; set; }

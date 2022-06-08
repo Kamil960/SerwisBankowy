@@ -8,14 +8,19 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
             <Label Grid.Row="1" Text="Twoje ubezpieczenia:" VerticalTextAlignment="Start" BackgroundColor="White"/>
-            <Picker Grid.Row="1" x:Name="InsurencesPicker" TextColor="Black" />
-            <CollectionView Grid.Row="3" x:Name="InsurenceListView" Margin="10,0,10,0">
+            <Picker Grid.Row="1" x:Name="InsurencesPicker" SelectedIndexChanged="Changed" TextColor="Black" />
+            <Label Grid.Row="2" x:Name="H2" Text="Wybrana polisa należy do rachunku o numerze:" HorizontalOptions="Center" FontSize="16" TextColor="Black" BackgroundColor="White"/>
+            <Label Grid.Row="3" x:Name="AccNumber" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="Black" BackgroundColor="White"/>
+            <CollectionView Grid.Row="5" x:Name="InsurenceListView" Margin="10,0,10,0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout x:DataType="model:Insurence">
@@ -27,7 +32,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Grid.Row="4" Text="Sprawdź dostępne ubezpieczenia" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
+            <Button Grid.Row="6" Text="Sprawdź dostępne ubezpieczenia" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

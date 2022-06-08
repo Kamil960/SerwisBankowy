@@ -1,14 +1,23 @@
-﻿using System;
+﻿using BankServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace AppMobiBank.Services
 {
     public abstract class ItemDataStore<T> : IDataStore<T>
     {
         public List<T> items { get; set; }
+        public IBankService BankServices { get; set; }
+
+        public ItemDataStore()
+        {
+            BankServices = DependencyService.Get<BankServiceReference.IBankService>();
+            items = new List<T>();
+        }
 
         public abstract T Find(T item);
         public abstract T Find(int id);

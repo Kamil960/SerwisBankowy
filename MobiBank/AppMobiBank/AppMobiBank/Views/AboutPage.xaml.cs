@@ -54,5 +54,12 @@ namespace AppMobiBank.Views
             else
                 return string.Empty;
         }
+
+        private void Search(object sender, EventArgs e)
+        {
+            _operations.Type = SearchBar.Text;
+            _operations.FindTypeCommand.Execute(true);
+            History.ItemsSource = _operations.Operations.Where((Operation o) => o.AccountNumber == Accounts.SelectedItem);
+        }
     }
 }

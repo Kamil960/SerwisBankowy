@@ -14,9 +14,9 @@ namespace AppMobiBank.Services
         {
             items = new List<Insurence>
             {
-                new Insurence{IdInsurence = 1, Kind = "Zdrowotne", Price = 120, Value = 120000},
-                new Insurence{IdInsurence = 2, Kind = "AC", Price = 120, Value = 120000},
-                new Insurence{IdInsurence = 3, Kind = "Od pożaru", Price = 120, Value = 120000},
+                new Insurence{IdInsurence = 1, IdOperation = 8, Kind = "Zdrowotne", Price = 180, Value = 120000},
+                new Insurence{IdInsurence = 2, IdOperation = 9, Kind = "AC", Price = 120, Value = 120000},
+                new Insurence{IdInsurence = 3, IdOperation = 10, Kind = "Od pożaru", Price = 60, Value = 120000},
             };
         }
         #endregion

@@ -15,24 +15,27 @@ namespace AppMobiBank.Views
     public partial class CardPage : ContentPage
     {
         CardViewModel _viewModel;
+        OperationViewModel _operation;
         public CardPage()
         {
             InitializeComponent();
             BindingContext = _viewModel = new CardViewModel();
+            _operation = new OperationViewModel();
             background.Source = new Uri("https://cdn.wallpapersafari.com/47/41/x2RTiN.jpg");
 
         }
         protected override void OnAppearing()
         {
             _viewModel.LoadItemsCommand.Execute(true);
+            _operation.LoadItemsCommand.Execute(true);
             CardsPicker.ItemsSource = _viewModel.Items.Select((Card c) => c.CardNumber).ToList();
             CardsPicker.SelectedIndex = 0;
-            ItemsListView.ItemsSource = _viewModel.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);
+            ItemsListView.ItemsSource = _viewModel.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);         
         }
         private void Changed(object sender, EventArgs e)
         {
             ItemsListView.ItemsSource = null;
-            ItemsListView.ItemsSource = _viewModel.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);           
+            ItemsListView.ItemsSource = _viewModel.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);
         }
 
         private void Disable(object sender, EventArgs e)
@@ -62,12 +65,8 @@ namespace AppMobiBank.Views
 
         private void Disactive(object sender, EventArgs e)
         {
-            var disCard = (
-            from c in _viewModel.Items
-            where c.CardNumber == CardsPicker.SelectedItem
-            select c
-            ).First();
-            _viewModel.SelectedItem = disCard;
+
+            _viewModel.SelectedItem = SelectedCard();
             if (_viewModel.SelectedItem != null)
                 _viewModel.DisCardCommand.Execute(_viewModel.SelectedItem);
             DisCard.IsVisible = false;
@@ -79,5 +78,28 @@ namespace AppMobiBank.Views
             Main.IsVisible = true;
             DisCard.IsVisible = false;
         }
+        #region Linq
+        private Card SelectedCard()
+        {
+            var card = (
+            from c in _viewModel.Items
+            where c.CardNumber == CardsPicker.SelectedItem
+            select c
+            ).First();
+            return card;
+        }
+        private Operation AddCardOperation()
+        {
+            Operation op = new Operation
+            {
+                IdOperation = _operation.Items.Select(x => x.IdOperation).Last() + 1,
+                AccountNumber = SelectedCard().AccountNumber,
+                Type = "dodanie karty płatniczej",
+                FinishDate = DateTime.Now,
+                IsActive = true
+            };
+            return op;
+        }
+        #endregion
     }
 }

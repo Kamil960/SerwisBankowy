@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "72ZiGt+1kcKyT3AIy+x6l1dKMeAiE1Gzowpzh3R7T2/2WGmBBOsCsossDmPbIQ3oCU1OOp60mheuxVA3qa7G3Q==",
+  "dgSpecHash": "9pCmd+yiQXKvLOb6QGedDxAJYskbUgW5rqkS0YyvbAHGEP/ZQAtWW34fF44a+W4KsirLftTu5dKV7iD08M319A==",
   "success": true,
   "projectFilePath": "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\Aplikacje mobilne\\MobiBank\\AppMobiBank\\AppMobiBank.Android\\AppMobiBank.Android.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,10 @@
     "C:\\Users\\kamil\\.nuget\\packages\\system.composition.runtime\\5.0.1\\system.composition.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.composition.typedparts\\5.0.1\\system.composition.typedparts.5.0.1.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.servicemodel.duplex\\4.6.0\\system.servicemodel.duplex.4.6.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\system.servicemodel.http\\4.8.0\\system.servicemodel.http.4.8.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.servicemodel.nettcp\\4.6.0\\system.servicemodel.nettcp.4.6.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.servicemodel.security\\4.6.0\\system.servicemodel.security.4.6.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\xamarin.androidx.activity\\1.2.4.1\\xamarin.androidx.activity.1.2.4.1.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\xamarin.androidx.annotation\\1.2.0.1\\xamarin.androidx.annotation.1.2.0.1.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\xamarin.androidx.annotation.experimental\\1.1.0.1\\xamarin.androidx.annotation.experimental.1.1.0.1.nupkg.sha512",

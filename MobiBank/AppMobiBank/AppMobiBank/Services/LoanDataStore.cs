@@ -14,9 +14,9 @@ namespace AppMobiBank.Services
         {
             items = new List<Loan>
             {
-                new Loan { IdLoan = 1, Name = "Hipoteczny", LastPay = DateTime.Now.AddYears(5), NextPay = DateTime.Now.AddDays(25), Percent = "10%", Sum = 500000 },
-                new Loan { IdLoan = 2, Name = "Szybki", LastPay = DateTime.Now.AddYears(5), NextPay = DateTime.Now.AddDays(25), Percent = "10%", Sum = 500000 },
-                new Loan { IdLoan = 3, Name = "Leasing samochodu", LastPay = DateTime.Now.AddYears(5), NextPay = DateTime.Now.AddDays(25), Percent = "10%", Sum = 500000 },
+                new Loan { IdLoan = 1, IdOperation = 11, Name = "Hipoteczny", LastPay = DateTime.Now.AddYears(5), NextPay = DateTime.Now.AddDays(25), Percent = "10%", Sum = 500000 },
+                new Loan { IdLoan = 2, IdOperation = 12, Name = "Szybki", LastPay = DateTime.Now.AddYears(5), NextPay = DateTime.Now.AddDays(25), Percent = "10%", Sum = 500000 },
+                new Loan { IdLoan = 3, IdOperation = 13, Name = "Leasing samochodu", LastPay = DateTime.Now.AddYears(5), NextPay = DateTime.Now.AddDays(25), Percent = "10%", Sum = 500000 },
             };
         }
         #endregion

@@ -22,6 +22,7 @@ namespace AppMobiBank
             DependencyService.Register<TransferDataStore>();
             DependencyService.Register<PermamentTransferDataStore>();
             DependencyService.Register<OperationDataStore>();
+            DependencyService.Register<BankServiceReference.BankServiceClient>();
             MainPage = new AppShell();
         }
 

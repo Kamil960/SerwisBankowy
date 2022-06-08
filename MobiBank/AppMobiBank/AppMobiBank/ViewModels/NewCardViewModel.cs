@@ -12,7 +12,6 @@ namespace AppMobiBank.ViewModels
 {
     public class NewCardViewModel : CardViewModel
     {
-        IDataStore<Card> DataStore => DependencyService.Get<IDataStore<Card>>();
         public Command AddItemCommand { get; }
         public Command GetLastId { get; }
         public Card card;

@@ -637,3 +637,9 @@ C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\A
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.Composition.Runtime.dll
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.Composition.TypedParts.dll
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\Java.Interop.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.IdentityModel.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.IdentityModel.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.ServiceModel.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.ServiceModel.Http.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.ServiceModel.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.Android\obj\Debug\120\android\assets\System.ServiceModel.Primitives.dll

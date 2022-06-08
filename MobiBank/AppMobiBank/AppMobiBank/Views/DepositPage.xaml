@@ -9,6 +9,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.2*"/>
                     <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.2*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="0.15*"/>
@@ -17,9 +18,10 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
                 <Label Grid.Row="1" Text="Wybierz lokate:" VerticalTextAlignment="Start" BackgroundColor="White"/>
-                <Picker Grid.Row="1" x:Name="DepositPicker" TextColor="Black" />
-                <Label Grid.Row="2" Text="Wybrana lokata" HorizontalOptions="Center" FontSize="26" TextColor="Black"/>
-                <CollectionView Grid.Row="3" x:Name="DepositsListView" Margin="10,0,10,0">
+                <Picker Grid.Row="1" x:Name="DepositPicker" SelectedIndexChanged="Changed" TextColor="Black" />
+                <Label Grid.Row="2" x:Name="H2" Text="Wybrana lokata należy do rachunku o numerze:" HorizontalOptions="Center" FontSize="16" TextColor="Black" BackgroundColor="White"/>
+                <Label Grid.Row="3" x:Name="AccNumber" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="Black" BackgroundColor="White"/>
+                <CollectionView Grid.Row="4" x:Name="DepositsListView" Margin="10,0,10,0">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout x:DataType="model:Deposit">
@@ -34,8 +36,8 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <Button Grid.Row="4" Text="Zamknij lokate" WidthRequest="200" HeightRequest="50" Clicked="CloseDeposit" CornerRadius="10" Margin="10,0,10,0"/>
-                <Button Grid.Row="5" Text="Sprawdź dostępne lokaty" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Grid.Row="5" Text="Zamknij lokate" WidthRequest="200" HeightRequest="50" Clicked="CloseDeposit" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Grid.Row="6" Text="Sprawdź dostępne lokaty" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
             </Grid>
             <StackLayout x:Name="CloseDepositView" IsVisible="false">
                 <Label Text="Lokata wybrana do zamknięcia" VerticalTextAlignment="Start" BackgroundColor="White"/>
@@ -43,6 +45,8 @@
                 <Label x:Name="Gain" FontSize="Medium" FontAttributes="Bold" TextColor="Black" BackgroundColor="White"/>
                 <Label FontSize="Medium" FontAttributes="Bold" Text="Suma wypłacona na twoje konto po zamknięciu lokaty:" TextColor="Black" BackgroundColor="White" />
                 <Label x:Name="Sum" FontSize="Medium" FontAttributes="Bold" TextColor="Black" BackgroundColor="White"/>
+                <Button Grid.Row="4" Text="Zamknij lokate" WidthRequest="200" HeightRequest="50" Clicked="ApproveCloseDeposit" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Grid.Row="5" Text="Powrót" WidthRequest="200" HeightRequest="50" Clicked="Back" CornerRadius="10" Margin="10,0,10,0"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
