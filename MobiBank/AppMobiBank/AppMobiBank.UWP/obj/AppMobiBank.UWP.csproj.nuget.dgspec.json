@@ -24,14 +24,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "uap10.0.16299"
+          "uap10.0.22000"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "uap10.0.16299": {
+          "uap10.0.22000": {
             "projectReferences": {
               "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\Aplikacje mobilne\\MobiBank\\AppMobiBank\\AppMobiBank\\AppMobiBank.csproj": {
                 "projectPath": "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\Aplikacje mobilne\\MobiBank\\AppMobiBank\\AppMobiBank\\AppMobiBank.csproj"
@@ -41,7 +41,7 @@
         }
       },
       "frameworks": {
-        "uap10.0.16299": {
+        "uap10.0.22000": {
           "dependencies": {
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
@@ -105,15 +105,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
             "projectReferences": {}
           }
         },
@@ -124,26 +124,32 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "dependencies": {
             "CommonServiceLocator": {
               "target": "Package",
               "version": "[2.0.5, )"
             },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
             "System.Composition": {
               "target": "Package",
               "version": "[5.0.1, )"
             },
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.6.*, )"
+            },
             "System.ServiceModel.Http": {
               "target": "Package",
               "version": "[4.8.0, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.6.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.6.*, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -164,6 +170,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }

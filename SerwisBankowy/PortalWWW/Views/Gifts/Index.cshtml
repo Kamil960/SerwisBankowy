@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Nagrody";
+    Layout = "~/Views/Shared/_GiftsLayout.cshtml";
+}
+@await Html.PartialAsync("RodzajeNagrod", (IEnumerable<BankData.Data.CMS.ListaNagrod>)ViewBag.ModelListyNagrod)
+<div class="main-section">
+	@await Html.PartialAsync("NagrodaGlownaView", (IEnumerable<BankData.Data.Bank.Nagrody>)ViewBag.ModelNagrodaGlowna)
+</div>

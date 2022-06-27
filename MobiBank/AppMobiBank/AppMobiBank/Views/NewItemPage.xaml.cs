@@ -10,13 +10,26 @@ namespace AppMobiBank.Views
 {
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public InferenceViewModel inferenceViewModel;
 
         public NewItemPage()
         {
             InitializeComponent();
-            background.Source = new Uri("https://cdn.wallpapersafari.com/47/41/x2RTiN.jpg");
-            BindingContext = new NewItemViewModel();
+            BindingContext = inferenceViewModel = new InferenceViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            inferenceViewModel.LoadItemsCommand.Execute(this);
+            inferenceViewModel.type = "kredyt";
+            inferenceViewModel.LoadSelectedItemsCommand.Execute(this);
+
+        }
+
+        private void CancelEvent(object sender, EventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PopAsync();
+            Application.Current.MainPage.Navigation.PushAsync(new LoanPage(), true);
         }
     }
 }

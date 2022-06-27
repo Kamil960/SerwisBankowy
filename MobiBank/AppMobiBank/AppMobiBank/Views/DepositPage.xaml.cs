@@ -24,7 +24,7 @@ namespace AppMobiBank.Views
             BindingContext = _deposit = new DepositViewModel();
             _operation = new OperationViewModel();
             _account = new AccountViewModel();
-            background.Source = new Uri("https://cdn.wallpapersafari.com/47/41/x2RTiN.jpg");
+            background.Source = new Uri("https://togethermagazyn.pl/wp-content/uploads/2018/02/pomara%C5%84cze-1050x520.jpg");
         }
         protected override void OnAppearing()
         {
@@ -69,7 +69,7 @@ namespace AppMobiBank.Views
             _operation.DissActiveOperationCommand.Execute(_operation.SelectedItem);
             _operation.AddItemCommand.Execute(CloseDepositOperation());
             var acc = _account.Items.Where((Account a) => a.AccountNumber == SelectedAccountNumber()).FirstOrDefault();
-            _account.value = decimal.Parse(Sum.Text);
+            _account.cash = decimal.Parse(Sum.Text);
             _account.account = acc;
             _account.UpdateBalanceCommand.Execute(true);
             DepositPicker.ItemsSource = NameList();
@@ -81,10 +81,6 @@ namespace AppMobiBank.Views
         {
             Main.IsVisible = true;
             CloseDepositView.IsVisible = false;
-        }
-        public void CheckOffers(object sender, EventArgs e)
-        {
-
         }
         #region Linq
         private string SelectedAccountNumber()
@@ -158,6 +154,7 @@ namespace AppMobiBank.Views
                 AccountNumber = SelectedAccountNumber(),
                 Type = "zamknięcie lokaty",
                 Value = DepositSum(),
+                BeginingDate = DateTime.Now,
                 FinishDate = DateTime.Now,
                 IsActive = true
             };
@@ -176,5 +173,6 @@ namespace AppMobiBank.Views
             return nameList;
         }
         #endregion
+
     }
 }

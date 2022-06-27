@@ -1,0 +1,49 @@
+﻿@model BankData.Data.Bank.Nagrody
+
+@{
+	ViewData["Title"] = "Edycja";
+	<link rel="stylesheet" href="~/css/edit-list-style.css" asp-append-version="true" />
+}
+
+<h1>Edycja Nagrody</h1>
+
+<hr />
+<div class="form-body">
+	<div class="row">
+		<div class="form-holder">
+			<div class="form-content">
+				<div class="form-items">
+					<form asp-action="Edit">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+						<input type="hidden" asp-for="IdNagrody" />
+						<div class="form-group">
+							<label asp-for="Nazwa" class="control-label"></label>
+							<input asp-for="Nazwa" class="form-control" />
+							<span asp-validation-for="Nazwa" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Kategoria" class="control-label"></label>
+							<input class="form-control-desc" asp-for="Kategoria" />
+							<span asp-validation-for="Kategoria" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Grafika" class="control-label"></label>
+							<input asp-for="Grafika" class="form-control" />
+							<span asp-validation-for="Grafika" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="LiczbaPunktow" class="control-label"></label>
+							<input asp-for="LiczbaPunktow" class="form-control" />
+							<span asp-validation-for="LiczbaPunktow" class="text-danger"></span>
+						</div>
+						<div class="form-group-btn">
+							<input type="submit" value="Edytuj" class="button" />
+							<a class="button" asp-action="Index">Powrót</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

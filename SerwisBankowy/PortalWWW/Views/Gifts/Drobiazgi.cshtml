@@ -1,0 +1,21 @@
+﻿@model IEnumerable<BankData.Data.Bank.Nagrody>
+@{
+	<link rel="stylesheet" href="~/css/gifts.css" asp-append-version="true" />
+}
+@await Html.PartialAsync("RodzajeNagrod", (IEnumerable<BankData.Data.CMS.ListaNagrod>)ViewBag.ModelListyNagrod)
+<div class="gifts-main-section">
+	<h2>Prezenty</h2>
+	<ul class="ul-section">
+		@foreach (var item in ViewBag.Nagrody)
+		{
+			<li class="li-section">
+					<img src="@item.Grafika" />
+					<div class="description-section">
+						<p>@item.Nazwa</p>
+						<label>Koszt: @item.LiczbaPunktow pkt</label>
+						<a asp-action="Wybierz" asp-controller="Gifts" asp-route-id="@item.IdNagrody">Wybierz</a>
+					</div>
+			</li>
+		}
+	</ul>
+</div>

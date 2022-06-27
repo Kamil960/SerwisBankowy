@@ -67,3 +67,13 @@ C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\A
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\System.Composition.Hosting.dll
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\System.Composition.Runtime.dll
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\System.Composition.TypedParts.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\Firebase.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\LiteDB.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\System.Reactive.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\BankService.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\EntityFramework.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\BankService.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\BankService.dll.config
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\BankService.dll.mdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.iOS\bin\iPhoneSimulator\Debug\EntityFramework.xml

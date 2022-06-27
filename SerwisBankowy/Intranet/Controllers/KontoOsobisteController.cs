@@ -1,5 +1,4 @@
-﻿#nullable disable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,13 +22,15 @@ namespace Intranet.Controllers
         // GET: KontoOsobiste
         public async Task<IActionResult> Index()
         {
-            return View(await _context.KontoOsobiste.ToListAsync());
+              return _context.KontoOsobiste != null ? 
+                          View(await _context.KontoOsobiste.ToListAsync()) :
+                          Problem("Entity set 'DataContext.KontoOsobiste'  is null.");
         }
 
         // GET: KontoOsobiste/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id == null || _context.KontoOsobiste == null)
             {
                 return NotFound();
             }
@@ -55,7 +56,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna")] KontoOsobiste kontoOsobiste)
+        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] KontoOsobiste kontoOsobiste)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +70,7 @@ namespace Intranet.Controllers
         // GET: KontoOsobiste/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            if (id == null || _context.KontoOsobiste == null)
             {
                 return NotFound();
             }
@@ -87,7 +88,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna")] KontoOsobiste kontoOsobiste)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] KontoOsobiste kontoOsobiste)
         {
             if (id != kontoOsobiste.IdUslugaSzczegolowa)
             {
@@ -120,7 +121,7 @@ namespace Intranet.Controllers
         // GET: KontoOsobiste/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.KontoOsobiste == null)
             {
                 return NotFound();
             }
@@ -140,15 +141,23 @@ namespace Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (_context.KontoOsobiste == null)
+            {
+                return Problem("Entity set 'DataContext.KontoOsobiste'  is null.");
+            }
             var kontoOsobiste = await _context.KontoOsobiste.FindAsync(id);
-            _context.KontoOsobiste.Remove(kontoOsobiste);
+            if (kontoOsobiste != null)
+            {
+                _context.KontoOsobiste.Remove(kontoOsobiste);
+            }
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool KontoOsobisteExists(int id)
         {
-            return _context.KontoOsobiste.Any(e => e.IdUslugaSzczegolowa == id);
+          return (_context.KontoOsobiste?.Any(e => e.IdUslugaSzczegolowa == id)).GetValueOrDefault();
         }
     }
 }

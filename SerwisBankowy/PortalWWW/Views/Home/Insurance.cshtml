@@ -9,18 +9,21 @@
 	<label>Dostępne oferty</label>
 </p>
 <div class="field">
+	<p class="info"> @ViewBag.Info</p>
 	<div class="conteiner">
 		<div class="row row-cols-1 row-cols-md-3">
 
 			@foreach (var item in Model)
 			{
-				<div class="col">
-					<div class="card">
-						<h4 class="btn-header">@item.Nazwa</h4>
-						<img class="btn-icon" src="@item.Grafika" alt="https://img.freepik.com/darmowe-wektory/kreskowka-banka-retro-budynek-lub-gmach-sadu-z-kolumny-ilustracja-odizolowywajaca-na-bielu_53562-8133.jpg" />
-						<p class="btn-description">@item.Opis</p>
+				<a href="@Url.Action("WybierzUbezpieczenie","Home", @item)" class="col">
+					<div class="col">
+						<div class="card">
+							<h4 class="btn-header">@item.Nazwa</h4>
+							<img class="btn-icon" src="@item.Grafika" alt="https://img.freepik.com/darmowe-wektory/kreskowka-banka-retro-budynek-lub-gmach-sadu-z-kolumny-ilustracja-odizolowywajaca-na-bielu_53562-8133.jpg" />
+							<p class="btn-description">@item.Opis</p>
+						</div>
 					</div>
-				</div>
+				</a>
 			}
 		</div>
 	</div>

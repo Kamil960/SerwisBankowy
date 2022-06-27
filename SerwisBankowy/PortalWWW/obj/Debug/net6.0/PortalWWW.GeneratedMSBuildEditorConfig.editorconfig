@@ -8,105 +8,133 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PortalWWW
 build_property.RootNamespace = PortalWWW
-build_property.ProjectDir = C:\Users\kamil\OneDrive\Pulpit\Informatyka studia\semestr 6\PIAB\SerwisBankowy\PortalWWW\
+build_property.ProjectDir = C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\PortalWWW\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\kamil\OneDrive\Pulpit\Informatyka studia\semestr 6\PIAB\SerwisBankowy\PortalWWW
+build_property.MSBuildProjectDirectory = C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\PortalWWW
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/AboutUs.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Gifts/Drobiazgi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lmdHNcRHJvYmlhemdpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Gifts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lmdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Gifts/Koszyk.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lmdHNcS29zenlrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Gifts/NagrodaGlownaView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lmdHNcTmFncm9kYUdsb3duYVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Gifts/Prezenty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lmdHNcUHJlemVudHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Gifts/RodzajeNagrod.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lmdHNcUm9kemFqZU5hZ3JvZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Gifts/Upominki.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lmdHNcVXBvbWlua2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/AboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/CompanyAccount.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/CompanyAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wYW55QWNjb3VudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Contact.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Deposit.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Deposit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXBvc2l0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Index.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Insurance.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Insurance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnN1cmFuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/ListaOfert.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/ListaOfert.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YU9mZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Loan.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Loan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2FuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Logowanie.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Logowanie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dvd2FuaWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/MainPageArt1.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/MainPageArt1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWluUGFnZUFydDEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/MainPageArt2.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/MainPageArt2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWluUGFnZUFydDIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/MainPageArt3.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/MainPageArt3.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWluUGFnZUFydDMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Of.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Of.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPZi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/PersonalAccount.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/PersonalAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJzb25hbEFjY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Registration.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/RegistrationEdit.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/RegistrationEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXRpb25FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/RegistrationFinal.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/RegistrationFinal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXRpb25GaW5hbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Strony.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Home/Strony.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHJvbnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Shared/Error.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Shared/_GiftsLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9HaWZ0c0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/_ViewImports.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/_ViewStart.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/wwwroot/css/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdFxjc3NcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/kamil/OneDrive/Pulpit/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Shared/_Layout.cshtml]
+[C:/Users/kamil/Desktop/Informatyka studia/semestr 6/PIAB/SerwisBankowy/PortalWWW/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8yz61e9ype

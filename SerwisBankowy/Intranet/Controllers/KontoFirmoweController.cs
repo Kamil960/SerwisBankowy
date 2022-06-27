@@ -1,5 +1,4 @@
-﻿#nullable disable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,13 +22,15 @@ namespace Intranet.Controllers
         // GET: KontoFirmowe
         public async Task<IActionResult> Index()
         {
-            return View(await _context.KontoFirmowe.ToListAsync());
+              return _context.KontoFirmowe != null ? 
+                          View(await _context.KontoFirmowe.ToListAsync()) :
+                          Problem("Entity set 'DataContext.KontoFirmowe'  is null.");
         }
 
         // GET: KontoFirmowe/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id == null || _context.KontoFirmowe == null)
             {
                 return NotFound();
             }
@@ -55,7 +56,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna")] KontoFirmowe kontoFirmowe)
+        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] KontoFirmowe kontoFirmowe)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +70,7 @@ namespace Intranet.Controllers
         // GET: KontoFirmowe/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            if (id == null || _context.KontoFirmowe == null)
             {
                 return NotFound();
             }
@@ -87,7 +88,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna")] KontoFirmowe kontoFirmowe)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] KontoFirmowe kontoFirmowe)
         {
             if (id != kontoFirmowe.IdUslugaSzczegolowa)
             {
@@ -120,7 +121,7 @@ namespace Intranet.Controllers
         // GET: KontoFirmowe/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.KontoFirmowe == null)
             {
                 return NotFound();
             }
@@ -140,15 +141,23 @@ namespace Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (_context.KontoFirmowe == null)
+            {
+                return Problem("Entity set 'DataContext.KontoFirmowe'  is null.");
+            }
             var kontoFirmowe = await _context.KontoFirmowe.FindAsync(id);
-            _context.KontoFirmowe.Remove(kontoFirmowe);
+            if (kontoFirmowe != null)
+            {
+                _context.KontoFirmowe.Remove(kontoFirmowe);
+            }
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool KontoFirmoweExists(int id)
         {
-            return _context.KontoFirmowe.Any(e => e.IdUslugaSzczegolowa == id);
+          return (_context.KontoFirmowe?.Any(e => e.IdUslugaSzczegolowa == id)).GetValueOrDefault();
         }
     }
 }

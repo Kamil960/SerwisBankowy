@@ -49,6 +49,12 @@
     margin: 50px;
     display:flex;
     justify-content:center;
+    text-decoration:none;
+    color:black;
+}
+.col:hover{
+    text-decoration: none;
+    color: black;
 }
 a svg:hover{
     color:aliceblue;
@@ -103,5 +109,9 @@ a svg:hover{
     font-size: 60px;
     font-weight:900;
     font-family:Centaur;
+}
+.info{
+    color: white;
+    text-align:center;
 }
 

@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\bin\x64\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>F91EEB7EB6816A3463BF4E3D8ACF122DCDF70B0ED9A624E993907859C209C05B</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>F2954E1E403268BF00E4160EB4DFFE9791896071A9D4EB1F6E24EA7CFF577DD5</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5E6FED21-F5E0-4051-B916-16CAE9D6026E_1.0.0.0_x64__jyxwa84jgtr96</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5E6FED21-F5E0-4051-B916-16CAE9D6026E_jyxwa84jgtr96!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5E6FED21-F5E0-4051-B916-16CAE9D6026E</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-05-22T18:44:07.639</Modified>
+      <Modified>2022-06-14T19:44:00.257</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\bin\x64\Debug\AppMobiBank.UWP.exe">
       <PackagePath>entrypoint\AppMobiBank.UWP.exe</PackagePath>
-      <Modified>2022-05-22T18:44:06.978</Modified>
+      <Modified>2022-06-14T19:43:59.114</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\.nuget\packages\commonservicelocator\2.0.5\lib\netstandard2.0\CommonServiceLocator.dll">
       <PackagePath>CommonServiceLocator.dll</PackagePath>
@@ -92,15 +92,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\bin\Debug\netstandard2.0\AppMobiBank.dll">
       <PackagePath>AppMobiBank.dll</PackagePath>
-      <Modified>2022-05-22T18:49:25.256</Modified>
+      <Modified>2022-06-14T19:39:54.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
       <Modified>2016-11-30T02:58:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.19041.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.22000.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
-      <Modified>2020-12-02T03:52:00.000</Modified>
+      <Modified>2021-09-11T16:48:58.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\.nuget\packages\xamarin.forms\5.0.0.2196\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
@@ -263,19 +263,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-05-22T18:44:06.928</Modified>
+      <Modified>2022-06-14T19:43:59.046</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-05-22T18:44:06.928</Modified>
+      <Modified>2022-06-14T19:43:59.046</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\X64\ucrtbased.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.22000.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
-      <Modified>2020-12-02T04:31:00.000</Modified>
+      <Modified>2021-09-11T18:05:22.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.22000.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
-      <Modified>2020-12-02T01:52:06.000</Modified>
+      <Modified>2021-09-11T20:28:18.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\.nuget\packages\microsoft.ui.xaml\2.4.3\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
       <PackagePath>WinMetadata\Microsoft.UI.Xaml.winmd</PackagePath>
@@ -283,11 +283,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-05-21T09:42:01.927</Modified>
+      <Modified>2022-06-14T19:15:42.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank.UWP\bin\x64\Debug\Core\AppMobiBank.UWP.exe">
       <PackagePath>AppMobiBank.UWP.exe</PackagePath>
-      <Modified>2022-05-22T18:44:07.639</Modified>
+      <Modified>2022-06-14T19:44:00.252</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

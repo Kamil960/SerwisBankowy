@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BankData.Data.Bank.Koszyk>
+@{
+	<link rel="stylesheet" href="~/css/gifts.css" asp-append-version="true" />
+}
+@await Html.PartialAsync("RodzajeNagrod", (IEnumerable<BankData.Data.CMS.ListaNagrod>)ViewBag.ModelListyNagrod)
+<div class="gifts-main-section">
+	<h2>@ViewBag.Info</h2>
+	@if (ViewBag.Nagrody != null)
+	{
+		<ul class="ul-basket-section">
+			@foreach (var item in ViewBag.Nagrody)
+			{
+				<li class="li-basket-section">
+					<img src="@item.Grafika" />
+					<label>@item.Nazwa</label>
+					<a class="button-basket" asp-action="Dodaj" asp-controller="Gifts" asp-route-id="@item.IdNagroda">
+						<img src="~/css/Image/plus.png" />
+					</a>
+					<p>Ilość: @item.Ilosc</p>
+					<a class="button-basket" asp-action="Usun" asp-controller="Gifts" asp-route-id="@item.IdNagroda">
+						<img src="~/css/Image/minus.png" />
+					</a>
+					<label>Koszt: @item.LiczbaPunktow pkt</label>
+					<a class="button-basket" asp-action="UsunCalkiem" asp-controller="Gifts" asp-route-id="@item.IdNagroda">
+						<img src="~/css/Image/delete.png" />
+					</a>
+				</li>
+				<hr />
+			}
+		</ul>
+		<h3>Suma punktów do wydania: @ViewBag.Suma</h3>
+		<a class="last-button-basket" asp-action="Zrealizuj" asp-controller="Gifts">Zrealizuj zamówienie</a>
+		<h4>@ViewBag.Info2</h4>
+	}
+</div>

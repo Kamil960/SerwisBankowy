@@ -10,3 +10,15 @@ C:\Users\kamil\OneDrive\Pulpit\Informatyka studia\semestr 6\PIAB\SerwisBankowy\B
 C:\Users\kamil\OneDrive\Pulpit\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.dll
 C:\Users\kamil\OneDrive\Pulpit\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\ref\BankData.dll
 C:\Users\kamil\OneDrive\Pulpit\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\bin\Debug\net6.0\BankData.deps.json
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\bin\Debug\net6.0\BankData.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\bin\Debug\net6.0\BankData.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.csproj.AssemblyReference.cache
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.AssemblyInfoInputs.cache
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.AssemblyInfo.cs
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.csproj.CoreCompileInputs.cache
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\refint\BankData.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\BankData.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\PIAB\SerwisBankowy\BankData\obj\Debug\net6.0\ref\BankData.dll

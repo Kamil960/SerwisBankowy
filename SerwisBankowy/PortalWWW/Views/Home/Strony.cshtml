@@ -1,25 +1,44 @@
 ﻿@model IEnumerable<BankData.Data.CMS.Strony>
-
+@{
+	<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+}
 <div class="container bg-light">
 	<div class="d-flex justify-content-end">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
-
 						@foreach (var item in Model)
 						{
 							@if (item.Pozycja == 1)
 							{
-								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="@Url.Action("Logowanie", "Home")">@item.Nazwa</a>
-								</li>
+								@if (ViewBag.Log == "true")
+								{
+									<li class="nav-item">
+										<a class="nav-link active" aria-current="page" asp-action="Logout">Wyloguj się</a>
+									</li>
+								}
+								else
+								{
+									<li class="nav-item">
+										<a class="nav-link active" aria-current="page" href="@Url.Action("Logowanie", "Home")">@item.Nazwa</a>
+									</li>
+								}
 							}
 							else if (item.Pozycja == 2)
 							{
-								<li class="nav-item">
-									<a class="nav-link" asp-action='Registration'>@item.Nazwa</a>
-								</li>
+								@if (ViewBag.Log == "true")
+								{
+									<li class="nav-item">
+										<a class="nav-link" href="@Url.Action("Index", "Gifts")">Bank Nagród</a>
+									</li>
+								}
+								else
+								{
+									<li class="nav-item">
+										<a class="nav-link" asp-action='Registration'>@item.Nazwa</a>
+									</li>
+								}
 							}
 							else if (item.Pozycja == 3)
 							{
@@ -56,3 +75,7 @@
 		</nav>
 	</div>
 </div>
+@if (ViewBag.Log == "true")
+{
+	<p class="points">Twoje punkty: @ViewBag.Points </p>
+}

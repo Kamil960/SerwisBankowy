@@ -20,10 +20,10 @@ namespace BankService
         List<PermamentTransferForView> GetPTForViews();
 
         [OperationContract]
-        List<OfferForView> GetOfferForViews();
+        List<OperationForView> GetOperationForViews();
 
         [OperationContract]
-        List<OfferForView> GetOfferByDate();
+        List<OperationForView> GetOperationByDate();
 
         [OperationContract]
         List<LoanForView> GetLoanForView();

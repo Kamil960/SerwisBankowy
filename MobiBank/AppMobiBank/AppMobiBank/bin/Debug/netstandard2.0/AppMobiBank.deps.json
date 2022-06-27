@@ -9,10 +9,16 @@
     ".NETStandard,Version=v2.0/": {
       "AppMobiBank/1.0.0": {
         "dependencies": {
+          "BankService": "1.0.0",
           "CommonServiceLocator": "2.0.5",
+          "EntityFramework": "6.4.0",
+          "FirebaseDatabase.net": "4.0.7",
           "NETStandard.Library": "2.0.3",
           "System.Composition": "5.0.1",
+          "System.ServiceModel.Duplex": "4.6.0",
           "System.ServiceModel.Http": "4.8.0",
+          "System.ServiceModel.NetTcp": "4.6.0",
+          "System.ServiceModel.Security": "4.6.0",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2196"
         },
@@ -28,10 +34,45 @@
           }
         }
       },
+      "EntityFramework/6.4.0": {},
+      "FirebaseDatabase.net/4.0.7": {
+        "dependencies": {
+          "LiteDB": "4.1.4",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Reactive": "4.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Firebase.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LiteDB/4.1.4": {
+        "dependencies": {
+          "System.Reflection": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.1.4.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
         }
       },
       "System.Buffers/4.5.0": {
@@ -102,6 +143,15 @@
           }
         }
       },
+      "System.IO/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
       "System.Memory/4.5.3": {
         "dependencies": {
           "System.Buffers": "4.5.0",
@@ -137,6 +187,26 @@
           }
         }
       },
+      "System.Reactive/4.0.0": {
+        "dependencies": {
+          "System.Runtime.InteropServices.WindowsRuntime": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.398"
+          }
+        }
+      },
+      "System.Reflection/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.IO": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Reflection.DispatchProxy/4.7.1": {
         "runtime": {
           "lib/netstandard2.0/System.Reflection.DispatchProxy.dll": {
@@ -145,11 +215,47 @@
           }
         }
       },
+      "System.Reflection.Primitives/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Reflection.TypeExtensions/4.3.0": {
+        "dependencies": {
+          "System.Reflection": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.5/System.Reflection.TypeExtensions.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.24705.1"
+          }
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "4.0.4.1",
             "fileVersion": "4.6.26919.2"
+          }
+        }
+      },
+      "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.24705.1"
           }
         }
       },
@@ -216,6 +322,18 @@
           }
         }
       },
+      "System.ServiceModel.Duplex/4.6.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Duplex.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.600.19.47001"
+          }
+        }
+      },
       "System.ServiceModel.Http/4.8.0": {
         "dependencies": {
           "System.Private.ServiceModel": "4.8.0",
@@ -225,6 +343,18 @@
           "lib/netstandard2.0/System.ServiceModel.Http.dll": {
             "assemblyVersion": "4.8.0.0",
             "fileVersion": "4.800.20.51907"
+          }
+        }
+      },
+      "System.ServiceModel.NetTcp/4.6.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.NetTcp.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.600.19.47001"
           }
         }
       },
@@ -241,6 +371,32 @@
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.800.20.51907"
           }
+        }
+      },
+      "System.ServiceModel.Security/4.6.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Security.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.600.19.47001"
+          }
+        }
+      },
+      "System.Text.Encoding/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Threading.Tasks/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -269,6 +425,19 @@
             "fileVersion": "5.0.0.786"
           }
         }
+      },
+      "BankService/1.0.0": {
+        "runtime": {
+          "BankService.dll": {}
+        }
+      },
+      "EntityFramework.Reference/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.400.19.56503"
+          }
+        }
       }
     }
   },
@@ -285,6 +454,27 @@
       "path": "commonservicelocator/2.0.5",
       "hashPath": "commonservicelocator.2.0.5.nupkg.sha512"
     },
+    "EntityFramework/6.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7jDmcQ3jaN5G7ZJC7Ecq161zQBs/5LqRzBdZ/I4XfmSvOwteGgNjOi30kthFador4Qjo3qUU6iOB1H04GIXrpg==",
+      "path": "entityframework/6.4.0",
+      "hashPath": "entityframework.6.4.0.nupkg.sha512"
+    },
+    "FirebaseDatabase.net/4.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yj8J5al66pCXRibNsK0K1wB1ZsPeCJCnwRVfwCcd6ZQ5tbwouObt0hgp+LmzKY90bLfQJuwmnLpKzVYGwD/6xA==",
+      "path": "firebasedatabase.net/4.0.7",
+      "hashPath": "firebasedatabase.net.4.0.7.nupkg.sha512"
+    },
+    "LiteDB/4.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g4g9JlHzRBZl+Gd2UbiRdszZ7t8wozU2wX7+5xY5uE79tmcgcDhha+ubAP84G1VLbwQmhBGCzRfIx+epLmJciQ==",
+      "path": "litedb/4.1.4",
+      "hashPath": "litedb.4.1.4.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -292,12 +482,26 @@
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",
@@ -348,6 +552,13 @@
       "path": "system.composition.typedparts/5.0.1",
       "hashPath": "system.composition.typedparts.5.0.1.nupkg.sha512"
     },
+    "System.IO/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "path": "system.io/4.3.0",
+      "hashPath": "system.io.4.3.0.nupkg.sha512"
+    },
     "System.Memory/4.5.3": {
       "type": "package",
       "serviceable": true,
@@ -369,6 +580,20 @@
       "path": "system.private.servicemodel/4.8.0",
       "hashPath": "system.private.servicemodel.4.8.0.nupkg.sha512"
     },
+    "System.Reactive/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yaVAxT2Yl28p9+DupGwj2oPbIOYZUQimOQ+n7N7vML2oofIRj9BmcfD7DHc6FLrNah65EigOgG6U9VnwWEyz5g==",
+      "path": "system.reactive/4.0.0",
+      "hashPath": "system.reactive.4.0.0.nupkg.sha512"
+    },
+    "System.Reflection/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
+      "path": "system.reflection/4.3.0",
+      "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
     "System.Reflection.DispatchProxy/4.7.1": {
       "type": "package",
       "serviceable": true,
@@ -376,12 +601,40 @@
       "path": "system.reflection.dispatchproxy/4.7.1",
       "hashPath": "system.reflection.dispatchproxy.4.7.1.nupkg.sha512"
     },
+    "System.Reflection.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
+      "path": "system.reflection.primitives/4.3.0",
+      "hashPath": "system.reflection.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.TypeExtensions/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7u6ulLcZbyxB5Gq0nMkQttcdBTx57ibzw+4IOXEfR+sXYQoHvjW5LTLyNr8O22UIMrqYbchJQJnos4eooYzYJA==",
+      "path": "system.reflection.typeextensions/4.3.0",
+      "hashPath": "system.reflection.typeextensions.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
     "System.Runtime.CompilerServices.Unsafe/4.5.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
       "path": "system.runtime.compilerservices.unsafe/4.5.2",
       "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    },
+    "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J4GUi3xZQLUBasNwZnjrffN8i5wpHrBtZoLG+OhRyGo/+YunMRWWtwoMDlUAIdmX0uRfpHIBDSV6zyr3yf00TA==",
+      "path": "system.runtime.interopservices.windowsruntime/4.3.0",
+      "hashPath": "system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512"
     },
     "System.Security.AccessControl/4.7.0": {
       "type": "package",
@@ -425,6 +678,13 @@
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
+    "System.ServiceModel.Duplex/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-upu4Sp6ChM2JAqO4wNThF1H95f/NTSrcVfg/TDlR9ZeLxpSez5wQUWoXN3c+2uThC7oApNglpvyJuP1XIAdyOA==",
+      "path": "system.servicemodel.duplex/4.6.0",
+      "hashPath": "system.servicemodel.duplex.4.6.0.nupkg.sha512"
+    },
     "System.ServiceModel.Http/4.8.0": {
       "type": "package",
       "serviceable": true,
@@ -432,12 +692,40 @@
       "path": "system.servicemodel.http/4.8.0",
       "hashPath": "system.servicemodel.http.4.8.0.nupkg.sha512"
     },
+    "System.ServiceModel.NetTcp/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AbQWd+nY/QG7SOtyuYAbW4e5LxF9UvFsozIT8YpCeotBNq19w884ylBYvPfysEq/CMrH6a6lY9exnqxia0FWpg==",
+      "path": "system.servicemodel.nettcp/4.6.0",
+      "hashPath": "system.servicemodel.nettcp.4.6.0.nupkg.sha512"
+    },
     "System.ServiceModel.Primitives/4.8.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-akJiBb0EcWTXQ/dgp1a27O7UynZbqQ84M17OY/ssxfb32x5wtQ5zRw6ExsQaPOUQgia4Wl2jy4FWZddQRLLnaA==",
       "path": "system.servicemodel.primitives/4.8.0",
       "hashPath": "system.servicemodel.primitives.4.8.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Security/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JOZuExve5ZqZdIt0PwmIxon1xiX0Z3APdGmFG4ExwaNB3dCkqbmLdupkSwEvhewD4FwqnkF/0mamoiav4WcEXQ==",
+      "path": "system.servicemodel.security/4.6.0",
+      "hashPath": "system.servicemodel.security.4.6.0.nupkg.sha512"
+    },
+    "System.Text.Encoding/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
+      "path": "system.text.encoding/4.3.0",
+      "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Tasks/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
+      "path": "system.threading.tasks/4.3.0",
+      "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
     "Xamarin.Essentials/1.7.0": {
       "type": "package",
@@ -452,6 +740,16 @@
       "sha512": "sha512-zSXDiZukojtEBmZKUUG1yYBwlB9tI8JLPkc6n+Sm1PAX01QyzErWE9AaFJgP7usyoGHn92l4HnQF7A+/MPI6VA==",
       "path": "xamarin.forms/5.0.0.2196",
       "hashPath": "xamarin.forms.5.0.0.2196.nupkg.sha512"
+    },
+    "BankService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework.Reference/6.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

@@ -1,5 +1,4 @@
-﻿ #nullable disable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,20 +18,19 @@ namespace Intranet.Controllers
         {
             _context = context;
         }
-        public IActionResult Registration()
-        {
-            return View();
-        }
+
         // GET: Klient
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Klient.ToListAsync());
+              return _context.Klient != null ? 
+                          View(await _context.Klient.ToListAsync()) :
+                          Problem("Entity set 'DataContext.Klient'  is null.");
         }
 
         // GET: Klient/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Klient == null)
             {
                 return NotFound();
             }
@@ -58,7 +56,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdKlient,Login,Haslo,Imie,Nazwisko,Miejscowosc,Ulica,NrBudynku,KodPocztowy,Poczta,NrDokumentu,CzyAktywny")] Klient klient)
+        public async Task<IActionResult> Create([Bind("IdKlient,Login,Haslo,Imie,Nazwisko,Miejscowosc,Ulica,NrBudynku,KodPocztowy,Poczta,NrDokumentu,LiczbaPunktow,CzyAktywny")] Klient klient)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +70,7 @@ namespace Intranet.Controllers
         // GET: Klient/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Klient == null)
             {
                 return NotFound();
             }
@@ -90,7 +88,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdKlient,Login,Haslo,Imie,Nazwisko,Miejscowosc,Ulica,NrBudynku,KodPocztowy,Poczta,NrDokumentu,CzyAktywny")] Klient klient)
+        public async Task<IActionResult> Edit(int id, [Bind("IdKlient,Login,Haslo,Imie,Nazwisko,Miejscowosc,Ulica,NrBudynku,KodPocztowy,Poczta,NrDokumentu,LiczbaPunktow,CzyAktywny")] Klient klient)
         {
             if (id != klient.IdKlient)
             {
@@ -123,7 +121,7 @@ namespace Intranet.Controllers
         // GET: Klient/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Klient == null)
             {
                 return NotFound();
             }
@@ -143,15 +141,23 @@ namespace Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (_context.Klient == null)
+            {
+                return Problem("Entity set 'DataContext.Klient'  is null.");
+            }
             var klient = await _context.Klient.FindAsync(id);
-            _context.Klient.Remove(klient);
+            if (klient != null)
+            {
+                _context.Klient.Remove(klient);
+            }
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool KlientExists(int id)
         {
-            return _context.Klient.Any(e => e.IdKlient == id);
+          return (_context.Klient?.Any(e => e.IdKlient == id)).GetValueOrDefault();
         }
     }
 }

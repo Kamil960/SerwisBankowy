@@ -18,5 +18,8 @@ namespace BankService.Model.Entities
         public string Oprocentowanie { get; set; }
         public Nullable<decimal> KwotaKredytu { get; set; }
         public Nullable<int> IdOferta { get; set; }
+        public string Nazwa { get; set; }
+        public Nullable<System.DateTime> OstatniaSpłata { get; set; }
+        public Nullable<System.DateTime> NastepnaSpłata { get; set; }
     }
 }

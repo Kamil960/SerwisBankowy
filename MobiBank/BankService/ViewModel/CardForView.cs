@@ -25,6 +25,12 @@ namespace BankService.ViewModel
 
         [DataMember]
         public string Kind { get; set; }
+        [DataMember]
+        public string AccountNumber { get; set; }
+        [DataMember]
+        public bool? IsActive { get; set; }
+        [DataMember]
+        public string Activity { get; set; }
         #endregion
 
         #region Constructor
@@ -35,6 +41,9 @@ namespace BankService.ViewModel
             Color = card.Kolor;
             UrlGrafic = card.UrlGrafika;
             Kind = card.Rodzaj;
+            AccountNumber = card.NumerKonta;
+            Activity = card.Aktywność;
+            IsActive = card.CzyAktywna;
         }
         #endregion
     }

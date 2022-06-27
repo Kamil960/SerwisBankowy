@@ -1,5 +1,4 @@
-﻿#nullable disable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,13 +22,15 @@ namespace Intranet.Controllers
         // GET: Kredyt
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Kredyt.ToListAsync());
+              return _context.Kredyt != null ? 
+                          View(await _context.Kredyt.ToListAsync()) :
+                          Problem("Entity set 'DataContext.Kredyt'  is null.");
         }
 
         // GET: Kredyt/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Kredyt == null)
             {
                 return NotFound();
             }
@@ -55,7 +56,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna")] Kredyt kredyt)
+        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] Kredyt kredyt)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +70,7 @@ namespace Intranet.Controllers
         // GET: Kredyt/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Kredyt == null)
             {
                 return NotFound();
             }
@@ -87,7 +88,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna")] Kredyt kredyt)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] Kredyt kredyt)
         {
             if (id != kredyt.IdUslugaSzczegolowa)
             {
@@ -120,7 +121,7 @@ namespace Intranet.Controllers
         // GET: Kredyt/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Kredyt == null)
             {
                 return NotFound();
             }
@@ -140,15 +141,23 @@ namespace Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (_context.Kredyt == null)
+            {
+                return Problem("Entity set 'DataContext.Kredyt'  is null.");
+            }
             var kredyt = await _context.Kredyt.FindAsync(id);
-            _context.Kredyt.Remove(kredyt);
+            if (kredyt != null)
+            {
+                _context.Kredyt.Remove(kredyt);
+            }
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool KredytExists(int id)
         {
-            return _context.Kredyt.Any(e => e.IdUslugaSzczegolowa == id);
+          return (_context.Kredyt?.Any(e => e.IdUslugaSzczegolowa == id)).GetValueOrDefault();
         }
     }
 }

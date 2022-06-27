@@ -1,30 +1,46 @@
 ﻿using AppMobiBank.Models;
-using BankServiceReference;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using BankServiceReference;
+using System.Collections.Generic;
+using System;
 
 namespace AppMobiBank.Services
 {
     public class CardDataStore : ItemDataStore<Card>
     {
 
-        #region Constructor
+         #region Constructor
         public CardDataStore():base()
         {
-
-            //var _BankServices = DependencyService.Get<BankServiceReference.IBankService>();
-            //items = _BankServices.GetCard(null).GetCardResult.Select(k => new Card
+            //try
             //{
-            //    IdCard = k.IdCard,
-            //    CardNumber = k.CardNumber,
-            //    Kind = k.Kind,
-            //    Color = k.Color
-            //}).ToList();
+            //    List<CardForView> CardFV = BankServices.GetCard(new GetCardRequest()).GetCardResult.ToList();
+            //    items = new List<Card>();
+            //    foreach (var k in CardFV)
+            //        items.Add(new Card(k));
+            //}
+            //catch(Exception e)
+            //{
+            //    items = new List<Card>()
+            //    {
+            //        new Card{IdCard = 1, AccountNumber = "1234567", CardNumber = "12345", Color = "czarny", Kind = "debetowa", IsActive = true, Activity = "Aktywna" },
+            //        new Card{IdCard = 2, AccountNumber = "8920982", CardNumber = "67890", Color = "złoty", Kind = "kredytowa", IsActive = true, Activity = "Aktywna" },
+            //        new Card{IdCard = 3, AccountNumber = "1234567", CardNumber = "16273", Color = "srebrny", Kind = "debetowa", IsActive = true, Activity = "Aktywna" },
+            //    };
+            //}
 
+            //items = bankEntities.Karta.Select(k => 
+            //new Card 
+            //{ 
+            //    IdCard = k.IdKarty,
+            //    AccountNumber = k.NumerKonta,
+            //    CardNumber = k.NrKarty,
+            //    Color = k.Kolor,
+            //    Kind = k.Rodzaj,
+            //    IsActive = k.CzyAktywna,
+            //    Activity = k.Aktywność
+            //} ).ToList();
             items = new List<Card>()
             {
                 new Card{IdCard = 1, AccountNumber = "1234567", CardNumber = "12345", Color = "czarny", Kind = "debetowa", IsActive = true, Activity = "Aktywna" },

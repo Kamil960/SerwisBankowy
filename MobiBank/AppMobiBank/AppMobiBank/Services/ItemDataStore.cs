@@ -1,4 +1,5 @@
-﻿using BankServiceReference;
+﻿using BankService.Model.Entities;
+using BankServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,14 @@ namespace AppMobiBank.Services
 {
     public abstract class ItemDataStore<T> : IDataStore<T>
     {
+        protected BankEntities bankEntities;
         public List<T> items { get; set; }
         public IBankService BankServices { get; set; }
 
         public ItemDataStore()
         {
-            BankServices = DependencyService.Get<BankServiceReference.IBankService>();
+            //bankEntities = new BankEntities();
+            //BankServices = DependencyService.Get<BankServiceReference.IBankService>();
             items = new List<T>();
         }
 

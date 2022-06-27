@@ -30,13 +30,13 @@ namespace AppMobiBank.Views
             _operations.LoadItemsCommand.Execute(true);
             Accounts.ItemsSource = _accounts.Items.Select((Account a) => a.AccountNumber).ToList();
             Accounts.SelectedIndex = 0;
-            History.ItemsSource = _operations.Items.Where((Operation o) => o.AccountNumber == Accounts.SelectedItem);
+            History.ItemsSource = OrderedOperations();
             Balance.Text = GetBalance();
         }
         private void Changed(object sender, EventArgs e)
         {
             History.ItemsSource = null;
-            History.ItemsSource = _operations.Items.Where((Operation o) => o.AccountNumber == Accounts.SelectedItem);
+            History.ItemsSource = OrderedOperations();
             Balance.Text = GetBalance();
         }
         private string GetBalance()
@@ -59,7 +59,22 @@ namespace AppMobiBank.Views
         {
             _operations.Type = SearchBar.Text;
             _operations.FindTypeCommand.Execute(true);
-            History.ItemsSource = _operations.Operations.Where((Operation o) => o.AccountNumber == Accounts.SelectedItem);
+            History.ItemsSource = _operations.Operations.OrderByDescending(o => o.BeginingDate);
         }
+
+        #region Linq
+        private List<Operation> OrderedOperations()
+        {
+            var op =
+            (
+                from o in _operations.Items
+                where o.AccountNumber == Accounts.SelectedItem
+                orderby o.BeginingDate descending
+                select o
+            ).ToList();
+            return op;
+        }
+        #endregion
+
     }
 }

@@ -13,12 +13,12 @@ namespace BankService
     // NOTE: In order to launch WCF Test Client for testing this service, please select BankService.svc or BankService.svc.cs at the Solution Explorer and start debugging.
     public class BankService : IBankService
     {
-        Mobile_BankEntities _mobileBank;
+        BankEntities _mobileBank;
 
         #region Constructor
         public BankService()
         {
-            _mobileBank = new Mobile_BankEntities();
+            _mobileBank = new BankEntities();
         }
         #endregion
         public List<AccountForView> GetAccount()
@@ -51,14 +51,14 @@ namespace BankService
             return _loan.Select(loan => new LoanForView(loan)).ToList();
         }
 
-        public List<OfferForView> GetOfferByDate()
+        public List<OperationForView> GetOperationByDate()
         {
-            return GetOfferForViews().OrderByDescending(offer => offer.FinishDate).ToList();
+            return GetOperationForViews().OrderByDescending(offer => offer.FinishingDate).ToList();
         }
-        public List<OfferForView> GetOfferForViews()
+        public List<OperationForView> GetOperationForViews()
         {
-            List<UslugaSzczegolowa> _offer = (from offer in _mobileBank.UslugaSzczegolowa select offer).ToList();
-            return _offer.Select(offer => new OfferForView(offer)).ToList();
+            List<Operacje> _offer = (from offer in _mobileBank.Operacje select offer).ToList();
+            return _offer.Select(offer => new OperationForView(offer)).ToList();
         }
 
         public List<PermamentTransferForView> GetPTForViews()

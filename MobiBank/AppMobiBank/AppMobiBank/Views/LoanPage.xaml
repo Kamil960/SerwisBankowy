@@ -6,36 +6,54 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.35*"/>
+                <RowDefinition Height="0.35*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
-            <Picker Grid.Row="1" x:Name="LoansPicker" SelectedIndexChanged="Changed" TextColor="Black" />
-            <Label Grid.Row="2" Text="Kredyt powiązany z rachunkiem o numerze:" VerticalOptions="Center"  HorizontalOptions="Center" FontSize="16" TextColor="Black" BackgroundColor="White"/>
-            <Label Grid.Row="3" x:Name="AccNumber" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
-            <CollectionView Grid.Row="5" x:Name="LoansListView" Margin="10,0,10,0">
+            <Image Grid.Row="0" Grid.RowSpan="5" x:Name="background" Aspect="AspectFill"/>
+            <Frame Grid.Row="1" BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                <Label  Text="Wybierz kredyt:" VerticalTextAlignment="Start" BackgroundColor="DeepSkyBlue"/>
+            </Frame>
+            <Picker Grid.Row="1" x:Name="LoansPicker" SelectedIndexChanged="Changed" TextColor="White" FontAttributes="Bold"/>
+            <Frame Grid.Row="2" BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                <StackLayout>
+                    <Label Text="Kredyt powiązany z rachunkiem o numerze:" VerticalOptions="Center"  HorizontalOptions="Center" FontSize="16" TextColor="White" />
+                    <Label x:Name="AccNumber" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+            <CollectionView Grid.Row="3" Grid.RowSpan="2" x:Name="LoansListView" Margin="10,0,10,0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout x:DataType="model:Loan">
-                            <Label FontSize="Medium" FontAttributes="Bold" Text="Data spłaty poprzedniej raty" TextColor="Black" BackgroundColor="White"/>
-                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding NextPay}" BackgroundColor="White" />
-                            <Label FontSize="Medium" FontAttributes="Bold" Text="Data spłaty kolejnej raty" TextColor="Black" BackgroundColor="White" />
-                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding LastPay}" BackgroundColor="White"/>
-                            <Label FontSize="Medium" FontAttributes="Bold" Text="Oprocentowanie" TextColor="Black" BackgroundColor="White" />
-                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Percent}" BackgroundColor="White" />
-                            <Label FontSize="Medium" FontAttributes="Bold" Text="Suma kredytu" TextColor="Black" BackgroundColor="White" />
-                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Sum}" BackgroundColor="White"/>
+                            <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                <StackLayout>
+                                    <Label FontSize="Medium" FontAttributes="Bold" Text="Data spłaty poprzedniej raty" TextColor="White" />
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding NextPay}"  />
+                                </StackLayout>
+                            </Frame>
+                            <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                <StackLayout>
+                                    <Label FontSize="Medium" FontAttributes="Bold" Text="Data spłaty kolejnej raty" TextColor="White"  />
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding LastPay}" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                <StackLayout>
+                                    <Label FontSize="Medium" FontAttributes="Bold" Text="Oprocentowanie" TextColor="White"  />
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Percent}"  />
+                                </StackLayout>
+                            </Frame>
+                            <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                <StackLayout>
+                                    <Label FontSize="Medium" FontAttributes="Bold" Text="Suma kredytu" TextColor="White"  />
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Sum}" />
+                                </StackLayout>
+                            </Frame>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Grid.Row="6" Text="Sprawdź dostępne kredyty" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

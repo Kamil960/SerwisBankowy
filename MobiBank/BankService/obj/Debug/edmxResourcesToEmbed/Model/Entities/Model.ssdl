@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Mobile_Bank.dbo.Karta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Karta">
+    <Key>
+      <PropertyRef Name="IdKarty" />
+    </Key>
+    <Property Name="IdKarty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NrKarty" Type="nvarchar" MaxLength="16" />
+    <Property Name="Kolor" Type="nchar" MaxLength="20" />
+    <Property Name="UrlGrafika" Type="nvarchar(max)" />
+    <Property Name="CzyAktywna" Type="bit" />
+    <Property Name="Rodzaj" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumerKonta" Type="nvarchar" MaxLength="32" />
+    <Property Name="Aktywność" Type="nvarchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Kredyt">
+    <Key>
+      <PropertyRef Name="IdKredyt" />
+    </Key>
+    <Property Name="IdKredyt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oprocentowanie" Type="nchar" MaxLength="10" />
+    <Property Name="KwotaKredytu" Type="money" />
+    <Property Name="IdOferta" Type="int" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="OstatniaSpłata" Type="date" />
+    <Property Name="NastepnaSpłata" Type="date" />
+  </EntityType>
+  <EntityType Name="Lokata">
+    <Key>
+      <PropertyRef Name="IdLokata" />
+    </Key>
+    <Property Name="IdLokata" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oprocentowanie" Type="nchar" MaxLength="10" />
+    <Property Name="WkladPoczatkowy" Type="money" />
+    <Property Name="IdOferta" Type="int" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Operacje">
+    <Key>
+      <PropertyRef Name="IdOperation" />
+    </Key>
+    <Property Name="IdOperation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="32" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Value" Type="money" />
+    <Property Name="BeginingDate" Type="date" />
+    <Property Name="FinishingDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Przelew">
+    <Key>
+      <PropertyRef Name="IdPrzelew" />
+    </Key>
+    <Property Name="IdPrzelew" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NrRachunekZewnetrzny" Type="nvarchar" MaxLength="32" />
+    <Property Name="Kwota" Type="money" />
+    <Property Name="Rodzaj" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdRachunek" Type="int" />
+  </EntityType>
+  <EntityType Name="Rachunek">
+    <Key>
+      <PropertyRef Name="IdRachunek" />
+    </Key>
+    <Property Name="IdRachunek" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NrRachunek" Type="nvarchar" MaxLength="32" />
+    <Property Name="StanRachunku" Type="money" />
+    <Property Name="CzyAktywny" Type="bit" />
+    <Property Name="IdOferta" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Ubezpieczenie">
+    <Key>
+      <PropertyRef Name="IdUbezpieczenie" />
+    </Key>
+    <Property Name="IdUbezpieczenie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WartoscPolisy" Type="money" />
+    <Property Name="RodzajPolisy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skladka" Type="money" />
+    <Property Name="IdOferta" Type="int" />
+  </EntityType>
+  <EntityType Name="ZlecenieStale">
+    <Key>
+      <PropertyRef Name="IdZlecenieStale" />
+    </Key>
+    <Property Name="IdZlecenieStale" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NrRachunekZewnetrzny" Type="nvarchar" MaxLength="32" />
+    <Property Name="Kwota" Type="money" />
+    <Property Name="Rodzaj" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Okres" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdOferta" Type="int" />
+  </EntityType>
+  <Association Name="FK_Przelew_Rachunek">
+    <End Role="Rachunek" Type="Self.Rachunek" Multiplicity="0..1" />
+    <End Role="Przelew" Type="Self.Przelew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rachunek">
+        <PropertyRef Name="IdRachunek" />
+      </Principal>
+      <Dependent Role="Przelew">
+        <PropertyRef Name="IdRachunek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="MobileBankModelStoreContainer">
+    <EntitySet Name="Kredyt" EntityType="Self.Kredyt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lokata" EntityType="Self.Lokata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operacje" EntityType="Self.Operacje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Przelew" EntityType="Self.Przelew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rachunek" EntityType="Self.Rachunek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ubezpieczenie" EntityType="Self.Ubezpieczenie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZlecenieStale" EntityType="Self.ZlecenieStale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Karta" EntityType="Self.Karta" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Karta].[IdKarty] AS [IdKarty], 
+    [Karta].[NrKarty] AS [NrKarty], 
+    [Karta].[Kolor] AS [Kolor], 
+    [Karta].[UrlGrafika] AS [UrlGrafika], 
+    [Karta].[CzyAktywna] AS [CzyAktywna], 
+    [Karta].[Rodzaj] AS [Rodzaj], 
+    [Karta].[NumerKonta] AS [NumerKonta], 
+    [Karta].[Aktywność] AS [Aktywność]
+    FROM [dbo].[Karta] AS [Karta]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Przelew_Rachunek" Association="Self.FK_Przelew_Rachunek">
+      <End Role="Rachunek" EntitySet="Rachunek" />
+      <End Role="Przelew" EntitySet="Przelew" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

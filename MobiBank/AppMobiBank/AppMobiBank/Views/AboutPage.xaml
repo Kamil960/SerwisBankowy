@@ -25,11 +25,14 @@
                 <Label x:Name="Balance" Text="" TextColor="Black"  FontSize="18" Padding="10" Margin="20,0,0,0"/>
             </StackLayout>
             <Picker Grid.Row="0" x:Name="Accounts" SelectedIndexChanged="Changed" SelectedIndex="0"/>
-            <Label Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" HorizontalOptions="Center" Text="Historia Operacji" TextColor="DarkSlateGray" BackgroundColor="AliceBlue" FontAttributes="Bold" FontSize="40" VerticalOptions="Center" Margin="0,10,0,0" Padding="45,0,45,0"/>
-            <SearchBar Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" x:Name="SearchBar" SearchButtonPressed="Search" Placeholder="Wpisz dane operacji której szukasz" HorizontalOptions="End" Margin="60, 130, 60 ,0" BackgroundColor="White"/>
+            <Label Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" HorizontalOptions="Center" Text="Historia Operacji" TextColor="Black" BackgroundColor="DeepSkyBlue" FontAttributes="Bold" FontSize="40" VerticalOptions="Center" Margin="0,0,0,0" Padding="45,0,45,0"/>
+            <Label Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" HorizontalOptions="Center" Text="Historia Operacji" TextColor="White" FontAttributes="Bold" FontSize="39" VerticalOptions="Center" Margin="0,0,0,4" Padding="45,0,45,0"/>
+            <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="End" Margin="50, 117, 50 ,0">
+                <SearchBar  x:Name="SearchBar" SearchButtonPressed="Search" Placeholder="Wpisz dane operacji której szukasz" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+            </Frame>
             <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.18*"/>
                     <RowDefinition Height="0.8*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -37,34 +40,34 @@
                     <ColumnDefinition Width="1.1*"/>
                     <ColumnDefinition Width="1.3*"/>
                 </Grid.ColumnDefinitions>
-                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="DeepSkyBlue">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="70"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1.1*"/>
                             <ColumnDefinition Width="1.1*"/>
                             <ColumnDefinition Width="1.3*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0" FontSize="Large" FontAttributes="Bold" Text="Rodzaj" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                        <Label Grid.Row="0" Grid.Column="1" FontSize="Large" FontAttributes="Bold" Text="Kwota" HeightRequest="50" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                        <Label Grid.Row="0" Grid.Column="2" FontSize="Large" FontAttributes="Bold" Text="Data wykonania" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="0" Grid.Column="0" FontSize="Large" FontAttributes="Bold" Text="Rodzaj" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" FontSize="Large" FontAttributes="Bold" Text="Kwota" HeightRequest="50" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="0" Grid.Column="2" FontSize="Large" FontAttributes="Bold" Text="Data wykonania" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     </Grid>
                 </Frame>
                 <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="History">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame>
+                            <Frame BackgroundColor="DeepSkyBlue">
                                 <Grid x:DataType="models:Operation">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1.1*"/>
                                         <ColumnDefinition Width="1.1*"/>
                                         <ColumnDefinition Width="1.3*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" FontSize="Medium" Text="{Binding Type}" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                                    <Label Grid.Column="1" FontSize="Medium"  Text="{Binding Value}" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                                    <Label Grid.Column="2" FontSize="Medium"  Text="{Binding BeginingDate}" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
+                                    <Label Grid.Column="0" FontSize="Medium" Text="{Binding Type}" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
+                                    <Label Grid.Column="1" FontSize="Medium"  Text="{Binding Value}" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
+                                    <Label Grid.Column="2" FontSize="Medium"  Text="{Binding BeginingDate}" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
                                 </Grid>
                             </Frame>
                         </DataTemplate>

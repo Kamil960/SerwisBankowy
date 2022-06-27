@@ -19,7 +19,5 @@ namespace BankService.Model.Entities
         public string RodzajPolisy { get; set; }
         public Nullable<decimal> Skladka { get; set; }
         public Nullable<int> IdOferta { get; set; }
-    
-        public virtual UslugaSzczegolowa UslugaSzczegolowa { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BankData.Data.Bank.Ubezpieczenie>
 
 @{
-	ViewData["Title"] = "Oferta kont osobistych";
+	ViewData["Title"] = "Oferta ubezpieczenia";
 	<link rel="stylesheet" href="~/css/OfertaOsobista.css" asp-append-version="true" />
 }
 <p class="title">
@@ -19,6 +19,8 @@
 							<h4 class="btn-header">@Html.DisplayFor(modelItem => item.Nazwa)</h4>
 							<img class="btn-icon" src="@Html.DisplayFor(modelItem => item.Grafika)" alt="https://img.freepik.com/darmowe-wektory/kreskowka-banka-retro-budynek-lub-gmach-sadu-z-kolumny-ilustracja-odizolowywajaca-na-bielu_53562-8133.jpg" />
 							<p class="btn-description">@Html.DisplayFor(modelItem => item.Opis)</p>
+							<label class="btn-description">Liczba punktów za wybranie oferty:</label>
+							<p class="btn-description">@Html.DisplayFor(modelItem => item.LiczbaPunktow)</p>
 						</a>
 						<div class="del">
 							<a class="del-btn" asp-action="Delete" asp-route-id="@item.IdUslugaSzczegolowa">

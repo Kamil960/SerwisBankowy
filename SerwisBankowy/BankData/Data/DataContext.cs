@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using BankData.Data.Bank;
+using BankData.Data.CMS;
 
 namespace BankData.Data
 {
@@ -42,5 +43,11 @@ namespace BankData.Data
         public DbSet<BankData.Data.Bank.Lokata> Lokata { get; set; }
 
         public DbSet<BankData.Data.Bank.Ubezpieczenie> Ubezpieczenie { get; set; }
+
+        public DbSet<BankData.Data.CMS.ListaNagrod>? ListaNagrod { get; set; }
+
+        public DbSet<BankData.Data.Bank.Nagrody>? Nagrody { get; set; }
+
+        public DbSet<BankData.Data.Bank.Koszyk>? Koszyk { get; set; }
     }
 }

@@ -21,7 +21,5 @@ namespace BankService.Model.Entities
         public string Nazwa { get; set; }
         public string Okres { get; set; }
         public Nullable<int> IdOferta { get; set; }
-    
-        public virtual UslugaSzczegolowa UslugaSzczegolowa { get; set; }
     }
 }

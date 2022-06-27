@@ -24,3 +24,7 @@ C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\A
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\obj\Debug\netstandard2.1\refint\AppMobiBank.dll
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\obj\Debug\netstandard2.1\AppMobiBank.pdb
 C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\obj\Debug\netstandard2.1\ref\AppMobiBank.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\bin\Debug\netstandard2.1\BankService.dll
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\bin\Debug\netstandard2.1\BankService.pdb
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\bin\Debug\netstandard2.1\BankService.dll.config
+C:\Users\kamil\Desktop\Informatyka studia\semestr 6\Aplikacje mobilne\MobiBank\AppMobiBank\AppMobiBank\obj\Debug\netstandard2.1\AppMobiBank.csproj.CopyComplete

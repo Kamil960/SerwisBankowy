@@ -1,5 +1,4 @@
-﻿#nullable disable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,13 +22,15 @@ namespace Intranet.Controllers
         // GET: Lokata
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Lokata.ToListAsync());
+              return _context.Lokata != null ? 
+                          View(await _context.Lokata.ToListAsync()) :
+                          Problem("Entity set 'DataContext.Lokata'  is null.");
         }
 
         // GET: Lokata/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Lokata == null)
             {
                 return NotFound();
             }
@@ -55,7 +56,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna")] Lokata lokata)
+        public async Task<IActionResult> Create([Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] Lokata lokata)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +70,7 @@ namespace Intranet.Controllers
         // GET: Lokata/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Lokata == null)
             {
                 return NotFound();
             }
@@ -87,7 +88,7 @@ namespace Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna")] Lokata lokata)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUslugaSzczegolowa,IdUsluga,Nazwa,Opis,Procent,Grafika,Pozycja,CzyAktywna,LiczbaPunktow")] Lokata lokata)
         {
             if (id != lokata.IdUslugaSzczegolowa)
             {
@@ -120,7 +121,7 @@ namespace Intranet.Controllers
         // GET: Lokata/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Lokata == null)
             {
                 return NotFound();
             }
@@ -140,15 +141,23 @@ namespace Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (_context.Lokata == null)
+            {
+                return Problem("Entity set 'DataContext.Lokata'  is null.");
+            }
             var lokata = await _context.Lokata.FindAsync(id);
-            _context.Lokata.Remove(lokata);
+            if (lokata != null)
+            {
+                _context.Lokata.Remove(lokata);
+            }
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool LokataExists(int id)
         {
-            return _context.Lokata.Any(e => e.IdUslugaSzczegolowa == id);
+          return (_context.Lokata?.Any(e => e.IdUslugaSzczegolowa == id)).GetValueOrDefault();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace BankData.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.3")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -45,6 +45,9 @@ namespace BankData.Migrations
                         .IsRequired()
                         .HasMaxLength(6)
                         .HasColumnType("nvarchar(6)");
+
+                    b.Property<int>("LiczbaPunktow")
+                        .HasColumnType("int");
 
                     b.Property<string>("Login")
                         .IsRequired()
@@ -98,6 +101,9 @@ namespace BankData.Migrations
                     b.Property<int>("IdUsluga")
                         .HasColumnType("int");
 
+                    b.Property<int>("LiczbaPunktow")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nazwa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -132,6 +138,9 @@ namespace BankData.Migrations
                     b.Property<int>("IdUsluga")
                         .HasColumnType("int");
 
+                    b.Property<int>("LiczbaPunktow")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nazwa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -149,6 +158,43 @@ namespace BankData.Migrations
                     b.ToTable("KontoOsobiste");
                 });
 
+            modelBuilder.Entity("BankData.Data.Bank.Koszyk", b =>
+                {
+                    b.Property<int>("IdKoszyk")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdKoszyk"), 1L, 1);
+
+                    b.Property<bool?>("CzyAktywna")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Grafika")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdNagroda")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Ilosc")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Kategoria")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LiczbaPunktow")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nazwa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdKoszyk");
+
+                    b.ToTable("Koszyk");
+                });
+
             modelBuilder.Entity("BankData.Data.Bank.Kredyt", b =>
                 {
                     b.Property<int>("IdUslugaSzczegolowa")
@@ -164,6 +210,9 @@ namespace BankData.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdUsluga")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LiczbaPunktow")
                         .HasColumnType("int");
 
                     b.Property<string>("Nazwa")
@@ -203,6 +252,9 @@ namespace BankData.Migrations
                     b.Property<int>("IdUsluga")
                         .HasColumnType("int");
 
+                    b.Property<int>("LiczbaPunktow")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nazwa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -223,6 +275,37 @@ namespace BankData.Migrations
                     b.ToTable("Lokata");
                 });
 
+            modelBuilder.Entity("BankData.Data.Bank.Nagrody", b =>
+                {
+                    b.Property<int>("IdNagrody")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdNagrody"), 1L, 1);
+
+                    b.Property<bool?>("CzyAktywna")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Grafika")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Kategoria")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LiczbaPunktow")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nazwa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdNagrody");
+
+                    b.ToTable("Nagrody");
+                });
+
             modelBuilder.Entity("BankData.Data.Bank.Ubezpieczenie", b =>
                 {
                     b.Property<int>("IdUslugaSzczegolowa")
@@ -238,6 +321,9 @@ namespace BankData.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdUsluga")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LiczbaPunktow")
                         .HasColumnType("int");
 
                     b.Property<string>("Nazwa")
@@ -538,6 +624,26 @@ namespace BankData.Migrations
                     b.HasKey("IdKontakt");
 
                     b.ToTable("Kontakt");
+                });
+
+            modelBuilder.Entity("BankData.Data.CMS.ListaNagrod", b =>
+                {
+                    b.Property<int>("IdElementu")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdElementu"), 1L, 1);
+
+                    b.Property<string>("Nazwa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Pozycja")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdElementu");
+
+                    b.ToTable("ListaNagrod");
                 });
 
             modelBuilder.Entity("BankData.Data.CMS.ONas", b =>

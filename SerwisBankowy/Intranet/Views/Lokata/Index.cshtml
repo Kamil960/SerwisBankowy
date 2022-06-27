@@ -20,6 +20,8 @@
 							<h4 class="btn-header">@Html.DisplayFor(modelItem => item.Nazwa)</h4>
 							<div class="procent"><p>@Html.DisplayFor(modelItem => item.Procent)</p></div>							
 							<p class="btn-description">@Html.DisplayFor(modelItem => item.Opis)</p>
+							<label class="btn-description">Liczba punktów za wybranie oferty:</label>
+							<p class="btn-description">@Html.DisplayFor(modelItem => item.LiczbaPunktow)</p>
 						</a>
 						<div class="del">
 							<a class="del-btn" asp-action="Delete" asp-route-id="@item.IdUslugaSzczegolowa">

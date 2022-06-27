@@ -9,7 +9,7 @@
         <StackLayout>
             <Grid x:Name="Main">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.1*"/>
                     <RowDefinition Height="0.3*"/>
                     <RowDefinition Height="0.2*"/>
                     <RowDefinition Height="*"/>
@@ -18,37 +18,67 @@
                     <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
-                <Label Grid.Row="1" Text="Wybierz numer karty płatniczej:" VerticalTextAlignment="Start" BackgroundColor="White"/>
-                <Picker Grid.Row="1" x:Name="CardsPicker" TextColor="Black" SelectedIndexChanged="Changed"/>
-                <Label Grid.Row="2" Text="Wybrana karta płatnicza" HorizontalOptions="Center" FontSize="26" TextColor="Black"/>
-                <CollectionView Grid.Row="3" x:Name="ItemsListView" Margin="10,0,10,0">
+                <Frame  Grid.Row="1" BackgroundColor="DeepSkyBlue" CornerRadius="20" >
+                    <Label Text="Wybierz karte płatniczą:" VerticalTextAlignment="Start"/>
+                </Frame>
+                <Picker Grid.Row="1" x:Name="CardsPicker" TextColor="White" SelectedIndexChanged="Changed" />
+
+                <CollectionView Grid.Row="2" Grid.RowSpan="2" x:Name="ItemsListView" Margin="30,0,30,0">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout x:DataType="model:Card">
-                                <Label FontSize="Medium" FontAttributes="Bold" Text="Numer karty" TextColor="Black" BackgroundColor="White"/>
-                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding CardNumber}" BackgroundColor="White" />
-                                <Label FontSize="Medium" FontAttributes="Bold" Text="Rodzaj" TextColor="Black" BackgroundColor="White" />
-                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Kind}" BackgroundColor="White"/>
-                                <Label FontSize="Medium" FontAttributes="Bold" Text="Kolor" TextColor="Black" BackgroundColor="White" />
-                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Color}" BackgroundColor="White" />
-                                <Label FontSize="Medium" FontAttributes="Bold" Text="Aktywna" TextColor="Black" BackgroundColor="White" />
-                                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Activity}" BackgroundColor="White"/>
+                                <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                    <StackLayout>
+                                        <Label FontSize="Medium" FontAttributes="Bold" Text="Numer konta" TextColor="White" />
+                                        <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding AccountNumber}"  />
+                                    </StackLayout>
+                                </Frame>
+                                <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                    <StackLayout>
+                                        <Label FontSize="Medium" FontAttributes="Bold" Text="Numer karty" TextColor="White" />
+                                        <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding CardNumber}"  />
+                                    </StackLayout>
+                                </Frame>
+                                <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                    <StackLayout>
+                                        <Label FontSize="Medium" FontAttributes="Bold" Text="Rodzaj" TextColor="White"  />
+                                        <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Kind}" />
+                                    </StackLayout>
+                                </Frame>
+                                <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                    <StackLayout>
+                                        <Label FontSize="Medium" FontAttributes="Bold" Text="Kolor" TextColor="White"  />
+                                        <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Color}"  />
+                                    </StackLayout>
+                                </Frame>
+                                <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                    <StackLayout>
+                                        <Label FontSize="Medium" FontAttributes="Bold" Text="Aktywność" TextColor="White"  />
+                                        <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Activity}" />
+                                    </StackLayout>
+                                </Frame>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <Button Grid.Row="4" Text="Zastrzeż" WidthRequest="200" HeightRequest="50" Clicked="Disable" CornerRadius="10" Margin="10,0,10,0"/>
-                <Button Grid.Row="5" Text="Zamów nową" WidthRequest="200" HeightRequest="50" Clicked="AddCard" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Grid.Row="4" BorderColor="Black" BorderWidth="1" Text="Zastrzeż" WidthRequest="200" HeightRequest="50" Clicked="Disable" CornerRadius="10" Margin="10,0,10,0"/>
+                <Button Grid.Row="5" BorderColor="Black" BorderWidth="1" Text="Zamów nową" WidthRequest="200" HeightRequest="50" Clicked="AddCard" CornerRadius="10" Margin="10,0,10,0"/>
             </Grid>
-            <StackLayout x:Name="DisCard" Margin="20" IsVisible="False">
+            <StackLayout x:Name="DisCard" Margin="10,100,10,10" IsVisible="False">
+                <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
                 <Label Text="Z jakiego powodu chcesz zablokować kartę:" x:Name="title"/>
-                <RadioButton Content="Kradzież" CheckedChanged="Reson"/>
-                <RadioButton Content="Zaginięcie" CheckedChanged="Reson"/>
-                <RadioButton Content="Inne" CheckedChanged="Reson" x:Name="Other"/>
-                <Label x:Name="Other1" Text="Inne" FontSize="Medium" HorizontalOptions="Start" IsVisible="False"/>
-                <Editor x:Name="Other2" IsVisible="False"/>
-                <Button Text="Zablokuj" WidthRequest="200" HeightRequest="50" Clicked="Disactive" CornerRadius="10" Margin="10,0,10,0"/>
-                <Button Text="Anuluj" WidthRequest="200" HeightRequest="50" Clicked="Cancel" CornerRadius="10" Margin="10,0,10,0"/>
+                </Frame>
+                <Frame  BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                    <StackLayout>
+                        <RadioButton Content="Kradzież" CheckedChanged="Reson"/>
+                        <RadioButton Content="Zaginięcie" CheckedChanged="Reson"/>
+                        <RadioButton Content="Inne" CheckedChanged="Reson" x:Name="Other"/>
+                    </StackLayout>
+                </Frame>
+                <Frame x:Name="Other1" BackgroundColor="DeepSkyBlue" CornerRadius="20" IsVisible="False">
+                    <Editor x:Name="Other2"/>
+                </Frame>
+                <Button Text="Zablokuj" BorderColor="White" BorderWidth="1" WidthRequest="200" HeightRequest="50" Clicked="Disactive" CornerRadius="10" Margin="10,0,10,0"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

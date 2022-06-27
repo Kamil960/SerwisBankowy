@@ -1,0 +1,14 @@
+﻿@{
+	<link rel="stylesheet" href="~/css/gifts.css" asp-append-version="true" />
+}
+<div class="gifts-main-section">
+	<h2>Nagroda Główna</h2>
+	<div class="gift-section">
+		<img src="@ViewBag.Nagrody.Grafika"/>
+		<div class="gift-description-section">
+			<p>@ViewBag.Nagrody.Nazwa</p>
+			<label>Koszt: @ViewBag.Nagrody.LiczbaPunktow pkt</label>
+			<a asp-action="Wybierz" asp-controller="Gifts" asp-route-id="@ViewBag.Nagrody.IdNagrody">Wybierz</a>
+		</div>
+	</div>
+</div>

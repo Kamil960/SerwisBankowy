@@ -1,8 +1,8 @@
 ﻿@model BankData.Data.Bank.KontoFirmowe
 
 @{
-    ViewData["Title"] = "Create";
-<link rel="stylesheet" href="~/css/edit-list-style.css" asp-append-version="true"/>
+	ViewData["Title"] = "Create";
+	<link rel="stylesheet" href="~/css/edit-list-style.css" asp-append-version="true" />
 }
 
 <h1>Dodawanie oferty dla Konta Firmowego</h1>
@@ -22,7 +22,7 @@
 						</div>
 						<div class="form-group">
 							<label asp-for="Opis" class="control-label"></label>
-							<input class="form-control-desc" asp-for="Opis"/>
+							<input class="form-control-desc" asp-for="Opis" />
 							<span asp-validation-for="Opis" class="text-danger"></span>
 						</div>
 						<div class="form-group">
@@ -42,6 +42,8 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}
 

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Główna</title>
+	<link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" asp-append-version="true">
+	<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+	<link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i">
+</head>
+<body class="main-body">
+	<header class="main-header">
+
+		<a href="@Url.Action("Index", "Home")" class="pbk"><img class="logo-icon" src="https://i.ibb.co/Hzr0xc1/logo.png" alt=""></a>
+		<div class="log-icons-field">
+			<a href="https://www.facebooke.com"><img class="log-icon" src="https://i.ibb.co/Xy3v8hW/fb.png" alt=""></a>
+			<a href="https://www.twitter.com"><img class="log-icon" src="https://i.ibb.co/gm02yQq/tw.png" alt=""></a>
+			<a href="https://www.instagram.com/"><img class="log-icon" src="https://i.ibb.co/mBtnhVb/inst.png" alt=""></a>
+			<a href="https://www.linkedin.com"><img class="log-icon" src="https://i.ibb.co/CQ1CXYq/link.png" alt=""></a>
+		</div>
+	</header>
+	@RenderBody()
+	<footer>
+		<div class="tit-foot">
+			
+			<label class="f-text">Copyright 2022</label>
+			<image class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png"></image>
+		</div>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

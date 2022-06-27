@@ -8,27 +8,33 @@ using System.Web;
 namespace BankService.ViewModel
 {
     [DataContract]
-    public class OfferForView
+    public class OperationForView
     {
         #region Properties
         [DataMember]
-        public int IdOffer { get; set; }
+        public int IdOperation { get; set; }
         [DataMember]
-        public int IdAccount { get; set; }
+        public string AccountNumber { get; set; }
         [DataMember]
         public bool? IsActive { get; set; }
         [DataMember]
         public DateTime? BeginingDate { get; set; }
         [DataMember]
-        public DateTime? FinishDate { get; set; }
+        public DateTime? FinishingDate { get; set; }
+        [DataMember]
+        public string Type { get; set; }
+        [DataMember]
+        public decimal? Value { get; set; }
 
-        public OfferForView(UslugaSzczegolowa offer)
+        public OperationForView(Operacje offer)
         {
-            IdOffer = offer.IdOferta;
-            IdAccount = offer.IdRachunek;
-            IsActive = offer.CzyAktywna;
-            BeginingDate = offer.DataRozpoczecia;
-            FinishDate = offer.DataZakonczenia;
+            IdOperation = offer.IdOperation;
+            AccountNumber = offer.AccountNumber;
+            IsActive = offer.IsActive;
+            BeginingDate = offer.BeginingDate;
+            FinishingDate = offer.FinishingDate;
+            Type = offer.Type;
+            Value = offer.Value;
 
         }
         #endregion

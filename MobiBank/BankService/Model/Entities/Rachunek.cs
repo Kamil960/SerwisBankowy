@@ -18,7 +18,6 @@ namespace BankService.Model.Entities
         public Rachunek()
         {
             this.Przelew = new HashSet<Przelew>();
-            this.UslugaSzczegolowa1 = new HashSet<UslugaSzczegolowa>();
         }
     
         public int IdRachunek { get; set; }
@@ -29,8 +28,5 @@ namespace BankService.Model.Entities
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Przelew> Przelew { get; set; }
-        public virtual UslugaSzczegolowa UslugaSzczegolowa { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UslugaSzczegolowa> UslugaSzczegolowa1 { get; set; }
     }
 }

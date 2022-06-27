@@ -12,7 +12,7 @@ namespace AppMobiBank
         public App()
         {
             InitializeComponent();
-
+            MainPage = new AppShell();
             DependencyService.Register<MockDataStore>();
             DependencyService.Register<CardDataStore>();
             DependencyService.Register<DepositDataStore>();
@@ -23,7 +23,7 @@ namespace AppMobiBank
             DependencyService.Register<PermamentTransferDataStore>();
             DependencyService.Register<OperationDataStore>();
             DependencyService.Register<BankServiceReference.BankServiceClient>();
-            MainPage = new AppShell();
+
         }
 
         protected override void OnStart()

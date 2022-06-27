@@ -10,17 +10,19 @@ using Xamarin.Forms;
 
 namespace AppMobiBank.ViewModels
 {
-    public class NewCardViewModel : CardViewModel
+    public class NewCardViewModel : ItemViewModel<Card>
     {
-        public Command AddItemCommand { get; }
+        public Command AddCardCommand { get; }
         public Command GetLastId { get; }
         public Card card;
         public NewCardViewModel():base()
         {
             Title = "Dodaj karte płatnicza";
-            AddItemCommand = new Command(AddItem);
-            this.PropertyChanged +=
-                (_, __) => AddItemCommand.ChangeCanExecute();
+            AddCardCommand = new Command(async () => await AddOperationExecute(SelectedItem));
+        }
+        public async Task AddOperationExecute(Card item)
+        {
+            await DataStore.AddItemAsync(item);
         }
     }
 }

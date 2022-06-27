@@ -16,23 +16,37 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Grid.RowSpan="7" x:Name="background" Aspect="AspectFill"/>
-            <Label Grid.Row="1" Text="Twoje ubezpieczenia:" VerticalTextAlignment="Start" BackgroundColor="White"/>
-            <Picker Grid.Row="1" x:Name="InsurencesPicker" SelectedIndexChanged="Changed" TextColor="Black" />
-            <Label Grid.Row="2" x:Name="H2" Text="Wybrana polisa należy do rachunku o numerze:" HorizontalOptions="Center" FontSize="16" TextColor="Black" BackgroundColor="White"/>
-            <Label Grid.Row="3" x:Name="AccNumber" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="Black" BackgroundColor="White"/>
+            <Frame Grid.Row="1" BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                <Label  Text="Twoje ubezpieczenia:" VerticalTextAlignment="Start" TextColor="White" BackgroundColor="DeepSkyBlue" />
+            </Frame>
+            <Picker Grid.Row="1" x:Name="InsurencesPicker" SelectedIndexChanged="Changed" TextColor="White" FontAttributes="Bold"/>
+            <Frame Grid.Row="2" Grid.RowSpan="2" BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                <StackLayout  BackgroundColor="DeepSkyBlue">
+                    <Label x:Name="H2" Text="Polisa powiązana z rachunkiem o numerze:" HorizontalOptions="Center" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+                    <Label x:Name="AccNumber" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                </StackLayout>
+            </Frame>
             <CollectionView Grid.Row="5" x:Name="InsurenceListView" Margin="10,0,10,0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout x:DataType="model:Insurence">
-                            <Label FontSize="Medium" FontAttributes="Bold" Text="Wartość polisy ubezpieczeniowej" TextColor="Black" BackgroundColor="White"/>
-                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Value}" BackgroundColor="White" />
-                            <Label FontSize="Medium" FontAttributes="Bold" Text="Składka" TextColor="Black" BackgroundColor="White" />
-                            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Price}" BackgroundColor="White"/>
+                            <Frame BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                <StackLayout>
+                                    <Label FontSize="Medium" FontAttributes="Bold" Text="Wartość polisy ubezpieczeniowej" TextColor="White"/>
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Value}"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame BackgroundColor="DeepSkyBlue" CornerRadius="20">
+                                <StackLayout>
+                                    <Label FontSize="Medium" FontAttributes="Bold" Text="Składka" TextColor="White" />
+                                    <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="{Binding Price}" />
+                                </StackLayout>
+                            </Frame>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Grid.Row="6" Text="Sprawdź dostępne ubezpieczenia" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>
+            <!--<Button Grid.Row="6" Text="Sprawdź dostępne ubezpieczenia" WidthRequest="200" HeightRequest="50" Clicked="CheckOffers" CornerRadius="10" Margin="10,0,10,0"/>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

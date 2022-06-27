@@ -1,0 +1,202 @@
+﻿.gifts-main-section {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    opacity: 0.8;
+    margin: 5%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+h2 {
+    font-size: 50px;
+}
+ul{
+    margin-right: 35px;
+}
+/*Sekcja listy nagród*/
+.ul-section {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.li-section {
+    display: flex;
+    padding: 2%;
+    border: solid 3px black;
+    margin: 1%;
+}
+
+    .li-section img {
+        width: 400px;
+        height: 300px;
+        border: 1px solid black;
+        opacity: 1.5;
+    }
+
+.description-section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-content:center;
+}
+
+.description-section p {
+    font-family: Rockwell;
+    font-size: 22px;
+}
+
+    .description-section label {
+        font-weight: bold;
+        font-size: 26px;
+        margin-top: 10%;
+    }
+
+.description-section a {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+    .description-section a:hover {
+        background-color: black;
+        color: white;
+    }
+/*Sekcja nagrody głównej*/
+.gift-section img {
+    width: 300px;
+    height: 450px;
+    border: 2px solid black;
+    opacity: 1.5;
+}
+
+.gift-section {
+    display: flex;
+}
+
+    .gift-section img {
+        width: 30%;
+        height: 30%;
+        border: 2px solid black;
+        opacity: 1.5;
+    }
+
+.gift-description-section {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+    .gift-description-section p {
+        font-family: Rockwell;
+        font-size: 24px;
+    }
+
+    .gift-description-section label {
+        margin-top: 10%;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .gift-description-section a {
+        margin-top: 10%;
+        text-decoration: none;
+        color: black;
+        font-size: 22px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+        .gift-description-section a:hover {
+            background-color: black;
+            color: white;
+        }
+/*Sekcja koszyk*/
+.basket {
+    position: absolute;
+    top: -10px;
+    z-index: 1000;
+    border-radius: 50%;
+    border: solid 1px black;
+}
+.basket img{
+    height:80px;
+    border-radius: 20px;
+}
+    .basket img:hover {
+        border-radius: 50%;
+        border: solid 2px white;
+    }
+.ul-basket-section {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+}
+
+.li-basket-section {
+    display: flex;
+    margin: 2%;
+    width: 90%;
+}
+
+    .li-basket-section>img {
+        min-width: 200px !important;
+        height: 150px !important;
+        border: solid 1px black;
+        margin-right: 10%;
+    }
+
+    .li-basket-section p {
+        font-size: 26px;
+        width: 40%;
+        align-self: center;
+        margin-top: 10px;
+    }
+
+    .li-basket-section label {
+        font-size: 30px;
+        font-weight: bold;
+        width: 100%;
+        align-self: center;
+    }
+
+.button-basket {
+    width: 40px !important;
+    height: 40px;
+    border-radius: 50%;
+    align-self: center;
+}
+
+    .button-basket img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+        .button-basket img:hover {
+            border: solid 3px black;
+        }
+.last-button-basket {
+    width: 30%;
+    margin-left: 35%;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+    .last-button-basket:hover {
+        background-color: black;
+        color: white;
+    }
+.points {
+    color: white;
+    text-align: end;
+    margin-right: 7%;
+}

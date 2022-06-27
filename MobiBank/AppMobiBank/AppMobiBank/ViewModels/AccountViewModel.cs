@@ -10,15 +10,15 @@ namespace AppMobiBank.ViewModels
     public class AccountViewModel : ItemViewModel<Account>
     {
         public Command UpdateBalanceCommand;
-        public decimal value { get; set; }
+        public decimal cash { get; set; }
         public Account account;
         public AccountViewModel():base()
         {
-            UpdateBalanceCommand = new Command(async () => await UpdateBalance(account, value));
+            UpdateBalanceCommand = new Command(async () => await UpdateBalance(account, cash));
         }
         public async Task UpdateBalance(Account acc, decimal money)
         {
-            acc.AccountBalance = acc.AccountBalance + money;
+            acc.AccountBalance = acc.AccountBalance - money;
             await DataStore.UpdateItemAsync(acc);
         }
     }

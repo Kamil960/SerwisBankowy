@@ -14,28 +14,26 @@ namespace AppMobiBank.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CardPage : ContentPage
     {
-        CardViewModel _viewModel;
-        OperationViewModel _operation;
+        CardViewModel _cards;
+
         public CardPage()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new CardViewModel();
-            _operation = new OperationViewModel();
-            background.Source = new Uri("https://cdn.wallpapersafari.com/47/41/x2RTiN.jpg");
+            BindingContext = _cards = new CardViewModel();
+            background.Source = new Uri("https://cdn.galleries.smcloud.net/t/galleries/gf-w6Jh-L3h7-HFiz_czerwone-pomarancze-z-sycylii-co-to-za-odmiana-jak-je-wykorzystac-664x442-nocrop.jpg");
 
         }
         protected override void OnAppearing()
         {
-            _viewModel.LoadItemsCommand.Execute(true);
-            _operation.LoadItemsCommand.Execute(true);
-            CardsPicker.ItemsSource = _viewModel.Items.Select((Card c) => c.CardNumber).ToList();
+            _cards.LoadItemsCommand.Execute(true);
+            CardsPicker.ItemsSource = _cards.Items.Select((Card c) => c.CardNumber).ToList();
             CardsPicker.SelectedIndex = 0;
-            ItemsListView.ItemsSource = _viewModel.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);         
+            ItemsListView.ItemsSource = _cards.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);         
         }
         private void Changed(object sender, EventArgs e)
         {
             ItemsListView.ItemsSource = null;
-            ItemsListView.ItemsSource = _viewModel.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);
+            ItemsListView.ItemsSource = _cards.Items.Where((Card c) => c.CardNumber == CardsPicker.SelectedItem);
         }
 
         private void Disable(object sender, EventArgs e)
@@ -66,9 +64,9 @@ namespace AppMobiBank.Views
         private void Disactive(object sender, EventArgs e)
         {
 
-            _viewModel.SelectedItem = SelectedCard();
-            if (_viewModel.SelectedItem != null)
-                _viewModel.DisCardCommand.Execute(_viewModel.SelectedItem);
+            _cards.SelectedItem = SelectedCard();
+            if (_cards.SelectedItem != null)
+                _cards.DisCardCommand.Execute(_cards.SelectedItem);
             DisCard.IsVisible = false;
             Main.IsVisible = true;
         }
@@ -82,24 +80,13 @@ namespace AppMobiBank.Views
         private Card SelectedCard()
         {
             var card = (
-            from c in _viewModel.Items
+            from c in _cards.Items
             where c.CardNumber == CardsPicker.SelectedItem
             select c
             ).First();
             return card;
         }
-        private Operation AddCardOperation()
-        {
-            Operation op = new Operation
-            {
-                IdOperation = _operation.Items.Select(x => x.IdOperation).Last() + 1,
-                AccountNumber = SelectedCard().AccountNumber,
-                Type = "dodanie karty płatniczej",
-                FinishDate = DateTime.Now,
-                IsActive = true
-            };
-            return op;
-        }
+
         #endregion
     }
 }

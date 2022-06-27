@@ -78,25 +78,25 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="Logowanie" Icon="icon_about.png">
+    <FlyoutItem Title="Logowanie" >
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Historia płatności" Icon="icon_about.png">
+    <FlyoutItem Title="Historia płatności">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Przelew" Icon="icon_about.png">
+    <FlyoutItem Title="Przelew" >
         <ShellContent Route="TransferPage" ContentTemplate="{DataTemplate local:TransferPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Karty płatnicze" Icon="icon_about.png">
+    <FlyoutItem Title="Karty płatnicze" >
         <ShellContent Route="CardPage" ContentTemplate="{DataTemplate local:CardPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Kredyty" Icon="icon_about.png">
+    <FlyoutItem Title="Kredyty" >
         <ShellContent Route="LoanPage" ContentTemplate="{DataTemplate local:LoanPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Lokaty" Icon="icon_about.png">
+    <FlyoutItem Title="Lokaty" >
         <ShellContent Route="DepositPage" ContentTemplate="{DataTemplate local:DepositPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Ubezpieczenia" Icon="shield.png">
+    <FlyoutItem Title="Ubezpieczenia" >
         <ShellContent Route="InsurencePage" ContentTemplate="{DataTemplate local:InsurencePage}" />
     </FlyoutItem>
 

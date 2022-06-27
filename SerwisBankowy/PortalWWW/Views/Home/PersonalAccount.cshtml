@@ -7,18 +7,20 @@
 <p class="title">
 	<label>Oferta Kont Osobistych</label>
 </p>
+
+<p class="info"> @ViewBag.Info</p>
 <div class="field">
 	<div class="conteiner">
 		<div class="row row-cols-1 row-cols-md-3">
 			@foreach (var item in Model)
 			{
-				<div class="col">
-						<div class="card">
-							<h4 class="btn-header">@item.Nazwa</h4>
-							<img class="btn-icon" src="@item.Grafika" />
-							<p class="btn-description">@item.Opis)</p>
-						</div>
+				<a href="@Url.Action("WybierzKonto","Home", @item)" class="col">
+					<div class="card">
+						<h4 class="btn-header">@item.Nazwa</h4>
+						<img class="btn-icon" src="@item.Grafika" />
+						<p class="btn-description">@item.Opis)</p>
 					</div>
+				</a>
 			}
 		</div>
 	</div>

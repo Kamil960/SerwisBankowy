@@ -29,12 +29,13 @@
                         <Label Text="Przelew stały"/>
                     </StackLayout>
                     <StackLayout x:Name="FieldsPT"  IsVisible="False">
-                        <Entry x:Name="Frecuency" Placeholder="Co ile dni przelew ma zostać powtórzony?" Style="{Binding TransferEntry}" />
+                        <Entry x:Name="Days" Placeholder="Co ile dni przelew ma zostać powtórzony?" Unfocused="ValidationDays" Style="{Binding TransferEntry}" />
                         <Label x:Name="DaysValidated" Text="To pole musi zostać uzupełnione" TextColor="Red" IsVisible="false" />
                         <Label Text="Wybierz date zakończenia cyku przelewów:"/>
                         <DatePicker x:Name="LastTerm"/>
                     </StackLayout>
-                    <Button Text="Wyślij" WidthRequest="200" HeightRequest="50" CornerRadius="10" Clicked="Send"/>
+                    <Button Text="Wyślij" BorderColor="Black" BorderWidth="1" WidthRequest="200" HeightRequest="50" CornerRadius="10" Clicked="Send"/>
+                    <Label x:Name="Info" Text="" TextColor="Red" IsVisible="false" />
                 </StackLayout>
             </Frame>
         </Grid>

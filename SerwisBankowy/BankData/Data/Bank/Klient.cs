@@ -57,6 +57,7 @@ namespace BankData.Data.Bank
         [MaxLength(9, ErrorMessage = "Musi zawierać 9 znaków")]
         [MinLength(9, ErrorMessage = "Musi zawierać 9 znaków")]
         public string NrDokumentu { get; set; }
+        public int LiczbaPunktow { get; set; }
         public bool? CzyAktywny { get; set; }
     }
 }

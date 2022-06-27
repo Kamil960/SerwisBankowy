@@ -178,19 +178,36 @@ namespace BankServiceReference
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OfferForView", Namespace="http://schemas.datacontract.org/2004/07/BankService.ViewModel")]
-    public partial class OfferForView : object
+    [System.Runtime.Serialization.DataContractAttribute(Name="OperationForView", Namespace="http://schemas.datacontract.org/2004/07/BankService.ViewModel")]
+    public partial class OperationForView : object
     {
+        
+        private string AccountNumberField;
         
         private System.Nullable<System.DateTime> BeginingDateField;
         
-        private System.Nullable<System.DateTime> FinishDateField;
+        private System.Nullable<System.DateTime> FinishingDateField;
         
-        private int IdAccountField;
-        
-        private int IdOfferField;
+        private int IdOperationField;
         
         private System.Nullable<bool> IsActiveField;
+        
+        private string TypeField;
+        
+        private System.Nullable<decimal> ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AccountNumber
+        {
+            get
+            {
+                return this.AccountNumberField;
+            }
+            set
+            {
+                this.AccountNumberField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> BeginingDate
@@ -206,41 +223,28 @@ namespace BankServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FinishDate
+        public System.Nullable<System.DateTime> FinishingDate
         {
             get
             {
-                return this.FinishDateField;
+                return this.FinishingDateField;
             }
             set
             {
-                this.FinishDateField = value;
+                this.FinishingDateField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdAccount
+        public int IdOperation
         {
             get
             {
-                return this.IdAccountField;
+                return this.IdOperationField;
             }
             set
             {
-                this.IdAccountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdOffer
-        {
-            get
-            {
-                return this.IdOfferField;
-            }
-            set
-            {
-                this.IdOfferField = value;
+                this.IdOperationField = value;
             }
         }
         
@@ -254,6 +258,32 @@ namespace BankServiceReference
             set
             {
                 this.IsActiveField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type
+        {
+            get
+            {
+                return this.TypeField;
+            }
+            set
+            {
+                this.TypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> Value
+        {
+            get
+            {
+                return this.ValueField;
+            }
+            set
+            {
+                this.ValueField = value;
             }
         }
     }
@@ -435,15 +465,47 @@ namespace BankServiceReference
     public partial class CardForView : object
     {
         
+        private string AccountNumberField;
+        
+        private string ActivityField;
+        
         private string CardNumberField;
         
         private string ColorField;
         
         private int IdCardField;
         
+        private System.Nullable<bool> IsActiveField;
+        
         private string KindField;
         
         private string UrlGraficField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AccountNumber
+        {
+            get
+            {
+                return this.AccountNumberField;
+            }
+            set
+            {
+                this.AccountNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Activity
+        {
+            get
+            {
+                return this.ActivityField;
+            }
+            set
+            {
+                this.ActivityField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CardNumber
@@ -481,6 +543,19 @@ namespace BankServiceReference
             set
             {
                 this.IdCardField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsActive
+        {
+            get
+            {
+                return this.IsActiveField;
+            }
+            set
+            {
+                this.IsActiveField = value;
             }
         }
         
@@ -610,17 +685,17 @@ namespace BankServiceReference
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetPTForViews", ReplyAction="http://tempuri.org/IBankService/GetPTForViewsResponse")]
         System.Threading.Tasks.Task<BankServiceReference.GetPTForViewsResponse> GetPTForViewsAsync(BankServiceReference.GetPTForViewsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOfferForViews", ReplyAction="http://tempuri.org/IBankService/GetOfferForViewsResponse")]
-        BankServiceReference.GetOfferForViewsResponse GetOfferForViews(BankServiceReference.GetOfferForViewsRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOperationForViews", ReplyAction="http://tempuri.org/IBankService/GetOperationForViewsResponse")]
+        BankServiceReference.GetOperationForViewsResponse GetOperationForViews(BankServiceReference.GetOperationForViewsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOfferForViews", ReplyAction="http://tempuri.org/IBankService/GetOfferForViewsResponse")]
-        System.Threading.Tasks.Task<BankServiceReference.GetOfferForViewsResponse> GetOfferForViewsAsync(BankServiceReference.GetOfferForViewsRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOperationForViews", ReplyAction="http://tempuri.org/IBankService/GetOperationForViewsResponse")]
+        System.Threading.Tasks.Task<BankServiceReference.GetOperationForViewsResponse> GetOperationForViewsAsync(BankServiceReference.GetOperationForViewsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOfferByDate", ReplyAction="http://tempuri.org/IBankService/GetOfferByDateResponse")]
-        BankServiceReference.GetOfferByDateResponse GetOfferByDate(BankServiceReference.GetOfferByDateRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOperationByDate", ReplyAction="http://tempuri.org/IBankService/GetOperationByDateResponse")]
+        BankServiceReference.GetOperationByDateResponse GetOperationByDate(BankServiceReference.GetOperationByDateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOfferByDate", ReplyAction="http://tempuri.org/IBankService/GetOfferByDateResponse")]
-        System.Threading.Tasks.Task<BankServiceReference.GetOfferByDateResponse> GetOfferByDateAsync(BankServiceReference.GetOfferByDateRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetOperationByDate", ReplyAction="http://tempuri.org/IBankService/GetOperationByDateResponse")]
+        System.Threading.Tasks.Task<BankServiceReference.GetOperationByDateResponse> GetOperationByDateAsync(BankServiceReference.GetOperationByDateRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBankService/GetLoanForView", ReplyAction="http://tempuri.org/IBankService/GetLoanForViewResponse")]
         BankServiceReference.GetLoanForViewResponse GetLoanForView(BankServiceReference.GetLoanForViewRequest request);
@@ -715,61 +790,61 @@ namespace BankServiceReference
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOfferForViews", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class GetOfferForViewsRequest
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOperationForViews", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetOperationForViewsRequest
     {
         
-        public GetOfferForViewsRequest()
+        public GetOperationForViewsRequest()
         {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOfferForViewsResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class GetOfferForViewsResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOperationForViewsResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetOperationForViewsResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.Collections.Generic.List<BankServiceReference.OfferForView> GetOfferForViewsResult;
+        public System.Collections.Generic.List<BankServiceReference.OperationForView> GetOperationForViewsResult;
         
-        public GetOfferForViewsResponse()
+        public GetOperationForViewsResponse()
         {
         }
         
-        public GetOfferForViewsResponse(System.Collections.Generic.List<BankServiceReference.OfferForView> GetOfferForViewsResult)
+        public GetOperationForViewsResponse(System.Collections.Generic.List<BankServiceReference.OperationForView> GetOperationForViewsResult)
         {
-            this.GetOfferForViewsResult = GetOfferForViewsResult;
+            this.GetOperationForViewsResult = GetOperationForViewsResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOfferByDate", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class GetOfferByDateRequest
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOperationByDate", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetOperationByDateRequest
     {
         
-        public GetOfferByDateRequest()
+        public GetOperationByDateRequest()
         {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOfferByDateResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class GetOfferByDateResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOperationByDateResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetOperationByDateResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.Collections.Generic.List<BankServiceReference.OfferForView> GetOfferByDateResult;
+        public System.Collections.Generic.List<BankServiceReference.OperationForView> GetOperationByDateResult;
         
-        public GetOfferByDateResponse()
+        public GetOperationByDateResponse()
         {
         }
         
-        public GetOfferByDateResponse(System.Collections.Generic.List<BankServiceReference.OfferForView> GetOfferByDateResult)
+        public GetOperationByDateResponse(System.Collections.Generic.List<BankServiceReference.OperationForView> GetOperationByDateResult)
         {
-            this.GetOfferByDateResult = GetOfferByDateResult;
+            this.GetOperationByDateResult = GetOperationByDateResult;
         }
     }
     
@@ -993,24 +1068,24 @@ namespace BankServiceReference
             return base.Channel.GetPTForViewsAsync(request);
         }
         
-        public BankServiceReference.GetOfferForViewsResponse GetOfferForViews(BankServiceReference.GetOfferForViewsRequest request)
+        public BankServiceReference.GetOperationForViewsResponse GetOperationForViews(BankServiceReference.GetOperationForViewsRequest request)
         {
-            return base.Channel.GetOfferForViews(request);
+            return base.Channel.GetOperationForViews(request);
         }
         
-        public System.Threading.Tasks.Task<BankServiceReference.GetOfferForViewsResponse> GetOfferForViewsAsync(BankServiceReference.GetOfferForViewsRequest request)
+        public System.Threading.Tasks.Task<BankServiceReference.GetOperationForViewsResponse> GetOperationForViewsAsync(BankServiceReference.GetOperationForViewsRequest request)
         {
-            return base.Channel.GetOfferForViewsAsync(request);
+            return base.Channel.GetOperationForViewsAsync(request);
         }
         
-        public BankServiceReference.GetOfferByDateResponse GetOfferByDate(BankServiceReference.GetOfferByDateRequest request)
+        public BankServiceReference.GetOperationByDateResponse GetOperationByDate(BankServiceReference.GetOperationByDateRequest request)
         {
-            return base.Channel.GetOfferByDate(request);
+            return base.Channel.GetOperationByDate(request);
         }
         
-        public System.Threading.Tasks.Task<BankServiceReference.GetOfferByDateResponse> GetOfferByDateAsync(BankServiceReference.GetOfferByDateRequest request)
+        public System.Threading.Tasks.Task<BankServiceReference.GetOperationByDateResponse> GetOperationByDateAsync(BankServiceReference.GetOperationByDateRequest request)
         {
-            return base.Channel.GetOfferByDateAsync(request);
+            return base.Channel.GetOperationByDateAsync(request);
         }
         
         public BankServiceReference.GetLoanForViewResponse GetLoanForView(BankServiceReference.GetLoanForViewRequest request)
@@ -1091,7 +1166,7 @@ namespace BankServiceReference
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IBankService))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:64946/BankService.svc");
+                return new System.ServiceModel.EndpointAddress("http://localhost/BankService/BankService.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

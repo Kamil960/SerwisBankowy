@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kredyt">
+    <Key>
+      <PropertyRef Name="IdKredyt" />
+    </Key>
+    <Property Name="IdKredyt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Oprocentowanie" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="KwotaKredytu" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IdOferta" Type="Int32" />
+    <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OstatniaSpłata" Type="DateTime" Precision="0" />
+    <Property Name="NastepnaSpłata" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Lokata">
+    <Key>
+      <PropertyRef Name="IdLokata" />
+    </Key>
+    <Property Name="IdLokata" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Oprocentowanie" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="WkladPoczatkowy" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IdOferta" Type="Int32" />
+    <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Operacje">
+    <Key>
+      <PropertyRef Name="IdOperation" />
+    </Key>
+    <Property Name="IdOperation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BeginingDate" Type="DateTime" Precision="0" />
+    <Property Name="FinishingDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Przelew">
+    <Key>
+      <PropertyRef Name="IdPrzelew" />
+    </Key>
+    <Property Name="IdPrzelew" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NrRachunekZewnetrzny" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Kwota" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Rodzaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdRachunek" Type="Int32" />
+    <NavigationProperty Name="Rachunek" Relationship="Self.FK_Przelew_Rachunek" FromRole="Przelew" ToRole="Rachunek" />
+  </EntityType>
+  <EntityType Name="Rachunek">
+    <Key>
+      <PropertyRef Name="IdRachunek" />
+    </Key>
+    <Property Name="IdRachunek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NrRachunek" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="StanRachunku" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CzyAktywny" Type="Boolean" />
+    <Property Name="IdOferta" Type="Int32" />
+    <NavigationProperty Name="Przelew" Relationship="Self.FK_Przelew_Rachunek" FromRole="Rachunek" ToRole="Przelew" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ubezpieczenie">
+    <Key>
+      <PropertyRef Name="IdUbezpieczenie" />
+    </Key>
+    <Property Name="IdUbezpieczenie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WartoscPolisy" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RodzajPolisy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Skladka" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IdOferta" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ZlecenieStale">
+    <Key>
+      <PropertyRef Name="IdZlecenieStale" />
+    </Key>
+    <Property Name="IdZlecenieStale" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NrRachunekZewnetrzny" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Kwota" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Rodzaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Okres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdOferta" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Karta">
+    <Key>
+      <PropertyRef Name="IdKarty" />
+    </Key>
+    <Property Name="IdKarty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NrKarty" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Kolor" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="UrlGrafika" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CzyAktywna" Type="Boolean" />
+    <Property Name="Rodzaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumerKonta" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Aktywność" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Przelew_Rachunek">
+    <End Role="Rachunek" Type="Self.Rachunek" Multiplicity="0..1" />
+    <End Role="Przelew" Type="Self.Przelew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rachunek">
+        <PropertyRef Name="IdRachunek" />
+      </Principal>
+      <Dependent Role="Przelew">
+        <PropertyRef Name="IdRachunek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kredyt" EntityType="Self.Kredyt" />
+    <EntitySet Name="Lokata" EntityType="Self.Lokata" />
+    <EntitySet Name="Operacje" EntityType="Self.Operacje" />
+    <EntitySet Name="Przelew" EntityType="Self.Przelew" />
+    <EntitySet Name="Rachunek" EntityType="Self.Rachunek" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Ubezpieczenie" EntityType="Self.Ubezpieczenie" />
+    <EntitySet Name="ZlecenieStale" EntityType="Self.ZlecenieStale" />
+    <EntitySet Name="Karta" EntityType="Self.Karta" />
+    <AssociationSet Name="FK_Przelew_Rachunek" Association="Self.FK_Przelew_Rachunek">
+      <End Role="Rachunek" EntitySet="Rachunek" />
+      <End Role="Przelew" EntitySet="Przelew" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MobileBankModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MobileBankModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

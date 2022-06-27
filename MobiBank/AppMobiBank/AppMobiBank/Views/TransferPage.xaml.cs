@@ -50,14 +50,16 @@ namespace AppMobiBank.Views
 
         private void Send(object sender, EventArgs e)
         {
-            int filledFieldsCounter = 0;
-            foreach (Label info in entryStack.Children.OfType<Label>())
+            //int filledFieldsCounter = 0;
+            //foreach (Label info in entryStack.Children.OfType<Label>())
+            //{
+            //    if (info.IsVisible == false)
+            //        filledFieldsCounter++;
+            //}
+            //if(filledFieldsCounter == entryStack.Children.OfType<Label>().Count())
+            if(IsEveryEntryFilled())
             {
-                if (info.IsVisible == false)
-                    filledFieldsCounter++;
-            }
-            if(filledFieldsCounter == entryStack.Children.OfType<Label>().Count())
-            {
+                _account.cash = Decimal.Parse(Money.Text);
                 var operation = AddTransferOperation();
                 var transfer = AddTransfer(operation.IdOperation);
                 if (CheckPT.IsChecked)
@@ -66,61 +68,142 @@ namespace AppMobiBank.Views
                     operation.Type = "przelew stały";
                     _permamentTransfer.AddItemCommand.Execute(pt);
                 }
-                _operation.AddItemCommand.Execute(operation);
-                _transfer.AddItemCommand.Execute(transfer);
-                _account.value = Decimal.Parse(Money.Text);
                 _account.account = _account.Items.Where((Account a) => a.AccountNumber == Accounts.SelectedItem).First();
-                _account.UpdateBalanceCommand.Execute(true);
-                Application.Current.MainPage.Navigation.PopAsync();
-                Application.Current.MainPage.Navigation.PushAsync(new AboutPage(), true);
+                if (_account.account.AccountBalance > _account.cash)
+                {
+                    _operation.AddItemCommand.Execute(operation);
+                    _transfer.AddItemCommand.Execute(transfer);
+                    _account.UpdateBalanceCommand.Execute(true);
+                    foreach (Entry entry in entryStack.Children.OfType<Entry>())
+                        entry.Text = "";
+                    Application.Current.MainPage.Navigation.PopAsync();
+                    Application.Current.MainPage.Navigation.PushAsync(new AboutPage(), true);
+                }
+                else
+                {
+                    foreach (Entry entry in entryStack.Children.OfType<Entry>())
+                        entry.Text = "";
+                    Info.IsVisible = true;
+                    Info.Text = "Przelew nie może zostać zrealizowany brak środków na koncie";
+                }                    
+            }
+            else
+            {
+                Info.IsVisible = true;
+                Info.Text = "Uzupełnij wszystkie pola wymagane do zrealizowania przelewu";
             }
         }
 
         private void ValidationForeignNumber(object sender, FocusEventArgs e)
         {
-            if (!Regex.Match(ForeignNumber.Text, "^[0-9]{12}").Success)
-            {
-                ForeignNumberValidated.Text = "Numer konta powinien zawierać 12 cyfr";
-                ForeignNumberValidated.IsVisible = true;
-            }
+            //if (ForeignNumber.Text != "")
+            //{
+            //    if (ForeignNumber.Text.Length != 12)
+            //    {
+            //        ForeignNumberValidated.Text = "Numer konta powinien zawierać 12 cyfr";
+            //        ForeignNumberValidated.IsVisible = true;
+            //    }
+            //    else
+            //        ForeignNumberValidated.IsVisible = false;
+            //    foreach (char ch in ForeignNumber.Text)
+            //    {
+            //        if (!char.IsDigit(ch))
+            //        {
+            //            ForeignNumberValidated.Text = "Numer konta powinien zawierać tylko cyfry";
+            //            ForeignNumberValidated.IsVisible = true;
+            //        }
+            //        else
+            //            ForeignNumberValidated.IsVisible = false;
+            //    }
+            //}
+            if (ForeignNumber.Text == "" || ForeignNumber.Text == null)
+                return;
             else
-                ForeignNumberValidated.IsVisible = false;
+            {
+                if (!Regex.Match(ForeignNumber.Text, "^[0-9]{12}").Success)
+                {
+                    ForeignNumberValidated.Text = "Numer konta powinien zawierać 12 cyfr";
+                    ForeignNumberValidated.IsVisible = true;
+                }
+                else
+                    ForeignNumberValidated.IsVisible = false;
+            }
         }
         private void ValidationName(object sender, FocusEventArgs e)
         {
-            if (!Regex.Match(Name.Text, "[a-zA-Z]").Success)
+            if (Name.Text == "" || Name.Text == null)
+                Info.Text = "";
+            else
             {
-                NameValidated.Text = "Nazwa nie może zawierać cyfr i znaków specjalnych";
-                NameValidated.IsVisible = true;
+                if (!Regex.Match(Name.Text, "[a-zA-Z]").Success)
+                {
+                    NameValidated.Text = "Nazwa nie może zawierać cyfr i znaków specjalnych";
+                    NameValidated.IsVisible = true;
+                }
+                else
+                    NameValidated.IsVisible = false;
             }
-            else  
-                NameValidated.IsVisible = false;
         }
         private void ValidationTitle(object sender, FocusEventArgs e)
         {
-            if (!Regex.Match(TransferTitle.Text, "^[a-zA-Z0-9]{0,50}").Success)
-            {
-                TitleValidated.Text = "Nazwa nie może zawierać cyfr i znaków specjalnych";
-                TitleValidated.IsVisible = true;
-            }
+            if (TransferTitle.Text == "" || TransferTitle.Text == null)
+                return;
             else
-                TitleValidated.IsVisible = false;
+            {
+                if (!Regex.Match(TransferTitle.Text, "^[a-zA-Z0-9]{0,50}").Success)
+                {
+                    TitleValidated.Text = "Tytuł nie może zawierać cyfr i znaków specjalnych";
+                    TitleValidated.IsVisible = true;
+                }
+                else
+                    TitleValidated.IsVisible = false;
+            }
         }
         private void ValidationCashField(object sender, FocusEventArgs e)
         {
-            if (!Regex.Match(Money.Text, "[0-9]").Success)
-            {
-                MoneyValidated.Text = "Nieprawidłowy format kwoty";
-                MoneyValidated.IsVisible = true;
-            }
+            if (Money.Text == "" || Money.Text == null)
+                return;
             else
             {
-                double temp = Math.Round(Double.Parse(Money.Text), 2);
-                Money.Text = temp.ToString();
-                MoneyValidated.IsVisible = false;
+                if (!Regex.Match(Money.Text, "[0-9]").Success)
+                {
+                    MoneyValidated.Text = "Nieprawidłowy format kwoty";
+                    MoneyValidated.IsVisible = true;
+                }
+                else
+                {
+                    double temp = Math.Round(Double.Parse(Money.Text), 2);
+                    Money.Text = temp.ToString();
+                    MoneyValidated.IsVisible = false;
+                }
             }
         }
-
+        private void ValidationDays(object sender, FocusEventArgs e)
+        {
+            if (Days.Text == "" || Days.Text == null)
+                return;
+            else
+            {
+                if (!Regex.Match(Days.Text, "[0-9]").Success)
+                {
+                    DaysValidated.Text = "Liczba dni musi być składać się z cyfr";
+                    DaysValidated.IsVisible = true;
+                }
+                else
+                {
+                    DaysValidated.IsVisible = false;
+                }
+            }
+        }
+        private bool IsEveryEntryFilled()
+        {
+            foreach(Entry entry in entryStack.Children.OfType<Entry>())
+            {
+                if (entry.Text == "" || entry.Text == null)
+                    return false;
+            }
+            return true;
+        }
         #region Linq
         private Operation AddTransferOperation()
         {
@@ -152,11 +235,13 @@ namespace AppMobiBank.Views
             {
                 IdPT = _permamentTransfer.Items.Select((PermamentTransfer p) => p.IdPT).Last() + 1,
                 IdTransfer = id,
-                Frecuency = Int32.Parse(Frecuency.Text),
+                Frecuency = Int32.Parse(Days.Text),
                 Term = LastTerm.Date
             };
             return pt;
         }
         #endregion
+
+
     }
 }

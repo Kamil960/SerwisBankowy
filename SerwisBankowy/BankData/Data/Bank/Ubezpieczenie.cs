@@ -22,6 +22,7 @@ namespace BankData.Data.Bank
         public string Opis { get; set; }
         public string? Grafika { get; set; }
         public int? Pozycja { get; set; }
+        public int LiczbaPunktow { get; set; }
         public bool? CzyAktywna { get; set; }
     }
 }

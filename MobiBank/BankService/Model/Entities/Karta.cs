@@ -20,8 +20,7 @@ namespace BankService.Model.Entities
         public string UrlGrafika { get; set; }
         public Nullable<bool> CzyAktywna { get; set; }
         public string Rodzaj { get; set; }
-        public Nullable<int> IdOferta { get; set; }
-    
-        public virtual UslugaSzczegolowa UslugaSzczegolowa { get; set; }
+        public string NumerKonta { get; set; }
+        public string Aktywność { get; set; }
     }
 }

@@ -1769,24 +1769,27 @@
   },
   "packageFolders": {
     "C:\\Users\\kamil\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kamil\\OneDrive\\Pulpit\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\BankData.csproj",
+      "projectUniqueName": "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\BankData.csproj",
       "projectName": "BankData",
-      "projectPath": "C:\\Users\\kamil\\OneDrive\\Pulpit\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\BankData.csproj",
+      "projectPath": "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\BankData.csproj",
       "packagesPath": "C:\\Users\\kamil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kamil\\OneDrive\\Pulpit\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\obj\\",
+      "outputPath": "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1839,7 +1842,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

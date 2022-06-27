@@ -2,7 +2,7 @@
 
 @{
 	ViewData["Title"] = "Edycja";
-	<link rel="stylesheet" href="~/css/edit-list-style.css" asp-append-version="true"/>
+	<link rel="stylesheet" href="~/css/edit-list-style.css" asp-append-version="true" />
 }
 
 <h1>Edycja oferty dla Konta Osobistego</h1>
@@ -23,13 +23,18 @@
 						</div>
 						<div class="form-group">
 							<label asp-for="Opis" class="control-label"></label>
-							<input class="form-control-desc" asp-for="Opis"/>
+							<input class="form-control-desc" asp-for="Opis" />
 							<span asp-validation-for="Opis" class="text-danger"></span>
 						</div>
 						<div class="form-group">
 							<label asp-for="Procent" class="control-label"></label>
 							<input asp-for="Procent" class="form-control" />
 							<span asp-validation-for="Procent" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="LiczbaPunktow" class="control-label"></label>
+							<input asp-for="LiczbaPunktow" class="form-control" />
+							<span asp-validation-for="LiczbaPunktow" class="text-danger"></span>
 						</div>
 						<div class="form-group-btn">
 							<input type="submit" value="Edytuj" class="button" />
@@ -43,5 +48,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

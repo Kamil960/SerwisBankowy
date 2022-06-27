@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankData.Data.Bank
 {
@@ -23,5 +18,6 @@ namespace BankData.Data.Bank
         public string? Grafika { get; set; }
         public int? Pozycja { get; set; }
         public bool? CzyAktywna { get; set; }
+        public int LiczbaPunktow { get; set; }
     }
 }

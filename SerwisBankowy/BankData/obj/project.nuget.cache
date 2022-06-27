@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8uHS3h4hbGr6qpEmU/EVn0N4sZmQkJ7ZsFe2HRJ/5LWi9C2IL9k/uREttCOBhoSFbRQki2NrTXDRdvcTX96KtQ==",
+  "dgSpecHash": "EGeQhfmG5UtLqEQuvU5rcEuLlGetCl1L/l6jewQ7Ubzj3Vyvl2OJ3Ebccqe/UJrE7g3OW0iQOYaw1f87iskL7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kamil\\OneDrive\\Pulpit\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\BankData.csproj",
+  "projectFilePath": "C:\\Users\\kamil\\Desktop\\Informatyka studia\\semestr 6\\PIAB\\SerwisBankowy\\BankData\\BankData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\kamil\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

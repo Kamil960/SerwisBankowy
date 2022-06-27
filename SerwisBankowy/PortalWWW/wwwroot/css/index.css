@@ -177,3 +177,9 @@
     width:50px;
     height:40px;
 }
+
+.points {
+    color: white;
+    text-align: end;
+    margin-right: 5%;
+}

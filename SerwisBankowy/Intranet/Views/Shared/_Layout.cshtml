@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-
 	<section class="app">
 		<aside class="sidebar">
 			<header>Menu</header>
@@ -50,19 +49,25 @@
 								<a href="@Url.Action("Index", "KontoFirmowe")"><img class="intra-icon2" src=~/css/Icons/company.png>Konto Firmowe</a>
 							</li>
 							<li>
-								<a href="@Url.Action("Index", "Kredyt")"><img class="intra-icon2" src=~/css/Icons/user.png>Kredyt</a>
+								<a href="@Url.Action("Index", "Kredyt")"><img class="intra-icon2" src=~/css/Icons/loan.png>Kredyt</a>
 							</li>
 							<li>
-								<a href="@Url.Action("Index", "Lokata")"><img class="intra-icon2" src=~/css/Icons/user.png>Lokata</a>
+								<a href="@Url.Action("Index", "Lokata")"><img class="intra-icon2" src=~/css/Icons/deposit.png>Lokata</a>
 							</li>
 							<li>
-								<a href="@Url.Action("Index", "Ubezpieczenie")"><img class="intra-icon2" src=~/css/Icons/user.png>Ubezpieczenie</a>
+								<a href="@Url.Action("Index", "Ubezpieczenie")"><img class="intra-icon2" src=~/css/Icons/insurance.png>Ubezpieczenie</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="@Url.Action("Registration", "Klient")"><img class="intra-icon" src=~/css/Icons/shop.png><span class="">Sklep</span></a>
+						<a href="#"><img class="intra-icon" src=~/css/Icons/shop.png> <span class="">Sklep</span></a>
 						<ul class="nav-flyout">
+							<li>
+								<a href="@Url.Action("Index", "ListaNagrod")"><img class="intra-icon2" src=~/css/Icons/list.png>Kategorie Nagród</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "Nagrody")"><img class="intra-icon2" src=~/css/Icons/reward.png>Nagrody</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
